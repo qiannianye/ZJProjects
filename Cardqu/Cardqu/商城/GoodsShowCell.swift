@@ -24,9 +24,7 @@ class GoodsShowCell: UICollectionViewCell {
     }
     
     func updateGoodsShowCell(imgUrl: String, price: String) {
-        imgView?.sd_setImage(with: URL(string: imgUrl), completed: { (image, error, imageType, url) in
-            
-        })
+        
         priceLb?.text = price
     }
     

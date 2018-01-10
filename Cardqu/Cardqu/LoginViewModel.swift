@@ -11,18 +11,53 @@ import ReactiveCocoa
 import ReactiveSwift
 import Result
 
-class LoginViewModel: BaseViewModel {
-    //用户名
-    var userName: String?
-    var password: String?
-    var isValidUserName: Bool = true
-    var isValidPassword = true
+//MARK:interface
+protocol LoginViewModelProtocol {
+    func setupInput(accountSignal: Signal<String?,NoError>, passwordSignal: Signal<String?,NoError>)
     
-    func addCheckObserver() {
-        isValidUserName = ((self.userName?.lengthOfBytes(using: .utf8)) != nil)
-        isValidPassword = ((self.password?.lengthOfBytes(using: .utf8)) != nil)
-        let (signal1, observer1) = Signal<Bool, NoError>.pipe()
-        signal1.observe(observer1)
+    var account: MutableProperty<String> { get }
+    var password: MutableProperty<String> { get }
+    var loginAction: Action<Any?,Any?,NoError> { get }
+}
+
+extension LoginViewModel: LoginViewModelProtocol {}
+
+class LoginViewModel: BaseViewModel {
+    private(set) var account = MutableProperty("")
+    private(set) var password = MutableProperty("")
+    private(set) lazy var loginAction = Action<Any?, Any?, NoError> { _ in
+        return self.loginSignalProducer
+    }
+    
+    func setupInput(accountSignal: Signal<String?, NoError>, passwordSignal: Signal<String?, NoError>) {
         
+        account <~ accountSignal.map({ (text) -> String in
+            let username = (text ?? "").substringTo(11)
+            return (username.isValidPhoneNum ? username : "请输入有效的手机号")
+        })
+        
+        password <~ passwordSignal.map({ (text) -> String in
+            //这里需要做加密
+            let despwd = text ?? ""
+            return despwd
+        })
+    }
+    
+    //
+    private var requestApi = HttpRequestAPI()
+    
+    private var loginSignalProducer: SignalProducer<Any?,NoError> {
+        let (l_signal, l_observer) = Signal<Any?, NoError>.pipe()
+        let l_signal_producer = SignalProducer<Any?, NoError>(l_signal)
+        let dto = LoginDTO()
+        dto.mobileLoginParameters(userName: self.account.value, password: self.password.value, type: "mobile", clientId: "IOS", appId: "")
+        requestApi.startRequestSuccess(successBlock: { (respondsData) in
+            l_observer.send(value: respondsData)
+            l_observer.sendCompleted()
+            print("login data:\(respondsData)")
+        }) { (error) in
+            //
+        }
+        return l_signal_producer
     }
 }

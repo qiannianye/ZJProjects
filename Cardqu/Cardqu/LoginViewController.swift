@@ -15,10 +15,19 @@ import Result
 class LoginViewController: UIViewController {
 
     let thirdpartyHeight: CGFloat = 100
-    var userNameTF: UITextField?
-    var passwordTF: UITextField?
+    var userNameTF: UITextField!
+    var passwordTF: UITextField!
     var loginBtn: UIButton?
-    private var requestApi = HttpRequestAPI()
+    
+    //private var loginViewModel = LoginViewModel()
+    private var loginViewModel: LoginViewModelProtocol! {
+        didSet{
+            loginViewModel.setupInput(accountSignal: userNameTF.reactive.continuousTextValues, passwordSignal: passwordTF.reactive.continuousTextValues)
+            userNameTF.reactive.text <~ loginViewModel.account
+            passwordTF.reactive.text <~ loginViewModel.password
+            loginBtn?.reactive.pressed = CocoaAction(loginViewModel.loginAction, input: loginBtn)
+        }
+    }
     
     lazy var bgImageView: UIImageView = {
         let imgView = UIImageView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - thirdpartyHeight ))
@@ -54,6 +63,7 @@ class LoginViewController: UIViewController {
         
         setupUI()
         createLoginSignal()
+        loginViewModel.setupInput(accountSignal: userNameTF.reactive.continuousTextValues, passwordSignal: passwordTF.reactive.continuousTextValues)
     }
 
     override func didReceiveMemoryWarning() {
@@ -160,8 +170,8 @@ extension LoginViewController{
             self.createLoginSignalProducer(username: name, password: pwd)
         }
         
-        loginAction.values.observeValues { (<#AnyObject#>) in
-            <#code#>
+        loginAction.values.observeValues { (respondsData) in
+            
         }
         
         loginBtn?.reactive.pressed = CocoaAction<UIButton>(loginAction, { _ in

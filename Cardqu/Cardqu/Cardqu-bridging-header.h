@@ -8,6 +8,5 @@
 
 #ifndef Cardqu_bridging_header_h
 #define Cardqu_bridging_header_h
-#import <SDWebImage/UIImageView+WebCache.h>
 
 #endif /* Cardqu_bridging_header_h */

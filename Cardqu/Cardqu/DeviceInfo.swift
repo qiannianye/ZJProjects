@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 let screenWidth = UIScreen.main.bounds.size.width
 let screenHeight = UIScreen.main.bounds.size.height
@@ -14,7 +15,6 @@ let statusBarH = UIApplication.shared.statusBarFrame.height
 let naviBarH: CGFloat = (statusBarH + 44) //加上状态栏的高度
 let tabBarH: CGFloat = ((statusBarH > 20) ? 83 : 49)
 let isIphoneX = ((statusBarH > 20) ? true : false)
-
 
 
 struct DeviceInfo {
