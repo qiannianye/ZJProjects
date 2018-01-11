@@ -16,6 +16,7 @@ struct AppInfo {
     static let buildVersion: String = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
     
     //获取app版本号
+    //shortversion 可能为空,造成转化时崩溃
     static let appVersion: String = Bundle.main.infoDictionary?["CFBundleShortVersion"] as! String
     
     //获取bundle identifier

@@ -33,7 +33,9 @@ class LoginViewModel: BaseViewModel {
         
         account <~ accountSignal.map({ (text) -> String in
             let username = (text ?? "").substringTo(11)
-            return (username.isValidPhoneNum ? username : "请输入有效的手机号")
+            //return (username.isValidPhoneNum ? username : "请输入有效的手机号")
+            print("username is valid?[\(username.isValidPhoneNum)]")
+            return username
         })
         
         password <~ passwordSignal.map({ (text) -> String in
@@ -44,20 +46,8 @@ class LoginViewModel: BaseViewModel {
     }
     
     //
-    private var requestApi = HttpRequestAPI()
-    
     private var loginSignalProducer: SignalProducer<Any?,NoError> {
-        let (l_signal, l_observer) = Signal<Any?, NoError>.pipe()
-        let l_signal_producer = SignalProducer<Any?, NoError>(l_signal)
-        let dto = LoginDTO()
-        dto.mobileLoginParameters(userName: self.account.value, password: self.password.value, type: "mobile", clientId: "IOS", appId: "")
-        requestApi.startRequestSuccess(successBlock: { (respondsData) in
-            l_observer.send(value: respondsData)
-            l_observer.sendCompleted()
-            print("login data:\(respondsData)")
-        }) { (error) in
-            //
-        }
-        return l_signal_producer
+        
+        return LoginAPI().mobileLogin(userName: self.account.value, password: self.password.value, type: "mobile", clientId: "IOS", appId: "")
     }
 }

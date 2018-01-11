@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     var userNameTF: UITextField!
     var passwordTF: UITextField!
     var loginBtn: UIButton?
+    var requestApi = HttpRequestAPI()
     
     //private var loginViewModel = LoginViewModel()
     private var loginViewModel: LoginViewModelProtocol! {
@@ -26,12 +27,16 @@ class LoginViewController: UIViewController {
             userNameTF.reactive.text <~ loginViewModel.account
             passwordTF.reactive.text <~ loginViewModel.password
             loginBtn?.reactive.pressed = CocoaAction(loginViewModel.loginAction, input: loginBtn)
+            loginViewModel.loginAction.values.observeValues { (value) in
+                print("login in![\(value)]" )
+            }
         }
     }
     
     lazy var bgImageView: UIImageView = {
         let imgView = UIImageView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - thirdpartyHeight ))
         imgView.image = UIImage(named: "kq_login_bgImage.jpg")
+        imgView.isUserInteractionEnabled = true
         return imgView
     }()
     
@@ -48,13 +53,14 @@ class LoginViewController: UIViewController {
         return sv
     }()
     
-    lazy var textField = {(placeholder: String?) -> UITextField in
+    private func textField(_ placeholder: String?) -> UITextField {
         let tf = UITextField()
         tf.placeholder = placeholder
-        tf.textColor = UIColor.white
+        tf.textColor = UIColor.black
         tf.font = UIFont.systemFont(ofSize: 12)
         tf.clearButtonMode = UITextFieldViewMode.whileEditing
         tf.backgroundColor = UIColor.yellow
+        //tf.becomeFirstResponder()
         return tf
     }
     
@@ -62,8 +68,10 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        createLoginSignal()
-        loginViewModel.setupInput(accountSignal: userNameTF.reactive.continuousTextValues, passwordSignal: passwordTF.reactive.continuousTextValues)
+        //createLoginSignal()
+        //loginViewModel.setupInput(accountSignal: userNameTF.reactive.continuousTextValues, passwordSignal: passwordTF.reactive.continuousTextValues)
+        
+        loginViewModel = LoginViewModel()
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,7 +89,7 @@ extension LoginViewController{
         setupApplogo()
         setupTextFields()
         setupLoginButton()
-        setupThirdparty()
+        //setupThirdparty()
         view.setNeedsUpdateConstraints()
     }
     
@@ -99,7 +107,7 @@ extension LoginViewController{
     }
     
     func setupTextFields() {
-        userNameTF = textField("请输入手机号")
+        userNameTF = textField("")
         passwordTF = textField("请输入密码")
         scrollView.addSubview(userNameTF!)
         scrollView.addSubview(passwordTF!)
