@@ -11,7 +11,7 @@ import ReactiveSwift
 import Result
 
 class HttpAPIManager {
-     func startRequest(config: HttpRequestConfiguration, success: RequestSuccessBlock, fail: RequestFailBlock) {
+    func startRequest(config: HttpRequestConfiguration, success: @escaping RequestSuccessBlock, fail: @escaping RequestFailBlock) {
         HttpRequestManager.shared.baseRequestWithConfig(config: config, success: { (respondsData) in
             success(respondsData)
         }) { (error) in
@@ -20,15 +20,16 @@ class HttpAPIManager {
     }
 }
 
-extension HttpAPIManager{
-    func producer(confi: HttpRequestConfiguration) -> SignalProducer<Any?,NoError> {
-      return SignalProducer<Any?, NoError>({ [weak self] (observer, _)  in
-            self?.startRequest(config: confi, success: { respondsData in
-                observer.send(value: respondsData as Any)
-                observer.sendCompleted()
-            }, fail: { error in
-                observer.send(error: error as! NoError)
-            })
-        }).observe(on: UIScheduler())
-    }
-}
+//extension HttpAPIManager{
+//    func producer(confi: HttpRequestConfiguration) -> SignalProducer<Any?,NoError> {
+//      return SignalProducer<Any?, NoError>({ [weak self] (observer, _)  in
+//            self?.startRequest(config: confi, success: { respondsData in
+//                observer.send(value: respondsData as Any)
+//                observer.sendCompleted()
+//            }, fail: { error in
+//                observer.send(error: error as! NoError)
+//            })
+//        }).observe(on: UIScheduler())
+//    }
+//}
+

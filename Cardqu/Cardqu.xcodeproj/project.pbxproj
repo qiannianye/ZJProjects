@@ -47,6 +47,8 @@
 		A780FF961FBEE5930031A919 /* CouponBagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780FF951FBEE5930031A919 /* CouponBagVC.swift */; };
 		A786D03B1FB2FC4E006FB878 /* AutoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786D03A1FB2FC4E006FB878 /* AutoScrollView.swift */; };
 		A790BC961FB582BC009B5679 /* AppConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = A790BC951FB582BC009B5679 /* AppConstans.swift */; };
+		A7A28AB420089B35008B3D96 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A28AB320089B35008B3D96 /* UIColor+Extension.swift */; };
+		A7A28AB62008C065008B3D96 /* CQHttpAPIManager+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A28AB52008C065008B3D96 /* CQHttpAPIManager+Reactive.swift */; };
 		A7B1DB351FECDDE2000B36AB /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B1DB341FECDDE2000B36AB /* BaseViewModel.swift */; };
 		A7B1DB371FECE182000B36AB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B1DB361FECE182000B36AB /* LoginViewModel.swift */; };
 		AB9F063DD45324032646893C /* Pods_Cardqu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E502C29C5EE4F8057DA4FFF4 /* Pods_Cardqu.framework */; };
@@ -118,6 +120,8 @@
 		A786D03A1FB2FC4E006FB878 /* AutoScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScrollView.swift; sourceTree = "<group>"; };
 		A790BC941FB55794009B5679 /* Cardqu-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cardqu-bridging-header.h"; sourceTree = "<group>"; };
 		A790BC951FB582BC009B5679 /* AppConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstans.swift; sourceTree = "<group>"; };
+		A7A28AB320089B35008B3D96 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		A7A28AB52008C065008B3D96 /* CQHttpAPIManager+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CQHttpAPIManager+Reactive.swift"; sourceTree = "<group>"; };
 		A7B1DB341FECDDE2000B36AB /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		A7B1DB361FECE182000B36AB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AAA69751FB9D96422B48B9E3 /* Pods-Cardqu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cardqu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cardqu/Pods-Cardqu.debug.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 				A77B84EB200743DF00D60FCB /* CQRequestConfig.swift */,
 				A77B84ED2007532900D60FCB /* CQRequestManager.swift */,
 				A77B84EF20075EBB00D60FCB /* CQHttpAPIManager.swift */,
+				A7A28AB52008C065008B3D96 /* CQHttpAPIManager+Reactive.swift */,
 			);
 			path = "请求类";
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 				A77C037B1FB1A31A0047F961 /* Bundle+Extensions.swift */,
 				A772EEE11FD672C100BEB72A /* String+Extensions.swift */,
 				A74C5EAB1FE7C978003AEAE6 /* UIButton+Extension.swift */,
+				A7A28AB320089B35008B3D96 /* UIColor+Extension.swift */,
 				A73C03101FE0CF1E0053EF9C /* JsonStringAddition.swift */,
 				A790BC951FB582BC009B5679 /* AppConstans.swift */,
 				A77592FF1FD533CB000345AB /* AppInfo.swift */,
@@ -481,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A74C5EAC1FE7C978003AEAE6 /* UIButton+Extension.swift in Sources */,
+				A7A28AB62008C065008B3D96 /* CQHttpAPIManager+Reactive.swift in Sources */,
 				A77C03781FB185D40047F961 /* HomeViewController.swift in Sources */,
 				A7B1DB371FECE182000B36AB /* LoginViewModel.swift in Sources */,
 				A73855191FBC245E006B046A /* SecondVC.swift in Sources */,
@@ -516,6 +523,7 @@
 				A738551B1FBC246C006B046A /* ThirdVC.swift in Sources */,
 				A790BC961FB582BC009B5679 /* AppConstans.swift in Sources */,
 				A74DD3481FB016E50067D31A /* AppDelegate.swift in Sources */,
+				A7A28AB420089B35008B3D96 /* UIColor+Extension.swift in Sources */,
 				A71D35101FB072D300ED2B01 /* BaseTabbarController.swift in Sources */,
 				A77593001FD533CB000345AB /* AppInfo.swift in Sources */,
 			);

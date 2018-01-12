@@ -33,41 +33,51 @@ final class HttpRequestManager{
 }
 
 extension HttpRequestManager {
-    func baseRequestWithConfig(config: HttpRequestConfiguration, success: RequestSuccessBlock, fail: RequestFailBlock) -> Void {
+    func baseRequestWithConfig(config: HttpRequestConfiguration, success: @escaping RequestSuccessBlock, fail: @escaping RequestFailBlock) -> Void {
         
         var url = config.requestUrl
-        //        if url.hasPrefix("http://") || url.hasPrefix("https://") {
-        //
-        //        }else{
-        //            url = currentService.host + url
-        //        }
+                if url.hasPrefix("http://") || url.hasPrefix("https://") {
         
-        guard url.hasPrefix("http://") || url.hasPrefix("https://") else { return }
-        url = currentService.host + url
+                }else{
+                    url = currentService.host + url
+                }
         
-        manager.request(url, method: config.method, parameters: config.parameters, encoding: config.parameterEncoding, headers: config.headers).responseData { (responds) in
-            //
+//        guard url.hasPrefix("http://") || url.hasPrefix("https://") else { return }
+//        url = currentService.host + url
+        
+        manager.request(url, method: config.method, parameters: config.parameters, encoding: config.parameterEncoding, headers: config.headers).responseData { [unowned self] (responds) in
+            self.handleRespondsData(respondsData: responds, success: success, fail: fail)
         }
     }
     
     
     //MARK:数据处理
-    func handleRespondsData(requestApi: HttpRequestAPI, respondsData: DataResponse<Any>, success: RequestSuccessBlock, fail: RequestFailBlock) {
+    func handleRespondsData(respondsData: DataResponse<Data>, success: RequestSuccessBlock, fail: RequestFailBlock) {
         guard respondsData.result.error == nil else { //请求成功后,result.error返回的是nil
             //处理失败的结果
             fail(respondsData.result.error!)
             return
         }
         //成功的结果
-        let respondsDic = respondsData.result.value as! Dictionary<String, Any>
-        let resultMsg = respondsDic["msg"] as! String
-        let resultCode = respondsDic["code"] as! String
+        let respondsDic = dataConvertDictionary(data: respondsData.result.value!)
+        let resultMsg = respondsDic!["msg"] as! String
+        let resultCode = respondsDic!["code"] as! String
         if resultCode.isEqualTo("0") {//请求数据成功
             success(respondsDic as AnyObject)
         }
         
         if resultMsg.lengthOfBytes(using: String.Encoding.utf8) > 0 {
             //展示message
+        }
+    }
+    
+    func dataConvertDictionary(data: Data) -> Dictionary<String,Any>? {
+        do {
+            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+            let dic = json as! Dictionary<String,Any>
+            return dic
+        } catch _ {
+            return nil
         }
     }
 }

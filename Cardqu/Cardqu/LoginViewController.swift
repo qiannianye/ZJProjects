@@ -115,7 +115,8 @@ extension LoginViewController{
     
     func setupLoginButton() {
         loginBtn = UIButton(type: .custom)
-        loginBtn?.backgroundColor = UIColor.orange
+        loginBtn?.setBackgroundImage(UIColor.gray.image, for: .disabled)
+        loginBtn?.setBackgroundImage(UIColor.orange.image, for: .normal)
         loginBtn?.clipsToBounds = true
         loginBtn?.layer.cornerRadius = 4
         loginBtn?.setTitle("login", for: .normal)
