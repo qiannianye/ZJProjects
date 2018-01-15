@@ -9,4 +9,7 @@
 #ifndef Cardqu_bridging_header_h
 #define Cardqu_bridging_header_h
 
+#import <CommonCrypto/CommonDigest.h>
+#import <CommonCrypto/CommonCrypto.h>
+
 #endif /* Cardqu_bridging_header_h */

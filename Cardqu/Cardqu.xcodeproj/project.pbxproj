@@ -12,6 +12,7 @@
 		A71FCD911FE22A92007204A2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71FCD901FE22A92007204A2 /* UserModel.swift */; };
 		A71FCD931FE261CE007204A2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71FCD921FE261CE007204A2 /* LoginViewController.swift */; };
 		A71FCD951FE27DE3007204A2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71FCD941FE27DE3007204A2 /* BaseViewController.swift */; };
+		A7264A09200CB3820073FDF4 /* Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7264A08200CB3820073FDF4 /* Encryption.swift */; };
 		A73855151FBC1717006B046A /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73855141FBC1717006B046A /* ContentCell.swift */; };
 		A73855171FBC2445006B046A /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73855161FBC2445006B046A /* FirstVC.swift */; };
 		A73855191FBC245E006B046A /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73855181FBC245E006B046A /* SecondVC.swift */; };
@@ -78,6 +79,7 @@
 		A71FCD901FE22A92007204A2 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		A71FCD921FE261CE007204A2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A71FCD941FE27DE3007204A2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A7264A08200CB3820073FDF4 /* Encryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encryption.swift; sourceTree = "<group>"; };
 		A73855141FBC1717006B046A /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
 		A73855161FBC2445006B046A /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
 		A73855181FBC245E006B046A /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				A77592FF1FD533CB000345AB /* AppInfo.swift */,
 				A77593011FD537F5000345AB /* DeviceInfo.swift */,
 				A772EEE31FD67B4000BEB72A /* ZJHud.swift */,
+				A7264A08200CB3820073FDF4 /* Encryption.swift */,
 				A74DD34B1FB016E50067D31A /* Main.storyboard */,
 				A74DD34E1FB016E60067D31A /* Assets.xcassets */,
 				A74DD3531FB016E60067D31A /* Info.plist */,
@@ -498,6 +501,7 @@
 				A77B84F42007624100D60FCB /* LoginAPI.swift in Sources */,
 				A71FCD931FE261CE007204A2 /* LoginViewController.swift in Sources */,
 				A73855171FBC2445006B046A /* FirstVC.swift in Sources */,
+				A7264A09200CB3820073FDF4 /* Encryption.swift in Sources */,
 				A780FF921FBEBC030031A919 /* GoodsShowCell.swift in Sources */,
 				A772EEE41FD67B4000BEB72A /* ZJHud.swift in Sources */,
 				A780FF941FBEC8690031A919 /* GoodsHeaderView.swift in Sources */,

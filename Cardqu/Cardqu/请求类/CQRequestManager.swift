@@ -60,24 +60,27 @@ extension HttpRequestManager {
         }
         //成功的结果
         let respondsDic = dataConvertDictionary(data: respondsData.result.value!)
-        let resultMsg = respondsDic!["msg"] as! String
-        let resultCode = respondsDic!["code"] as! String
-        if resultCode.isEqualTo("0") {//请求数据成功
+        let resultMsg = respondsDic["err_msg"] as! String
+        let resultCode = respondsDic["err_code"] as! NSNumber
+        if /*resultCode.isEqualTo("0")*/ resultCode.intValue == 0 {//请求数据成功
             success(respondsDic as AnyObject)
         }
+        
+        //调试
+        success(respondsDic as AnyObject)
         
         if resultMsg.lengthOfBytes(using: String.Encoding.utf8) > 0 {
             //展示message
         }
     }
     
-    func dataConvertDictionary(data: Data) -> Dictionary<String,Any>? {
+    func dataConvertDictionary(data: Data) -> Dictionary<String,Any> {
         do {
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
             let dic = json as! Dictionary<String,Any>
             return dic
         } catch _ {
-            return nil
+            return Dictionary<String,Any>()
         }
     }
 }

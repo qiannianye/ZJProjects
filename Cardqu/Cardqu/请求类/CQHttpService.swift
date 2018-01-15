@@ -16,9 +16,9 @@ enum CQServiceEnvironment {
     var host: String{
         switch self {
         case .test:
-            return "https://apijava.cardqu.t.KQService"
+            return "https://apijava.t.cardqu.com/KaQuService"
         default:
-            return "https://apijava.cardqu.KQService"
+            return "https://apijava.cardqu.com/KaQuService"
         }
     }
 }

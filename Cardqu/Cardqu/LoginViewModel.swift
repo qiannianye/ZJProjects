@@ -42,7 +42,7 @@ class LoginViewModel: BaseViewModel {
         
         password <~ passwordSignal.map({ (text) -> String in
             //这里需要做加密
-            let despwd = text ?? ""
+            let despwd = (text ?? "").encrypt(key: encryptKey)
             return despwd
         })
     }
@@ -57,7 +57,7 @@ class LoginViewModel: BaseViewModel {
     
     private var loginProperty: Property<Bool> {
         return Property.combineLatest(account,password).map({(username, password) -> Bool in
-            return  username.count > 0 && password.count > 0 && username.isValidPhoneNum
+            return  username.count > 0 && password.count > 0 && username.isValidPhoneNum && !(password.isEqualTo(""))
         })
     }
 }
