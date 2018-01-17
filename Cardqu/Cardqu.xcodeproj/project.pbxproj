@@ -376,7 +376,7 @@
 				TargetAttributes = {
 					A74DD3431FB016E50067D31A = {
 						CreatedOnToolsVersion = 9.0.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					A74DD3571FB016E60067D31A = {
 						CreatedOnToolsVersion = 9.0.1;
@@ -688,13 +688,16 @@
 			baseConfigurationReference = AAA69751FB9D96422B48B9E3 /* Pods-Cardqu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = D9NTHZ9768;
 				INFOPLIST_FILE = Cardqu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pantour.kaqu.Cardqu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pantour.kaqu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d08124fe-8d14-4be1-b5d4-1b1ccd21a37d";
+				PROVISIONING_PROFILE_SPECIFIER = CardquDev;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Cardqu/Cardqu-bridging-header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -706,13 +709,14 @@
 			baseConfigurationReference = A561E0B495A6F55CE3145D33 /* Pods-Cardqu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Cardqu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pantour.kaqu.Cardqu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pantour.kaqu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Cardqu/Cardqu-bridging-header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

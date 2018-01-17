@@ -68,6 +68,7 @@ extension HttpRequestManager {
         
         //调试
         success(respondsDic as AnyObject)
+        print("errMsg:[\(resultMsg)]")
         
         if resultMsg.lengthOfBytes(using: String.Encoding.utf8) > 0 {
             //展示message

@@ -41,17 +41,27 @@ class LoginViewModel: BaseViewModel {
         })
         
         password <~ passwordSignal.map({ (text) -> String in
-            //这里需要做加密
-            let despwd = (text ?? "").encrypt(key: encryptKey)
-            return despwd
+            
+//            let pwd = text ?? ""
+//            guard pwd.count > 0 else {return ""}
+//            let encryptPwd = pwd.encrypt(key: encryptKey)
+//            return encryptPwd
+            return text ?? ""
         })
     }
     
     //
     private var loginSignalProducer: SignalProducer<Any?,NoError> {
+        //请求前做密码加密
+        //Oe5Q7UOE8/UAAAAAAAA=
+        //MWZmNmQ5YjAzMWVjMzVlZg==
+        let encryptPwd = self.password.value.encrypt(key: encryptKey)
+        print("pwd is---[\(encryptPwd)]")
+        let decryptPwd = encryptPwd.decrypt(key: encryptKey)
+        print("dePwd is ---[\(decryptPwd)]")
         
-        return LoginAPI().mobileLogin(userName: self.account.value, password: self.password.value, type: "mobile", clientId: "IOS", appId: "").on(value:{ value in
-            print("value is [\(value)]")
+        return LoginAPI().mobileLogin(userName: self.account.value, password: encryptPwd, type: "mobile", clientId: "IOS_" + AppInfo.appVersion, appId: "").on(value:{ value in
+            print("value is [\(String(describing: value))]")
         })
     }
     
