@@ -11,5 +11,6 @@
 
 #import <CommonCrypto/CommonDigest.h>
 #import <CommonCrypto/CommonCrypto.h>
+#import "WXApi.h"
 
 #endif /* Cardqu_bridging_header_h */
