@@ -21,9 +21,9 @@ class LoginAPI: HttpAPIManager {
     }
     
     //第三方登录
-    func thirdLogin(openId: String, unionId: String, platform: String, clientId: String) -> SignalProducer<Any?,NoError> {
-        let dic = ["open_id":openId, "union_id": unionId,  "client_id":clientId]
-        let confi = HttpRequestConfiguration(url: "/2.3/user/login.json", method: .post, headers: nil, parameters: dic, respondsType: .json, paraEncoding: URLEncoding.default)
+    func thirdLogin(openId: String, unionId: String, platform: String, accessToken: String, clientId: String, expiresIn: String, appId: String) -> SignalProducer<Any?,NoError> {
+        let dic = ["open_id":openId, "union_id":unionId, "platform": platform, "access_token":accessToken, "client_id":clientId, "expires_in":expiresIn, "ky_app_id":appId]
+        let confi = HttpRequestConfiguration(url: "/2.3/auth/token.json", method: .post, headers: nil, parameters: dic, respondsType: .json, paraEncoding: URLEncoding.default)
         return producer(confi: confi)
     }
 }

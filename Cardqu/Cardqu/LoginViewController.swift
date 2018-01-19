@@ -89,7 +89,7 @@ extension LoginViewController{
         setupApplogo()
         setupTextFields()
         setupLoginButton()
-        //setupThirdparty()
+        setupThirdparty()
         view.setNeedsUpdateConstraints()
     }
     
@@ -152,9 +152,10 @@ extension LoginViewController{
             btn.addTarget(self, action: #selector(respondsToThirdLogin(btn:)), for: .touchUpInside)
             bgView.addSubview(btn)
             
-            btn.index = i
+            //btn.index = i
+            btn.tag = i
             i += 1
-            print("btn index = \(btn.index)")
+            //print("btn index = \(btn.index)")
         }
     }
     
@@ -209,9 +210,17 @@ extension LoginViewController{
     
     //第三方登录
     @objc func respondsToThirdLogin(btn: UIButton) {
-        switch btn.index {
-        case 0: break
-
+        switch btn.tag {
+        case 0:
+            print("qq login")
+        case 1:
+            do {
+               print("weixin login")
+                let req = SendAuthReq()
+                req.state = "ka__qu321"
+                req.scope = "snsapi_message,snsapi_userinfo,snsapi_friend,snsapi_contact" //post_timeline,sns
+                WXApi.sendAuthReq(req, viewController: self, delegate:UIApplication.shared.delegate as! WXApiDelegate)
+            }
         default:
             break
         }

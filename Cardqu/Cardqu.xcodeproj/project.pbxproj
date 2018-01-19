@@ -47,7 +47,7 @@
 		A780FF941FBEC8690031A919 /* GoodsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780FF931FBEC8690031A919 /* GoodsHeaderView.swift */; };
 		A780FF961FBEE5930031A919 /* CouponBagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780FF951FBEE5930031A919 /* CouponBagVC.swift */; };
 		A786D03B1FB2FC4E006FB878 /* AutoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786D03A1FB2FC4E006FB878 /* AutoScrollView.swift */; };
-		A78DA4E82010A66500BB3850 /* 3Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78DA4E72010A66500BB3850 /* 3Party.swift */; };
+		A7908AC920119FAE0053CB8A /* ThirdParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7908AC820119FAE0053CB8A /* ThirdParty.swift */; };
 		A790BC961FB582BC009B5679 /* AppConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = A790BC951FB582BC009B5679 /* AppConstans.swift */; };
 		A7A28AB420089B35008B3D96 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A28AB320089B35008B3D96 /* UIColor+Extension.swift */; };
 		A7A28AB62008C065008B3D96 /* CQHttpAPIManager+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A28AB52008C065008B3D96 /* CQHttpAPIManager+Reactive.swift */; };
@@ -121,7 +121,7 @@
 		A780FF931FBEC8690031A919 /* GoodsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsHeaderView.swift; sourceTree = "<group>"; };
 		A780FF951FBEE5930031A919 /* CouponBagVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponBagVC.swift; sourceTree = "<group>"; };
 		A786D03A1FB2FC4E006FB878 /* AutoScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScrollView.swift; sourceTree = "<group>"; };
-		A78DA4E72010A66500BB3850 /* 3Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3Party.swift; sourceTree = "<group>"; };
+		A7908AC820119FAE0053CB8A /* ThirdParty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdParty.swift; sourceTree = "<group>"; };
 		A790BC941FB55794009B5679 /* Cardqu-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cardqu-bridging-header.h"; sourceTree = "<group>"; };
 		A790BC951FB582BC009B5679 /* AppConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstans.swift; sourceTree = "<group>"; };
 		A7A28AB320089B35008B3D96 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -246,7 +246,7 @@
 				A790BC951FB582BC009B5679 /* AppConstans.swift */,
 				A77592FF1FD533CB000345AB /* AppInfo.swift */,
 				A77593011FD537F5000345AB /* DeviceInfo.swift */,
-				A78DA4E72010A66500BB3850 /* 3Party.swift */,
+				A7908AC820119FAE0053CB8A /* ThirdParty.swift */,
 				A772EEE31FD67B4000BEB72A /* ZJHud.swift */,
 				A7264A08200CB3820073FDF4 /* Encryption.swift */,
 				A74DD34B1FB016E50067D31A /* Main.storyboard */,
@@ -500,10 +500,10 @@
 				A71FCD911FE22A92007204A2 /* UserModel.swift in Sources */,
 				A77C037E1FB1AF090047F961 /* BaseNavigationController.swift in Sources */,
 				A772EEE21FD672C100BEB72A /* String+Extensions.swift in Sources */,
-				A78DA4E82010A66500BB3850 /* 3Party.swift in Sources */,
 				A71FCD951FE27DE3007204A2 /* BaseViewController.swift in Sources */,
 				A77B84F42007624100D60FCB /* LoginAPI.swift in Sources */,
 				A71FCD931FE261CE007204A2 /* LoginViewController.swift in Sources */,
+				A7908AC920119FAE0053CB8A /* ThirdParty.swift in Sources */,
 				A73855171FBC2445006B046A /* FirstVC.swift in Sources */,
 				A7264A09200CB3820073FDF4 /* Encryption.swift in Sources */,
 				A780FF921FBEBC030031A919 /* GoodsShowCell.swift in Sources */,
