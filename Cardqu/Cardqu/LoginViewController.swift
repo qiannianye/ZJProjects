@@ -216,10 +216,7 @@ extension LoginViewController{
         case 1:
             do {
                print("weixin login")
-                let req = SendAuthReq()
-                req.state = "ka__qu321"
-                req.scope = "snsapi_message,snsapi_userinfo,snsapi_friend,snsapi_contact" //post_timeline,sns
-                WXApi.sendAuthReq(req, viewController: self, delegate:UIApplication.shared.delegate as! WXApiDelegate)
+               ThirdShare.share.wxAuthorization(controller: self)
             }
         default:
             break

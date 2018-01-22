@@ -30,7 +30,7 @@ class HttpRequestConfiguration {
         self.headers = headers
         self.respondsType = respondsType
         self.parameterEncoding = paraEncoding
-        self.publicParameters()
+        //self.publicParameters() //第三方请求时不需要公共参数,做处理
         self.generateParameters(paraDic: parameters)
     }
     

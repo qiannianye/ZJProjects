@@ -60,19 +60,29 @@ extension HttpRequestManager {
         }
         //成功的结果
         let respondsDic = dataConvertDictionary(data: respondsData.result.value!)
-        let resultMsg = respondsDic["err_msg"] as! String
-        let resultCode = respondsDic["err_code"] as! NSNumber
-        if /*resultCode.isEqualTo("0")*/ resultCode.intValue == 0 {//请求数据成功
+        
+        //有的请求没有err_msg或者err_code,因为这两个字段是自己的服务器返回的,但是如果是请求微信或者其他第三方时,返回的是第三方的数据,那么此时会崩溃.因为字典里取该字段,该字段没有时,取不到值,nil直接解包String,导致崩溃.
+        
+        //这样写易导致崩溃
+//        let resultMsg = respondsDic["err_msg"] as! String
+//        let resultCode = respondsDic["err_code"] as! NSNumber
+        
+        if let resultMsg = respondsDic["err_msg"] {
+            //展示message
+            print("err_msg:[\(resultMsg)]")
+        }
+        
+        if let resultCode = respondsDic["err_code"] {
+            let code = resultCode as! NSNumber
+            if code.intValue == 0 {//请求数据成功
+                success(respondsDic as AnyObject)
+            }else{
+                fail(respondsData.result.error!)
+            }
+        }else{
             success(respondsDic as AnyObject)
         }
-        
-        //调试
-        success(respondsDic as AnyObject)
-        print("errMsg:[\(resultMsg)]")
-        
-        if resultMsg.lengthOfBytes(using: String.Encoding.utf8) > 0 {
-            //展示message
-        }
+        print("respondsData:[\(respondsDic)]")
     }
     
     func dataConvertDictionary(data: Data) -> Dictionary<String,Any> {

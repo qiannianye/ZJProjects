@@ -26,4 +26,39 @@ class LoginAPI: HttpAPIManager {
         let confi = HttpRequestConfiguration(url: "/2.3/auth/token.json", method: .post, headers: nil, parameters: dic, respondsType: .json, paraEncoding: URLEncoding.default)
         return producer(confi: confi)
     }
+    
+    //获取微信accesstoken
+    func wxAuth(code: String){
+        let wxAuthUrl = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=\(AppKey.wxAppID)&secret=\(AppKey.wxAppSecret)&code=\(code)&grant_type=authorization_code"
+        
+        let confi = HttpRequestConfiguration(url: wxAuthUrl, method: .get, headers: nil, parameters: Dictionary<String,Any>(), respondsType: .json, paraEncoding: URLEncoding.default)
+        
+        self.startRequest(config: confi, success: { (resp) in
+            print("微信授权:[\(resp)]")
+            //授权成功后登录
+            //待处理,返回数据赋值,等微博和qq一起处理
+            let access_token = resp["access_token"] as! String
+            let expires_in = resp["expires_in"] as! NSNumber
+            let openid = resp["openid"] as! String
+            //let refresh_token = resp["refresh_token"] as! String
+            //let scope = resp["scope"] as! String
+            let unionid = resp["unionid"] as! String
+        
+            let dic = ["open_id":openid, "union_id":unionid, "platform": "weixin", "access_token":access_token, "client_id":"IOS_" + AppInfo.appVersion, "expires_in":expires_in.stringValue, "ky_app_id":""]
+            let confi = HttpRequestConfiguration(url: "/2.3/auth/token.json", method: .post, headers: nil, parameters: dic, respondsType: .json, paraEncoding: URLEncoding.default)
+            self.startRequest(config: confi, success: { (resp) in
+                //已成功,需要整理
+                var rootVC = UIApplication.shared.keyWindow?.rootViewController
+                if (rootVC?.isKind(of: LoginViewController.self))!{
+                    rootVC = nil
+                }
+                
+            }, fail: { (error) in
+                //
+            })
+            
+        }) { (error) in
+            print("微信授权error:[\(error)]")
+        }
+    }
 }

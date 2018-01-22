@@ -49,6 +49,7 @@
 		A786D03B1FB2FC4E006FB878 /* AutoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786D03A1FB2FC4E006FB878 /* AutoScrollView.swift */; };
 		A7908AC920119FAE0053CB8A /* ThirdParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7908AC820119FAE0053CB8A /* ThirdParty.swift */; };
 		A790BC961FB582BC009B5679 /* AppConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = A790BC951FB582BC009B5679 /* AppConstans.swift */; };
+		A79C8A132015C344009D2395 /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C8A122015C344009D2395 /* AppDelegate+Extension.swift */; };
 		A7A28AB420089B35008B3D96 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A28AB320089B35008B3D96 /* UIColor+Extension.swift */; };
 		A7A28AB62008C065008B3D96 /* CQHttpAPIManager+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A28AB52008C065008B3D96 /* CQHttpAPIManager+Reactive.swift */; };
 		A7B1DB351FECDDE2000B36AB /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B1DB341FECDDE2000B36AB /* BaseViewModel.swift */; };
@@ -124,6 +125,7 @@
 		A7908AC820119FAE0053CB8A /* ThirdParty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdParty.swift; sourceTree = "<group>"; };
 		A790BC941FB55794009B5679 /* Cardqu-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cardqu-bridging-header.h"; sourceTree = "<group>"; };
 		A790BC951FB582BC009B5679 /* AppConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstans.swift; sourceTree = "<group>"; };
+		A79C8A122015C344009D2395 /* AppDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extension.swift"; sourceTree = "<group>"; };
 		A7A28AB320089B35008B3D96 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		A7A28AB52008C065008B3D96 /* CQHttpAPIManager+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CQHttpAPIManager+Reactive.swift"; sourceTree = "<group>"; };
 		A7B1DB341FECDDE2000B36AB /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				A77592FF1FD533CB000345AB /* AppInfo.swift */,
 				A77593011FD537F5000345AB /* DeviceInfo.swift */,
 				A7908AC820119FAE0053CB8A /* ThirdParty.swift */,
+				A79C8A122015C344009D2395 /* AppDelegate+Extension.swift */,
 				A772EEE31FD67B4000BEB72A /* ZJHud.swift */,
 				A7264A08200CB3820073FDF4 /* Encryption.swift */,
 				A74DD34B1FB016E50067D31A /* Main.storyboard */,
@@ -499,6 +502,7 @@
 				A73855191FBC245E006B046A /* SecondVC.swift in Sources */,
 				A71FCD911FE22A92007204A2 /* UserModel.swift in Sources */,
 				A77C037E1FB1AF090047F961 /* BaseNavigationController.swift in Sources */,
+				A79C8A132015C344009D2395 /* AppDelegate+Extension.swift in Sources */,
 				A772EEE21FD672C100BEB72A /* String+Extensions.swift in Sources */,
 				A71FCD951FE27DE3007204A2 /* BaseViewController.swift in Sources */,
 				A77B84F42007624100D60FCB /* LoginAPI.swift in Sources */,
