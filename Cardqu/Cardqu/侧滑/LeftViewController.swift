@@ -9,15 +9,29 @@
 import UIKit
 
 class LeftViewController: UIViewController {
-
+    
+    let header = MineHeader.loadNibView()
+    
+    private var viewModel: MineViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.cyan
+        setupUI()
+        viewModel = MineViewModel(header: header as! MineHeader, model: nil)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+}
+
+extension LeftViewController {
+    func setupUI() {
+       self.view.backgroundColor = UIColor.cyan
+        view.addSubview(header)
     }
 }

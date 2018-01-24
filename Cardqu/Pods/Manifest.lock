@@ -12,7 +12,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.5.0)
   - HandyJSON (~> 4.0.0-beta.1)
-  - ReactiveCocoa (~> 7.0)
+  - ReactiveCocoa (~> 7.1.0)
   - SnapKit (~> 4.0.0)
   - WechatOpenSDK
 
@@ -25,6 +25,6 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   WechatOpenSDK: 491d965d79335070328571d3e79f714549e79a5e
 
-PODFILE CHECKSUM: 3f0c50dd6cc9cac0764486b1f097753aef1e1460
+PODFILE CHECKSUM: e40dad14091671f7a5fc08f9bf77e0d7cbc1b025
 
 COCOAPODS: 1.2.1

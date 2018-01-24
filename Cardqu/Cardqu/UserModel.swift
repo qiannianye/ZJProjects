@@ -9,18 +9,19 @@
 import Foundation
 import HandyJSON
 
-struct UserModel: HandyJSON {
-    var id: Int?                      //用户id
-    var name: String?                 //用户名
-    var display_name: String?         //昵称
-    var mobile: String?               //注册手机号
-    var icon_url: String?             //头像
-    var access_token: String?         //token
-    var expire_in: String?            //过期时间
-    var refresh_token: String?        //刷新token
-    var importShown: String?          //Y表示需要在进入卡包的时候显示一键领卡的页面， N表示直接显示卡包
-    var coinAmount: String?           //金币数量
-    var coupon_num: String?           //优惠券数量
+struct UserModel: HandyJSON { // "!" 和 "?" 什么时候用
+
+    var id: Int!                     //用户id
+    var name: String!                 //用户名
+    var display_name: String!         //昵称
+    var mobile: String!              //注册手机号
+    var icon_url: String!             //头像
+    var access_token: String!         //token
+    var expire_in: String!            //过期时间
+    var refresh_token: String!        //刷新token
+    var importShown: String!          //Y表示需要在进入卡包的时候显示一键领卡的页面， N表示直接显示卡包
+    var coinAmount: String!           //金币数量
+    var coupon_num: String!           //优惠券数量
     var ky_app_id: String?            //此值不为空时，需保留此值，下次登录或解密时需要传递此值给后台；参数ky_app_id不为空时，此值为空
     var platforms: Array<Platform> = [] //绑定的平台列表
     var appversion: AppVersion?       //app版本
