@@ -28,6 +28,9 @@
 		A74F4B0F1FBD9B92005A1B2F /* MallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F4B0E1FBD9B92005A1B2F /* MallViewController.swift */; };
 		A75AD89D20172F6F00F8E2BE /* UIImage+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75AD89C20172F6F00F8E2BE /* UIImage+Drawing.swift */; };
 		A75AD8A3201743B600F8E2BE /* MineHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75AD8A2201743B600F8E2BE /* MineHeader.swift */; };
+		A7619CBA2019BD17009F5941 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A7619CB62019BD16009F5941 /* Base64.m */; };
+		A7619CBB2019BD17009F5941 /* Base64+DES.m in Sources */ = {isa = PBXBuildFile; fileRef = A7619CB82019BD16009F5941 /* Base64+DES.m */; };
+		A7619CBE2019D415009F5941 /* NSString+Hashing.m in Sources */ = {isa = PBXBuildFile; fileRef = A7619CBD2019D415009F5941 /* NSString+Hashing.m */; };
 		A76813451FDE6C6300AB55C6 /* PTRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76813441FDE6C6300AB55C6 /* PTRequestManager.swift */; };
 		A772EEE21FD672C100BEB72A /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772EEE11FD672C100BEB72A /* String+Extensions.swift */; };
 		A772EEE41FD67B4000BEB72A /* ZJHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772EEE31FD67B4000BEB72A /* ZJHud.swift */; };
@@ -109,6 +112,13 @@
 		A74F4B0E1FBD9B92005A1B2F /* MallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallViewController.swift; sourceTree = "<group>"; };
 		A75AD89C20172F6F00F8E2BE /* UIImage+Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Drawing.swift"; sourceTree = "<group>"; };
 		A75AD8A2201743B600F8E2BE /* MineHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineHeader.swift; sourceTree = "<group>"; };
+		A7619CB52019BD15009F5941 /* Base64Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Defines.h; sourceTree = "<group>"; };
+		A7619CB62019BD16009F5941 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		A7619CB72019BD16009F5941 /* Base64+DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Base64+DES.h"; sourceTree = "<group>"; };
+		A7619CB82019BD16009F5941 /* Base64+DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Base64+DES.m"; sourceTree = "<group>"; };
+		A7619CB92019BD16009F5941 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		A7619CBC2019D415009F5941 /* NSString+Hashing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hashing.h"; sourceTree = "<group>"; };
+		A7619CBD2019D415009F5941 /* NSString+Hashing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hashing.m"; sourceTree = "<group>"; };
 		A76813441FDE6C6300AB55C6 /* PTRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTRequestManager.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		A772EEE11FD672C100BEB72A /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A772EEE31FD67B4000BEB72A /* ZJHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJHud.swift; sourceTree = "<group>"; };
@@ -267,7 +277,7 @@
 				A7908AC820119FAE0053CB8A /* ThirdParty.swift */,
 				A79C8A122015C344009D2395 /* AppDelegate+Extension.swift */,
 				A772EEE31FD67B4000BEB72A /* ZJHud.swift */,
-				A7264A08200CB3820073FDF4 /* Encryption.swift */,
+				A7619CBF2019D422009F5941 /* 加密 */,
 				A74DD34B1FB016E50067D31A /* Main.storyboard */,
 				A74DD34E1FB016E60067D31A /* Assets.xcassets */,
 				A74DD3531FB016E60067D31A /* Info.plist */,
@@ -292,6 +302,21 @@
 				A74DD3691FB016E60067D31A /* Info.plist */,
 			);
 			path = CardquUITests;
+			sourceTree = "<group>";
+		};
+		A7619CBF2019D422009F5941 /* 加密 */ = {
+			isa = PBXGroup;
+			children = (
+				A7264A08200CB3820073FDF4 /* Encryption.swift */,
+				A7619CB92019BD16009F5941 /* Base64.h */,
+				A7619CB62019BD16009F5941 /* Base64.m */,
+				A7619CB72019BD16009F5941 /* Base64+DES.h */,
+				A7619CB82019BD16009F5941 /* Base64+DES.m */,
+				A7619CB52019BD15009F5941 /* Base64Defines.h */,
+				A7619CBC2019D415009F5941 /* NSString+Hashing.h */,
+				A7619CBD2019D415009F5941 /* NSString+Hashing.m */,
+			);
+			path = "加密";
 			sourceTree = "<group>";
 		};
 		A780FF971FBEE59C0031A919 /* 商城 */ = {
@@ -528,10 +553,12 @@
 				A772EEE21FD672C100BEB72A /* String+Extensions.swift in Sources */,
 				A71FCD951FE27DE3007204A2 /* BaseViewController.swift in Sources */,
 				A77B84F42007624100D60FCB /* LoginAPI.swift in Sources */,
+				A7619CBA2019BD17009F5941 /* Base64.m in Sources */,
 				A71FCD931FE261CE007204A2 /* LoginViewController.swift in Sources */,
 				A75AD8A3201743B600F8E2BE /* MineHeader.swift in Sources */,
 				A7908AC920119FAE0053CB8A /* ThirdParty.swift in Sources */,
 				A73855171FBC2445006B046A /* FirstVC.swift in Sources */,
+				A7619CBB2019BD17009F5941 /* Base64+DES.m in Sources */,
 				A7264A09200CB3820073FDF4 /* Encryption.swift in Sources */,
 				A780FF921FBEBC030031A919 /* GoodsShowCell.swift in Sources */,
 				A772EEE41FD67B4000BEB72A /* ZJHud.swift in Sources */,
@@ -539,6 +566,7 @@
 				A71D350E1FB043D000ED2B01 /* SlidingMenuVC.swift in Sources */,
 				A74F4B0F1FBD9B92005A1B2F /* MallViewController.swift in Sources */,
 				A77593041FD55417000345AB /* HttpRequestAPI.swift in Sources */,
+				A7619CBE2019D415009F5941 /* NSString+Hashing.m in Sources */,
 				A786D03B1FB2FC4E006FB878 /* AutoScrollView.swift in Sources */,
 				A77B84EE2007532900D60FCB /* CQRequestManager.swift in Sources */,
 				A77C037C1FB1A31A0047F961 /* Bundle+Extensions.swift in Sources */,

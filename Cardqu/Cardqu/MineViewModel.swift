@@ -21,26 +21,19 @@ class MineViewModel: BaseViewModel {
     
     var model: UserModel? {
         didSet{
-            guard model != nil else {
-                return
-            }
-            
-            headerUrl.value = (model?.icon_url)!
+            guard model != nil else { return }
+            headerUrl.value = model?.icon_url ?? ""
             nickName.value = model?.display_name ?? ""
             //level.value =
         }
     }
     
-    var header: MineHeader {
+    var header: MineHeader? {
         didSet{
-            header.usernameLb.reactive.text <~ nickName
-            header.qudouLb.reactive.text <~ qudou
+            guard header != nil else { return }
+            header!.usernameLb.reactive.text <~ nickName
+            header!.qudouLb.reactive.text <~ qudou
             //header.headerImgView.reactive.image <~ UIImage(headerUrl)
         }
-    }
-    
-    init(header: MineHeader, model: UserModel?) {
-        self.header = header
-        super.init()
     }
 }

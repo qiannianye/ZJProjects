@@ -13,6 +13,19 @@ public let encryptKey = "bdky1236"
 private let iv = ["1","2","3","4","5","6","7","8"]
 
 extension String{
+    
+    func md5String() -> String{
+        
+        let cStr = self.cString(using: String.Encoding.utf8)
+        let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: 16)
+        CC_MD5(cStr!,(CC_LONG)(strlen(cStr!)), buffer)
+        let md5String = NSMutableString()
+        for i in 0 ..< 16{
+            md5String.appendFormat("%02x", buffer[i])
+        }
+        free(buffer)
+        return md5String as String
+    }
 
      func encrypt(key: String) -> String{
         

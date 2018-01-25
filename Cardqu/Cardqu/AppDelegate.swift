@@ -19,22 +19,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
         WXApi.registerApp(AppKey.wxAppID , enableMTA: false)
         
         
-        let tabbarVC = BaseTabbarController()
-        let leftVC = LeftViewController()
-        let rootVC = SlidingMenuVC(mainVC: tabbarVC, leftVC: leftVC, gapWidth: screenWidth - 44)
-        window?.rootViewController = rootVC
+//        let tabbarVC = BaseTabbarController()
+//        let leftVC = LeftViewController()
+//        let rootVC = SlidingMenuVC(mainVC: tabbarVC, leftVC: leftVC, gapWidth: screenWidth - 44)
+//        window?.rootViewController = rootVC
         
         //调试登录
-//        let isLogin = UserDefaults.standard.value(forKey: "isLogin")
-//        if isLogin != nil {
-//            let tabbarVC = BaseTabbarController()
-//            let leftVC = LeftViewController()
-//            let rootVC = SlidingMenuVC(mainVC: tabbarVC, leftVC: leftVC, gapWidth: screenWidth - 44)
-//            window?.rootViewController = rootVC
-//        }else{
-//            let loginVC = LoginViewController()
-//            window?.rootViewController = loginVC
-//        }
+        let isLogin = UserDefaults.standard.value(forKey: "isLogin")
+        if isLogin != nil {
+            let tabbarVC = BaseTabbarController()
+            let leftVC = LeftViewController()
+            let rootVC = SlidingMenuVC(mainVC: tabbarVC, leftVC: leftVC, gapWidth: screenWidth - 44)
+            window?.rootViewController = rootVC
+        }else{
+            let loginVC = LoginViewController()
+            window?.rootViewController = loginVC
+        }
         
         
         

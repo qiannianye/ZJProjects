@@ -55,12 +55,20 @@ class LoginViewModel: BaseViewModel {
         //请求前做密码加密
         //Oe5Q7UOE8/UAAAAAAAA=
         //MWZmNmQ5YjAzMWVjMzVlZg==
-        let encryptPwd = self.password.value.encrypt(key: encryptKey)
-        print("pwd is---[\(encryptPwd)]")
-        let decryptPwd = encryptPwd.decrypt(key: encryptKey)
-        print("dePwd is ---[\(decryptPwd)]")
+//        let encryptPwd = self.password.value.encrypt(key: encryptKey)
+//        print("pwd is---[\(encryptPwd)]")
+//        let decryptPwd = encryptPwd.decrypt(key: encryptKey)
+//        print("dePwd is ---[\(decryptPwd)]")
         
-        return LoginAPI().mobileLogin(userName: self.account.value, password: encryptPwd, type: "mobile", clientId: "IOS_" + AppInfo.appVersion, appId: "").on(value:{ value in
+        let encryptPwd = Base64DesFunc.encryptString(self.password.value, keyString: encryptKey)
+        print("pwd is---[\(String(describing: encryptPwd))]")
+        //MWZmNmQ5YjAzMWVjMzVlZg==
+        
+        
+        //MD5加密后:7848d93309c0c86f9e9a35f2a6b8cd14
+        //MD5加密字符串:4iT0UCL0BQTS7XN9YC04B2YkV2F4K3IOS_1.0kaqu1516878138mobile131469924711.0
+        //作对比
+        return LoginAPI().mobileLogin(userName: self.account.value, password: encryptPwd!, type: "mobile", clientId: "IOS_" + AppInfo.appVersion, appId: "").on(value:{ value in
             print("value is [\(String(describing: value))]")
         })
     }

@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardqu/&#x8bf7;&#x6c42;&#x7c7b;/CQRequestManager.swift"
-            timestampString = "538311379.955035"
+            timestampString = "538570872.582716"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -26,7 +26,7 @@
                   moduleName = "Cardqu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sunhaidong/Documents/ZJProjects/Cardqu/Cardqu/%E8%AF%B7%E6%B1%82%E7%B1%BB/CQRequestManager.swift"
-                  timestampString = "538483314.038757"
+                  timestampString = "538570874.6758029"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "48"
@@ -41,7 +41,7 @@
                   moduleName = "Cardqu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sunhaidong/Documents/ZJProjects/Cardqu/Cardqu/%E8%AF%B7%E6%B1%82%E7%B1%BB/CQRequestManager.swift"
-                  timestampString = "538483314.040517"
+                  timestampString = "538570874.686383"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "49"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardqu/&#x8bf7;&#x6c42;&#x7c7b;/CQRequestManager.swift"
-            timestampString = "538311379.9551131"
+            timestampString = "538570872.582822"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -74,7 +74,7 @@
                   moduleName = "Cardqu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sunhaidong/Documents/ZJProjects/Cardqu/Cardqu/%E8%AF%B7%E6%B1%82%E7%B1%BB/CQRequestManager.swift"
-                  timestampString = "538483314.043849"
+                  timestampString = "538570874.69388"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "48"
@@ -89,7 +89,7 @@
                   moduleName = "Cardqu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sunhaidong/Documents/ZJProjects/Cardqu/Cardqu/%E8%AF%B7%E6%B1%82%E7%B1%BB/CQRequestManager.swift"
-                  timestampString = "538483314.045185"
+                  timestampString = "538570874.6960649"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "49"
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardqu/LoginViewModel.swift"
-            timestampString = "538311379.955175"
+            timestampString = "538570872.582934"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "loginSignalProducer"
             landmarkType = "24">
             <Locations>
@@ -122,12 +122,12 @@
                   moduleName = "Cardqu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sunhaidong/Documents/ZJProjects/Cardqu/Cardqu/LoginViewModel.swift"
-                  timestampString = "538483314.048351"
+                  timestampString = "538570874.701035"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "1104">
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "928">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -137,11 +137,11 @@
                   moduleName = "Cardqu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sunhaidong/Documents/ZJProjects/Cardqu/Cardqu/LoginViewModel.swift"
-                  timestampString = "538483314.049677"
+                  timestampString = "538570874.703081"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
                   offsetFromSymbolStart = "20">
                </Location>
             </Locations>
@@ -170,7 +170,7 @@
                   moduleName = "Cardqu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sunhaidong/Documents/ZJProjects/Cardqu/Cardqu/%E8%AF%B7%E6%B1%82%E7%B1%BB/CQHttpAPIManager.swift"
-                  timestampString = "538483314.0528311"
+                  timestampString = "538570874.708053"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
@@ -185,7 +185,7 @@
                   moduleName = "Cardqu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sunhaidong/Documents/ZJProjects/Cardqu/Cardqu/%E8%AF%B7%E6%B1%82%E7%B1%BB/CQHttpAPIManager.swift"
-                  timestampString = "538483314.054177"
+                  timestampString = "538570874.710125"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "16"
@@ -217,40 +217,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cardqu/LoginAPI.swift"
-            timestampString = "538311379.955317"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "mobileLogin(userName:password:type:clientId:appId:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cardqu/LoginAPI.swift"
-            timestampString = "538311379.955381"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "mobileLogin(userName:password:type:clientId:appId:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Cardqu/&#x8bf7;&#x6c42;&#x7c7b;/CQRequestManager.swift"
-            timestampString = "538311379.955439"
+            timestampString = "538570872.583078"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -378,13 +346,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardqu/AppDelegate.swift"
-            timestampString = "538311379.955904"
+            timestampString = "538570872.583334"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
             endingLineNumber = "94"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "onResp(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -394,13 +362,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardqu/AppDelegate.swift"
-            timestampString = "538311379.956431"
+            timestampString = "538570872.583403"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
             endingLineNumber = "88"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "onResp(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -410,13 +378,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardqu/AppDelegate.swift"
-            timestampString = "538311379.95684"
+            timestampString = "538570872.583463"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
             endingLineNumber = "85"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "onResp(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -426,13 +394,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardqu/AppDelegate.swift"
-            timestampString = "538311379.957244"
+            timestampString = "538570872.583506"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "97"
             endingLineNumber = "97"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "onResp(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -506,13 +474,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardqu/AppDelegate.swift"
-            timestampString = "538311379.957769"
+            timestampString = "538570872.5836591"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
             endingLineNumber = "91"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "onResp(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -522,11 +490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardqu/LoginAPI.swift"
-            timestampString = "538311379.9581749"
+            timestampString = "538570872.583709"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "wxAuth(code:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -538,11 +506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardqu/LoginAPI.swift"
-            timestampString = "538311379.958234"
+            timestampString = "538570872.5898089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "wxAuth(code:)"
             landmarkType = "7">
             <Locations>
@@ -554,11 +522,11 @@
                   moduleName = "Cardqu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sunhaidong/Documents/ZJProjects/Cardqu/Cardqu/LoginAPI.swift"
-                  timestampString = "538483314.1026"
+                  timestampString = "538570874.780605"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
                   offsetFromSymbolStart = "5544">
                </Location>
                <Location
@@ -569,11 +537,11 @@
                   moduleName = "Cardqu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sunhaidong/Documents/ZJProjects/Cardqu/Cardqu/LoginAPI.swift"
-                  timestampString = "538483314.103925"
+                  timestampString = "538570874.78272"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
                   offsetFromSymbolStart = "16">
                </Location>
             </Locations>
@@ -585,13 +553,93 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cardqu/UIView+Extension.swift"
-            timestampString = "538480054.7377011"
+            filePath = "Cardqu/MineViewModel.swift"
+            timestampString = "538570872.590194"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "loadNibView()"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "model"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cardqu.MineViewModel.model.didset : Swift.Optional&lt;Cardqu.UserModel&gt;"
+                  moduleName = "Cardqu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sunhaidong/Documents/ZJProjects/Cardqu/Cardqu/MineViewModel.swift"
+                  timestampString = "538570874.789426"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "5648">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #2 : @autoclosure () throws -&gt; Swift.String in Cardqu.MineViewModel.model.didset : Swift.Optional&lt;Cardqu.UserModel&gt;"
+                  moduleName = "Cardqu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sunhaidong/Documents/ZJProjects/Cardqu/Cardqu/MineViewModel.swift"
+                  timestampString = "538570874.791448"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cardqu/MineViewModel.swift"
+            timestampString = "538570872.590255"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "header"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cardqu/&#x4fa7;&#x6ed1;/LeftViewController.swift"
+            timestampString = "538570872.5903341"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cardqu/&#x8bf7;&#x6c42;&#x7c7b;/CQRequestConfig.swift"
+            timestampString = "538570929.9304481"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "siginParameters(paraStr:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -10,7 +10,12 @@ import UIKit
 
 class LeftViewController: UIViewController {
     
-    let header = MineHeader.loadNibView()
+    let header: UIView = {
+        let header = MineHeader.loadNibView()
+        header.frame = CGRect(x: 0, y: statusBarH, width: screenWidth, height: 150)
+        return header
+    }()
+    
     
     private var viewModel: MineViewModel?
     
@@ -18,7 +23,13 @@ class LeftViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
-        viewModel = MineViewModel(header: header as! MineHeader, model: nil)
+        var model = UserModel()
+        model.display_name = "123k"
+        model.icon_url = ""
+        
+        viewModel = MineViewModel()
+        viewModel?.model = model
+        viewModel?.header = header as? MineHeader
     }
 
     override func didReceiveMemoryWarning() {

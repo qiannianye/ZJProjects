@@ -77,7 +77,9 @@ extension HttpRequestManager {
             if code.intValue == 0 {//请求数据成功
                 success(respondsDic as AnyObject)
             }else{
-                fail(respondsData.result.error!)
+//                let error: Error! = "请求成功,返回数据失败,code不为0" as! Error
+//
+//                fail(error)
             }
         }else{
             success(respondsDic as AnyObject)
