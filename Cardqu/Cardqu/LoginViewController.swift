@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
             passwordTF.reactive.text <~ loginViewModel.password
             loginBtn?.reactive.pressed = CocoaAction(loginViewModel.loginAction, input: loginBtn)
             loginViewModel.loginAction.values.observeValues { (value) in
-                print("login in![\(value)]" )
+                //print("login in ![\(value)]" )
             }
         }
     }

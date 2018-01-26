@@ -35,17 +35,11 @@ class LoginViewModel: BaseViewModel {
         
         account <~ accountSignal.map({ (text) -> String in
             let username = (text ?? "").substringTo(11)
-            //return (username.isValidPhoneNum ? username : "请输入有效的手机号")
             print("username is valid?[\(username.isValidPhoneNum)]")
             return username
         })
         
         password <~ passwordSignal.map({ (text) -> String in
-            
-//            let pwd = text ?? ""
-//            guard pwd.count > 0 else {return ""}
-//            let encryptPwd = pwd.encrypt(key: encryptKey)
-//            return encryptPwd
             return text ?? ""
         })
     }
@@ -61,15 +55,18 @@ class LoginViewModel: BaseViewModel {
 //        print("dePwd is ---[\(decryptPwd)]")
         
         let encryptPwd = Base64DesFunc.encryptString(self.password.value, keyString: encryptKey)
-        print("pwd is---[\(String(describing: encryptPwd))]")
+        
+        print("pwd is---[\(encryptPwd!)]")
         //MWZmNmQ5YjAzMWVjMzVlZg==
         
         
         //MD5加密后:7848d93309c0c86f9e9a35f2a6b8cd14
         //MD5加密字符串:4iT0UCL0BQTS7XN9YC04B2YkV2F4K3IOS_1.0kaqu1516878138mobile131469924711.0
         //作对比
-        return LoginAPI().mobileLogin(userName: self.account.value, password: encryptPwd!, type: "mobile", clientId: "IOS_" + AppInfo.appVersion, appId: "").on(value:{ value in
-            print("value is [\(String(describing: value))]")
+        return LoginAPI().mobileLogin(userName: self.account.value, password: encryptPwd!, type: "general", clientId: "IOS_" + AppInfo.appVersion, appId: "").on(value:{ value in
+            //print("value is [\(String(describing: value))]")
+            let model = UserModel.deserialize(from: (value as! Dictionary))
+            print("user's name is \(model?.display_name)")
         })
     }
     

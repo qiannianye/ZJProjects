@@ -84,7 +84,7 @@ extension HttpRequestManager {
         }else{
             success(respondsDic as AnyObject)
         }
-        print("respondsData:[\(respondsDic)]")
+        print("respondsData:\(respondsDic)")
     }
     
     func dataConvertDictionary(data: Data) -> Dictionary<String,Any> {

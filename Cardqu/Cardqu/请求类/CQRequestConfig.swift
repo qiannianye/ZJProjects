@@ -24,7 +24,7 @@ class HttpRequestConfiguration {
     var parameterEncoding: ParameterEncoding = URLEncoding.default
     var isNeedToken: Bool = false
     
-    //不签名
+    //不签名的配置
     init(url: String, method: HTTPMethod = .get, headers: [String: String]? = nil, parameters: [String: Any], respondsType: RespondsDataType, paraEncoding: ParameterEncoding = URLEncoding.default) {
         self.requestUrl = url
         self.method = method
@@ -35,7 +35,7 @@ class HttpRequestConfiguration {
         self.generateParameters(paraDic: parameters)
     }
     
-    //签名
+    //需要签名的配置
     init(url: String, method: HTTPMethod = .post, headers: [String: String]? = nil, parametersStr: String) {
         self.requestUrl = url
         self.method = method
@@ -46,46 +46,46 @@ class HttpRequestConfiguration {
     //签名
     private func siginParameters(paraStr: String) /*-> Dictionary<String,Any>*/{
         publicParameters()
+        
         let timestamp = String.init(format: "%.f", Date().timeIntervalSince1970)
         parameters["timestamp"] = timestamp
         parameters["appsecret"] = "4iT0UCL0BQTS7XN9YC04B2YkV2F4K3"
         
         let arr = paraStr.components(separatedBy: "&")
-//        var paraKeyArr = [String]()
-//        var paraValueArr = [String]()
         for item in arr {
-            let tmpArr = item.components(separatedBy: "=")
-//            paraKeyArr.append(tmpArr.first!)
-//            paraValueArr.append(tmpArr.last!)
-            parameters[tmpArr.first!] = tmpArr.last!
+           let range = item.rangeOfCharacter(from: CharacterSet(charactersIn: "="))
+            if range == nil {continue}
+            let key = item.substringTo((range?.lowerBound.encodedOffset)!)
+            let value = item.substringFrom((range?.upperBound.encodedOffset)!)
+            parameters[key] = value
         }
         
-//        let parametersName = parameters.keys
-//        let sortedParameters = parametersName.sorted()
-//        print("sorted parameters:[\(sortedParameters)]")
+        //排序,从小到大
         let sort =  parameters.sorted { (arg0, arg1) -> Bool in
             let (_, _) = arg1
             let (_, _) = arg0
             return arg0.key < arg1.key
         }//返回元素是元组的数组
-        print("sorted -[\(sort)]")
+        //print("sorted -[\(sort)]")
         
         var str = ""
         for item in sort {
+            if item.key.isEqualTo("password") { continue }
             str.append(item.value as! String)
         }
-        print("str---[\(str)]")
+        //print("str---[\(str)]")
         let md5Str = str.md5String()
-        print("md5--[\(md5Str)]")
+        //print("md5--[\(md5Str)]")
         
-        
+        parameters["sign"] = md5Str
+        parameters.removeValue(forKey: "appsecret")
     }
     
     //公共参数
     private func publicParameters() {
-        //parameters["os"] = "iOS"
-        parameters["project"] = "kaqu"
-        parameters["version"] = AppInfo.appVersion
+        parameters["project_type"] = "kaqu"
+        parameters["login_version"] = String.init(format: "%@", AppInfo.appVersion)
+        parameters["login_id"] = "201801261205388487903"
     }
     
     private func generateParameters(paraDic: [String: Any]){
