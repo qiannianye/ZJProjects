@@ -25,14 +25,13 @@ class HttpRequestConfiguration {
     var isNeedToken: Bool = false
     
     //不签名的配置
-    init(url: String, method: HTTPMethod = .get, headers: [String: String]? = nil, parameters: [String: Any], respondsType: RespondsDataType, paraEncoding: ParameterEncoding = URLEncoding.default) {
+    init(url: String, method: HTTPMethod = .get, headers: [String: String]? = nil, parameters: [String: Any]?, paraEncoding: ParameterEncoding = URLEncoding.default) {
         self.requestUrl = url
         self.method = method
         self.headers = headers
-        self.respondsType = respondsType
         self.parameterEncoding = paraEncoding
         self.publicParameters() //第三方请求时不需要公共参数,做处理
-        self.generateParameters(paraDic: parameters)
+        self.generateParameters(paraDic: parameters!)
     }
     
     //需要签名的配置

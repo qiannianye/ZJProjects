@@ -31,7 +31,7 @@ struct DeviceInfo {
     static let model = UIDevice.current.model
     
     //uuid
-    static let uuid = UIDevice.current.identifierForVendor?.uuid
+    static let uuid = UIDevice.current.identifierForVendor?.uuidString
 }
 
 

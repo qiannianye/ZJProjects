@@ -16,27 +16,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        //预先保存
+        let uuid = UUIDManager.readUUID()
+        if uuid.isEqualTo("") {
+            UUIDManager.saveUUID(uuid:DeviceInfo.uuid!)
+        }
         WXApi.registerApp(AppKey.wxAppID , enableMTA: false)
         
         
-//        let tabbarVC = BaseTabbarController()
-//        let leftVC = LeftViewController()
-//        let rootVC = SlidingMenuVC(mainVC: tabbarVC, leftVC: leftVC, gapWidth: screenWidth - 44)
-//        window?.rootViewController = rootVC
+        
+        let tabbarVC = BaseTabbarController()
+        let leftVC = LeftViewController()
+        let rootVC = SlidingMenuVC(mainVC: tabbarVC, leftVC: leftVC, gapWidth: screenWidth - 44)
+        window?.rootViewController = rootVC
+        
+        LoginManager.share.login()
+        
+        
         
         //调试登录
-        let isLogin = UserDefaults.standard.value(forKey: "isLogin")
-        if isLogin != nil {
-            let tabbarVC = BaseTabbarController()
-            let leftVC = LeftViewController()
-            let rootVC = SlidingMenuVC(mainVC: tabbarVC, leftVC: leftVC, gapWidth: screenWidth - 44)
-            window?.rootViewController = rootVC
-        }else{
-            let loginVC = LoginViewController()
-            window?.rootViewController = loginVC
-        }
-        
-        
+//        let isLogin = UserDefaults.standard.value(forKey: "isLogin")
+//        if isLogin != nil {
+//            let tabbarVC = BaseTabbarController()
+//            let leftVC = LeftViewController()
+//            let rootVC = SlidingMenuVC(mainVC: tabbarVC, leftVC: leftVC, gapWidth: screenWidth - 44)
+//            window?.rootViewController = rootVC
+//        }else{
+//            let loginVC = LoginViewController()
+//            window?.rootViewController = loginVC
+//        }
         
         return true
     }
@@ -90,7 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
         }else if resp.isKind(of: SendAuthResp.self){//向微信端申请认证或者权限后返回处理
             
             let authResp: SendAuthResp = resp as! SendAuthResp
-            LoginAPI().wxAuth(code: authResp.code)
+            UserAPI().wxAuth(code: authResp.code)
             
             
         }else{//其他:比如打开网页,打开微信指定页面

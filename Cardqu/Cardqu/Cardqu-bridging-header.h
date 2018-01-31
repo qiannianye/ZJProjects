@@ -13,6 +13,6 @@
 #import <CommonCrypto/CommonCrypto.h>
 #import "WXApi.h"
 #import "Base64+DES.h"
-#import "NSString+Hashing.h"
+
 
 #endif /* Cardqu_bridging_header_h */

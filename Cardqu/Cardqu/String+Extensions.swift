@@ -8,6 +8,16 @@
 
 import Foundation
 
+//MARK: 文件路经
+extension String{
+    static func filePath(fileName: String) -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)
+        let path = paths[0] as NSString
+        return path.appendingPathComponent(fileName)
+    }
+}
+
+//MARK: 合法性判断
 extension String{
     
     //不加private或者fileprivate,默认是public
@@ -45,8 +55,9 @@ extension String{
     }
 }
 
+//MARK:操作字符串
 extension String{
-    //MARK:判断是否相等
+    //判断是否相等
     func isEqualTo (_ str: String) -> Bool {
         let compareResult = compare(str)
         if compareResult != .orderedSame {
@@ -55,7 +66,7 @@ extension String{
         return true
     }
     
-    //MARK:截取字符串
+    //截取字符串
     func substringTo (_ to: Int) -> String {
         guard to < count else {
             return self
@@ -63,6 +74,7 @@ extension String{
         return String(prefix(upTo: index(startIndex, offsetBy: to)))
     }
     
+    //截取字符串
     func substringFrom (_ from: Int) -> String {
         guard from <= count else {
             return self

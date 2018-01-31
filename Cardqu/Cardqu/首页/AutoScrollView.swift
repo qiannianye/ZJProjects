@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 //MARK:自动滚动视图上的cell
 class AutoScrollCell: UICollectionViewCell {
@@ -112,9 +113,7 @@ extension AutoScrollView:UICollectionViewDataSource,UICollectionViewDelegate,UIC
         
         //填充视图
         let imageUrl = images[indexPath.row]
-        
-        print(imageUrl,":",indexPath.row)
-        
+        cell?.imgView?.kf.setImage(with: ImageResource(downloadURL: URL(string: imageUrl)!, cacheKey: "banner"), placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
        
         return cell!
     }

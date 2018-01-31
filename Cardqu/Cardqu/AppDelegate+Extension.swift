@@ -34,7 +34,7 @@ import Foundation
 //
 //        }else if resp.isKind(of: SendAuthResp.self){//向微信端申请认证或者权限后返回处理
 //        let authResp: SendAuthResp = resp as! SendAuthResp
-//        LoginAPI().wxAuth(code: authResp.code)
+//        UserAPI().wxAuth(code: authResp.code)
 //
 //
 //        }else{//其他:比如打开网页,打开微信指定页面

@@ -23,7 +23,7 @@ class MineViewModel: BaseViewModel {
         didSet{
             guard model != nil else { return }
             headerUrl.value = model?.icon_url ?? ""
-            nickName.value = model?.display_name ?? ""
+            nickName.value = UserManager.default.user?.display_name ?? ""
             //level.value =
         }
     }
