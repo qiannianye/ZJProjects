@@ -18,7 +18,6 @@
 		A73855191FBC245E006B046A /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73855181FBC245E006B046A /* SecondVC.swift */; };
 		A738551B1FBC246C006B046A /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A738551A1FBC246C006B046A /* ThirdVC.swift */; };
 		A73C03111FE0CF1E0053EF9C /* JsonStringAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73C03101FE0CF1E0053EF9C /* JsonStringAddition.swift */; };
-		A73C03151FE115870053EF9C /* LoginDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73C03141FE115870053EF9C /* LoginDTO.swift */; };
 		A7419D9D202085DD00C622E5 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7419D9C202085DD00C622E5 /* LoginManager.swift */; };
 		A7479AAE201F081300383F83 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7479AAD201F081300383F83 /* KeychainWrapper.swift */; };
 		A7479AB0201F27A200383F83 /* KeychainUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7479AAF201F27A200383F83 /* KeychainUUID.swift */; };
@@ -33,13 +32,10 @@
 		A75AD8A3201743B600F8E2BE /* MineHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75AD8A2201743B600F8E2BE /* MineHeader.swift */; };
 		A7619CBA2019BD17009F5941 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A7619CB62019BD16009F5941 /* Base64.m */; };
 		A7619CBB2019BD17009F5941 /* Base64+DES.m in Sources */ = {isa = PBXBuildFile; fileRef = A7619CB82019BD16009F5941 /* Base64+DES.m */; };
-		A76813451FDE6C6300AB55C6 /* PTRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76813441FDE6C6300AB55C6 /* PTRequestManager.swift */; };
 		A772EEE21FD672C100BEB72A /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772EEE11FD672C100BEB72A /* String+Extensions.swift */; };
 		A772EEE41FD67B4000BEB72A /* ZJHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772EEE31FD67B4000BEB72A /* ZJHud.swift */; };
-		A77592FE1FD52774000345AB /* HttpRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77592FD1FD52774000345AB /* HttpRequestDTO.swift */; };
 		A77593001FD533CB000345AB /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77592FF1FD533CB000345AB /* AppInfo.swift */; };
 		A77593021FD537F5000345AB /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77593011FD537F5000345AB /* DeviceInfo.swift */; };
-		A77593041FD55417000345AB /* HttpRequestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77593031FD55417000345AB /* HttpRequestAPI.swift */; };
 		A77B84E82007149B00D60FCB /* CQHttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77B84E72007149B00D60FCB /* CQHttpService.swift */; };
 		A77B84EC200743DF00D60FCB /* CQRequestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77B84EB200743DF00D60FCB /* CQRequestConfig.swift */; };
 		A77B84EE2007532900D60FCB /* CQRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77B84ED2007532900D60FCB /* CQRequestManager.swift */; };
@@ -101,7 +97,6 @@
 		A73855181FBC245E006B046A /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 		A738551A1FBC246C006B046A /* ThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
 		A73C03101FE0CF1E0053EF9C /* JsonStringAddition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonStringAddition.swift; sourceTree = "<group>"; };
-		A73C03141FE115870053EF9C /* LoginDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDTO.swift; sourceTree = "<group>"; };
 		A7419D9A2020512600C622E5 /* Cardqu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cardqu.entitlements; sourceTree = "<group>"; };
 		A7419D9C202085DD00C622E5 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		A7479AAD201F081300383F83 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
@@ -126,13 +121,10 @@
 		A7619CB72019BD16009F5941 /* Base64+DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Base64+DES.h"; sourceTree = "<group>"; };
 		A7619CB82019BD16009F5941 /* Base64+DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Base64+DES.m"; sourceTree = "<group>"; };
 		A7619CB92019BD16009F5941 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
-		A76813441FDE6C6300AB55C6 /* PTRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PTRequestManager.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		A772EEE11FD672C100BEB72A /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A772EEE31FD67B4000BEB72A /* ZJHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJHud.swift; sourceTree = "<group>"; };
-		A77592FD1FD52774000345AB /* HttpRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestDTO.swift; sourceTree = "<group>"; };
 		A77592FF1FD533CB000345AB /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		A77593011FD537F5000345AB /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
-		A77593031FD55417000345AB /* HttpRequestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestAPI.swift; sourceTree = "<group>"; };
 		A77B84E72007149B00D60FCB /* CQHttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CQHttpService.swift; sourceTree = "<group>"; };
 		A77B84EB200743DF00D60FCB /* CQRequestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CQRequestConfig.swift; sourceTree = "<group>"; };
 		A77B84ED2007532900D60FCB /* CQRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CQRequestManager.swift; sourceTree = "<group>"; };
@@ -220,9 +212,6 @@
 		A73C03131FE10F7E0053EF9C /* 请求类 */ = {
 			isa = PBXGroup;
 			children = (
-				A77592FD1FD52774000345AB /* HttpRequestDTO.swift */,
-				A77593031FD55417000345AB /* HttpRequestAPI.swift */,
-				A76813441FDE6C6300AB55C6 /* PTRequestManager.swift */,
 				A77B84E72007149B00D60FCB /* CQHttpService.swift */,
 				A77B84EB200743DF00D60FCB /* CQRequestConfig.swift */,
 				A77B84ED2007532900D60FCB /* CQRequestManager.swift */,
@@ -281,7 +270,6 @@
 				A7851D942021A616003951B0 /* UserManager.swift */,
 				A77B84F32007624100D60FCB /* UserAPI.swift */,
 				A7851D962021CD53003951B0 /* RecommendAPI.swift */,
-				A73C03141FE115870053EF9C /* LoginDTO.swift */,
 				A7B1DB341FECDDE2000B36AB /* BaseViewModel.swift */,
 				A7B1DB361FECE182000B36AB /* LoginViewModel.swift */,
 				A786137E20183BF000080204 /* MineViewModel.swift */,
@@ -597,7 +585,6 @@
 				A780FF941FBEC8690031A919 /* GoodsHeaderView.swift in Sources */,
 				A71D350E1FB043D000ED2B01 /* SlidingMenuVC.swift in Sources */,
 				A74F4B0F1FBD9B92005A1B2F /* MallViewController.swift in Sources */,
-				A77593041FD55417000345AB /* HttpRequestAPI.swift in Sources */,
 				A7419D9D202085DD00C622E5 /* LoginManager.swift in Sources */,
 				A786D03B1FB2FC4E006FB878 /* AutoScrollView.swift in Sources */,
 				A77B84EE2007532900D60FCB /* CQRequestManager.swift in Sources */,
@@ -606,16 +593,13 @@
 				A7D47F0B2018702E00A8C01C /* UIView+Extension.swift in Sources */,
 				A73855151FBC1717006B046A /* ContentCell.swift in Sources */,
 				A77B84EC200743DF00D60FCB /* CQRequestConfig.swift in Sources */,
-				A76813451FDE6C6300AB55C6 /* PTRequestManager.swift in Sources */,
 				A780FF961FBEE5930031A919 /* CouponBagVC.swift in Sources */,
-				A73C03151FE115870053EF9C /* LoginDTO.swift in Sources */,
 				A7B1DB351FECDDE2000B36AB /* BaseViewModel.swift in Sources */,
 				A77C03801FB1B4E40047F961 /* LeftViewController.swift in Sources */,
 				A77D90981FBAD96F00D9F74D /* CustomSegment.swift in Sources */,
 				A77B84E82007149B00D60FCB /* CQHttpService.swift in Sources */,
 				A73C03111FE0CF1E0053EF9C /* JsonStringAddition.swift in Sources */,
 				A77593021FD537F5000345AB /* DeviceInfo.swift in Sources */,
-				A77592FE1FD52774000345AB /* HttpRequestDTO.swift in Sources */,
 				A738551B1FBC246C006B046A /* ThirdVC.swift in Sources */,
 				A790BC961FB582BC009B5679 /* AppConstans.swift in Sources */,
 				A74DD3481FB016E50067D31A /* AppDelegate.swift in Sources */,

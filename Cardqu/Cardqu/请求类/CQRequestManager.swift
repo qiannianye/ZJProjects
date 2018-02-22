@@ -9,8 +9,8 @@
 import Foundation
 import Alamofire
 
-//typealias RequestSuccessBlock = (AnyObject) ->Void
-//typealias RequestFailBlock = (Error) ->Void
+typealias RequestSuccessBlock = (AnyObject) -> Void
+typealias RequestFailBlock = (Error) -> Void
 
 final class HttpRequestManager{
     //MARK:单例
@@ -36,16 +36,21 @@ extension HttpRequestManager {
     func baseRequestWithConfig(config: HttpRequestConfiguration, success: @escaping RequestSuccessBlock, fail: @escaping RequestFailBlock) -> Void {
         
         var url = config.requestUrl
-                if url.hasPrefix("http://") || url.hasPrefix("https://") {
-        
-                }else{
-                    url = currentService.host + url
-                }
+        if url.hasPrefix("http://") || url.hasPrefix("https://") {
+            
+        }else{
+            url = currentService.host + url
+        }
         
 //        guard url.hasPrefix("http://") || url.hasPrefix("https://") else { return }
 //        url = currentService.host + url
         
-        manager.request(url, method: config.method, parameters: config.parameters, encoding: config.parameterEncoding, headers: config.headers).responseData { [unowned self] (responds) in
+        var headerDic: HTTPHeaders?
+        if config.isNeedToken {
+            headerDic = ["Authorization":"Bearer \(String(describing: UserManager.default.user?.access_token))"]
+        }
+
+        manager.request(url, method: config.method, parameters: config.parameters, encoding: URLEncoding.default, headers: headerDic).responseData { [unowned self] (responds) in
             self.handleRespondsData(respondsData: responds, success: success, fail: fail)
         }
     }

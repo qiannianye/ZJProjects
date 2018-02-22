@@ -50,7 +50,7 @@ class LoginViewModel: BaseViewModel {
         return UserAPI().mobileLogin(userName: self.account.value, password: self.password.value, type: "general", clientId: "IOS_" + AppInfo.appVersion, appId: "").on(value:{ value in
             //print("value is [\(String(describing: value))]")
             let model = UserModel.deserialize(from: (value as! Dictionary))
-            print("user's name is \(model?.display_name)")
+            print("user's name is \(String(describing: model?.display_name))")
         })
     }
     

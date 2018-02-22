@@ -18,7 +18,6 @@ class LoginViewController: UIViewController {
     var userNameTF: UITextField!
     var passwordTF: UITextField!
     var loginBtn: UIButton?
-    var requestApi = HttpRequestAPI()
     
     //private var loginViewModel = LoginViewModel()
     private var loginViewModel: LoginViewModelProtocol! {
@@ -68,8 +67,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        //createLoginSignal()
-        //loginViewModel.setupInput(accountSignal: userNameTF.reactive.continuousTextValues, passwordSignal: passwordTF.reactive.continuousTextValues)
         
         loginViewModel = LoginViewModel()
     }
@@ -159,53 +156,8 @@ extension LoginViewController{
         }
     }
     
-    //MARK:创建信号
-    //登录按钮信号
-    private func createLoginSignal() {
+    
 
-        let nameSignal = userNameTF?.reactive.continuousTextValues.map{(text) in
-            return text != nil ? true : false
-        }
-        
-        let pwdSignal = passwordTF?.reactive.continuousTextValues.map{(text) in
-            return text != nil ? true : false
-        }
-        
-        let checkAccountSignal = Signal.combineLatest(nameSignal!, pwdSignal!).map({
-            return $0 && $1
-        })
-        
-        let loginProperty = Property(initial: false, then: checkAccountSignal)
-        let loginAction = Action<(String, String), AnyObject, NoError>(enabledIf: loginProperty) { (name, pwd) -> SignalProducer<AnyObject, NoError> in
-            self.createLoginSignalProducer(username: name, password: pwd)
-        }
-        
-        loginAction.values.observeValues { (respondsData) in
-            
-        }
-        
-        loginBtn?.reactive.pressed = CocoaAction<UIButton>(loginAction, { _ in
-            ((self.userNameTF?.text)!,(self.passwordTF?.text)!)
-        })
-    }
-    
-    //创建登录信号创作并登录
-    private func createLoginSignalProducer(username: String, password: String) -> SignalProducer<AnyObject, NoError>{
-        let (l_signal, l_observer) = Signal<AnyObject, NoError>.pipe()
-        let l_signal_producer = SignalProducer<AnyObject, NoError>(l_signal)
-        let dto = LoginDTO()
-        dto.mobileLoginParameters(userName: username, password: password, type: "mobile", clientId: "IOS", appId: "")
-        requestApi.startRequestSuccess(successBlock: { (respondsData) in
-            l_observer.send(value: respondsData)
-            l_observer.sendCompleted()
-            print("login data:\(respondsData)")
-        }) { (error) in
-            //
-        }
-        return l_signal_producer
-    }
-    
-    
     //MARK:按钮点击事件
     
     //第三方登录

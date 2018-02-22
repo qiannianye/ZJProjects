@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardqu/&#x8bf7;&#x6c42;&#x7c7b;/CQRequestManager.swift"
-            timestampString = "538655541.842074"
+            timestampString = "540986480.079025"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "baseRequestWithConfig(config:success:fail:)"
             landmarkType = "7">
             <Locations>
@@ -26,12 +26,12 @@
                   moduleName = "Cardqu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sunhaidong/Documents/ZJProjects/Cardqu/Cardqu/%E8%AF%B7%E6%B1%82%E7%B1%BB/CQRequestManager.swift"
-                  timestampString = "539085734.9960099"
+                  timestampString = "540986480.420758"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "547">
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "4248">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,12 @@
                   moduleName = "Cardqu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sunhaidong/Documents/ZJProjects/Cardqu/Cardqu/%E8%AF%B7%E6%B1%82%E7%B1%BB/CQRequestManager.swift"
-                  timestampString = "539085734.998071"
+                  timestampString = "540986480.422894"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "51">
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "552">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardqu/&#x8bf7;&#x6c42;&#x7c7b;/CQRequestManager.swift"
-            timestampString = "538655541.842514"
+            timestampString = "540986480.079132"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "handleRespondsData(respondsData:success:fail:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,13 +74,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardqu/&#x8bf7;&#x6c42;&#x7c7b;/CQHttpAPIManager+Reactive.swift"
-            timestampString = "538653501.299342"
+            timestampString = "540986480.0792201"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "producer(confi:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ReactiveSwift.Signal&lt;Swift.Optional&lt;Any&gt;, Result.NoError&gt;.Observer, ReactiveSwift.Lifetime) -&gt; () in Cardqu.HttpAPIManager.producer(confi: Cardqu.HttpRequestConfiguration) -&gt; ReactiveSwift.SignalProducer&lt;Swift.Optional&lt;Any&gt;, Result.NoError&gt;"
+                  moduleName = "Cardqu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sunhaidong/Documents/ZJProjects/Cardqu/Cardqu/%E8%AF%B7%E6%B1%82%E7%B1%BB/CQHttpAPIManager+Reactive.swift"
+                  timestampString = "540986480.432241"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; () in closure #1 (ReactiveSwift.Signal&lt;Swift.Optional&lt;Any&gt;, Result.NoError&gt;.Observer, ReactiveSwift.Lifetime) -&gt; () in Cardqu.HttpAPIManager.producer(confi: Cardqu.HttpRequestConfiguration) -&gt; ReactiveSwift.SignalProducer&lt;Swift.Optional&lt;Any&gt;, Result.NoError&gt;"
+                  moduleName = "Cardqu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sunhaidong/Documents/ZJProjects/Cardqu/Cardqu/%E8%AF%B7%E6%B1%82%E7%B1%BB/CQHttpAPIManager+Reactive.swift"
+                  timestampString = "540986480.434711"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "116">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -330,12 +362,92 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardqu/&#x8bf7;&#x6c42;&#x7c7b;/CQHttpAPIManager+Reactive.swift"
-            timestampString = "539075161.572264"
+            timestampString = "540986480.079672"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
             endingLineNumber = "34"
             landmarkName = "producer(confi:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cardqu/&#x4fa7;&#x6ed1;/LeftViewController.swift"
+            timestampString = "540986480.07978"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cardqu/UserAPI.swift"
+            timestampString = "540986480.0801311"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "userVipInfo(needInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cardqu/UserAPI.swift"
+            timestampString = "540986480.0801851"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "userVipInfo(needInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cardqu/UserAPI.swift"
+            timestampString = "540986480.080229"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "userVipInfo(needInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cardqu/LoginManager.swift"
+            timestampString = "540986480.0803109"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "loginAction(username:password:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

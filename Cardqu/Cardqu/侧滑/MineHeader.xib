@@ -46,7 +46,9 @@
                         <constraint firstAttribute="height" constant="44" id="X3D-Yq-dwf"/>
                         <constraint firstAttribute="width" constant="80" id="aRm-NF-6fJ"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="登录">
+                        <color key="titleColor" red="0.90196078430000004" green="0.36862745099999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lRv-TJ-YfW">
                     <rect key="frame" x="0.0" y="0.0" width="74" height="58"/>
@@ -54,7 +56,6 @@
                         <constraint firstAttribute="height" constant="58" id="2Ag-Cn-nM8"/>
                         <constraint firstAttribute="width" constant="74" id="bUZ-ir-glZ"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import ReactiveSwift
 
 class LoginManager{
     static let share = LoginManager()
@@ -32,7 +32,7 @@ class LoginManager{
             CQUser.password = CQVisitor.password
         }
         
-        loginAction(username: CQUser.name, password: CQUser.password)
+        loginAction(username: "13146992471" /*CQUser.name*/, password: "123789"/*CQUser.password*/)
     }
     
     
@@ -44,6 +44,8 @@ class LoginManager{
             print("value is [\(String(describing: value))]")
             CQUser.saveAccount()
             UserManager.default.user = UserModel.deserialize(from: (value as! Dictionary))
+            //发送通知
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LoginSuccess"), object: nil, userInfo: nil)
         })
     }
 }

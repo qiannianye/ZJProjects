@@ -14,8 +14,7 @@ import Alamofire
 
 class RecommendAPI: HttpAPIManager {
     func banner() -> SignalProducer<Any?,NoError> {
-        let header = ["Authorization":"Bearer \(String(describing: UserManager.default.user?.access_token))"]
-        let confi = HttpRequestConfiguration(url: "/2.3/slot/10000/ads.json", method: .get, headers: header, parameters:[:] , paraEncoding: URLEncoding.default)
+        let confi = HttpRequestConfiguration(url: "/2.3/slot/10000/ads.json", method: .get, parameters:[:], isToken: false)
         return producer(confi: confi)
     }
 }

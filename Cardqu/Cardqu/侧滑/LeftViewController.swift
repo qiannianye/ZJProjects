@@ -23,6 +23,7 @@ class LeftViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        notifi()
         var model = UserModel()
         model.display_name = "123k"
         model.icon_url = ""
@@ -44,5 +45,13 @@ extension LeftViewController {
     func setupUI() {
        self.view.backgroundColor = UIColor.cyan
         view.addSubview(header)
+    }
+    
+    func notifi() {
+        NotificationCenter.default.addObserver(self, selector: #selector(loadUserInfo), name: NSNotification.Name(rawValue: "LoginSuccess"), object: nil)
+    }
+    
+    @objc private func loadUserInfo(){
+        UserAPI().userVipInfo(needInfo: "0")
     }
 }

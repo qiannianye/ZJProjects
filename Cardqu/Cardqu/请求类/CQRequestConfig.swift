@@ -18,32 +18,29 @@ enum RespondsDataType  {
 class HttpRequestConfiguration {
     var requestUrl: String
     var method: HTTPMethod
-    var headers: [String: String]?
     var parameters = Dictionary<String, Any>()
     var respondsType = RespondsDataType.json
-    var parameterEncoding: ParameterEncoding = URLEncoding.default
     var isNeedToken: Bool = false
     
     //不签名的配置
-    init(url: String, method: HTTPMethod = .get, headers: [String: String]? = nil, parameters: [String: Any]?, paraEncoding: ParameterEncoding = URLEncoding.default) {
+    init(url: String, method: HTTPMethod = .get, parameters: [String: Any]?, isToken: Bool) {
         self.requestUrl = url
         self.method = method
-        self.headers = headers
-        self.parameterEncoding = paraEncoding
+        self.isNeedToken = isToken
         self.publicParameters() //第三方请求时不需要公共参数,做处理
         self.generateParameters(paraDic: parameters!)
     }
     
     //需要签名的配置
-    init(url: String, method: HTTPMethod = .post, headers: [String: String]? = nil, parametersStr: String) {
+    init(url: String, method: HTTPMethod = .post, parametersStr: String, isToken: Bool) {
         self.requestUrl = url
         self.method = method
-        self.headers = headers
+        self.isNeedToken = isToken
         self.siginParameters(paraStr: parametersStr)
     }
     
     //签名
-    private func siginParameters(paraStr: String) /*-> Dictionary<String,Any>*/{
+    private func siginParameters(paraStr: String){
         publicParameters()
         
         let timestamp = String.init(format: "%.f", Date().timeIntervalSince1970)

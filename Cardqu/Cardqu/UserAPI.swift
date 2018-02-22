@@ -20,14 +20,14 @@ class UserAPI: HttpAPIManager {
         let encryptPwd = Base64DesFunc.encryptString(password, keyString: encryptKey)
         
         let paraStr = String.init(format: "username=%@&password=%@&type=%@&client_id=%@&ky_app_id=%@", userName, encryptPwd!, type, clientId, appId)
-        let confi = HttpRequestConfiguration(url: "/2.3/user/login.json", method: .post, headers: nil, parametersStr: paraStr)
+        let confi = HttpRequestConfiguration(url: "/2.3/user/login.json", method: .post, parametersStr: paraStr, isToken: false)
         return producer(confi: confi)
     }
     
     //第三方登录
     func thirdLogin(openId: String, unionId: String, platform: String, accessToken: String, clientId: String, expiresIn: String, appId: String) -> SignalProducer<Any?,NoError> {
         let dic = ["open_id":openId, "union_id":unionId, "platform": platform, "access_token":accessToken, "client_id":clientId, "expires_in":expiresIn, "ky_app_id":appId]
-        let confi = HttpRequestConfiguration(url: "/2.3/auth/token.json", method: .post, headers: nil, parameters: dic, paraEncoding: URLEncoding.default)
+        let confi = HttpRequestConfiguration(url: "/2.3/auth/token.json", method: .post, parameters: dic, isToken: false)
         return producer(confi: confi)
     }
     
@@ -35,7 +35,7 @@ class UserAPI: HttpAPIManager {
     func wxAuth(code: String){
         let wxAuthUrl = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=\(AppKey.wxAppID)&secret=\(AppKey.wxAppSecret)&code=\(code)&grant_type=authorization_code"
         
-        let confi = HttpRequestConfiguration(url: wxAuthUrl, method: .get, headers: nil, parameters: Dictionary<String,Any>(), paraEncoding: URLEncoding.default)
+        let confi = HttpRequestConfiguration(url: wxAuthUrl, method: .get, parameters: Dictionary<String,Any>(), isToken: false)
         
         self.startRequest(config: confi, success: { (resp) in
             print("微信授权:[\(resp)]")
@@ -49,7 +49,7 @@ class UserAPI: HttpAPIManager {
             let unionid = resp["unionid"] as! String
         
             let dic = ["open_id":openid, "union_id":unionid, "platform": "weixin", "access_token":access_token, "client_id":"IOS_" + AppInfo.appVersion, "expires_in":expires_in.stringValue, "ky_app_id":""]
-            let confi = HttpRequestConfiguration(url: "/2.3/auth/token.json", method: .post, headers: nil, parameters: dic, paraEncoding: URLEncoding.default)
+            let confi = HttpRequestConfiguration(url: "/2.3/auth/token.json", method: .post, parameters: dic, isToken: false)
             self.startRequest(config: confi, success: { (resp) in
                 //已成功,需要整理
                 var rootVC = UIApplication.shared.keyWindow?.rootViewController
@@ -63,6 +63,19 @@ class UserAPI: HttpAPIManager {
             
         }) { (error) in
             print("微信授权error:[\(error)]")
+        }
+    }
+    
+    //MARK:获取用户基本信息
+    func userVipInfo(needInfo: String) -> Void {
+        let dic = ["needAllInfo":needInfo]
+        let confi = HttpRequestConfiguration(url: "/2.3/vip/user/vipInfo.json", method: .post, parameters: dic, isToken: true)
+        self.startRequest(config: confi, success: { (resp) in
+            //
+            print("user vip info :\(resp)")
+        }) { (error) in
+            //
+            print("user vipinfo fail")
         }
     }
 }
