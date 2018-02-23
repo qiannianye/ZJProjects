@@ -33,7 +33,7 @@ extension Cardqu.HttpAPIManager {
                 observer.send(value: respondsData as Any)
                 observer.sendCompleted()
             }, fail: { error in
-                observer.send(error: error as! NoError)
+                observer.send(error: (error as? NoError)!)
             })
         }).observe(on: UIScheduler())
     }

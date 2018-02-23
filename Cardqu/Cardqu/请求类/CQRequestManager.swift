@@ -47,7 +47,7 @@ extension HttpRequestManager {
         
         var headerDic: HTTPHeaders?
         if config.isNeedToken {
-            headerDic = ["Authorization":"Bearer \(String(describing: UserManager.default.user?.access_token))"]
+            headerDic = ["Authorization":("Bearer " + (UserManager.default.user?.access_token)!)]
         }
 
         manager.request(url, method: config.method, parameters: config.parameters, encoding: URLEncoding.default, headers: headerDic).responseData { [unowned self] (responds) in

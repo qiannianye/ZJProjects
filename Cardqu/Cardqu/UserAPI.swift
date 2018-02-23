@@ -67,15 +67,9 @@ class UserAPI: HttpAPIManager {
     }
     
     //MARK:获取用户基本信息
-    func userVipInfo(needInfo: String) -> Void {
+    func userVipInfo(needInfo: String) -> SignalProducer<Any?,NoError> {
         let dic = ["needAllInfo":needInfo]
         let confi = HttpRequestConfiguration(url: "/2.3/vip/user/vipInfo.json", method: .post, parameters: dic, isToken: true)
-        self.startRequest(config: confi, success: { (resp) in
-            //
-            print("user vip info :\(resp)")
-        }) { (error) in
-            //
-            print("user vipinfo fail")
-        }
+        return producer(confi: confi)
     }
 }

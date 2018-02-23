@@ -16,4 +16,13 @@ class MineHeader: UIView {
 
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var editBtn: UIButton!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.headerImgView.clipsToBounds = true
+        self.headerImgView.layer.cornerRadius = self.headerImgView.frame.width/2
+        self.headerImgView.layer.borderColor = UIColor.black.cgColor
+        self.headerImgView.layer.borderWidth = 1
+    }
 }

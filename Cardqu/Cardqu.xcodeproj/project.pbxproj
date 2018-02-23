@@ -46,13 +46,14 @@
 		A77C037E1FB1AF090047F961 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C037D1FB1AF090047F961 /* BaseNavigationController.swift */; };
 		A77C03801FB1B4E40047F961 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C037F1FB1B4E40047F961 /* LeftViewController.swift */; };
 		A77D90981FBAD96F00D9F74D /* CustomSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D90971FBAD96F00D9F74D /* CustomSegment.swift */; };
+		A77F2DA4203FC1650013B863 /* VipInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77F2DA3203FC1650013B863 /* VipInfoModel.swift */; };
 		A780FF921FBEBC030031A919 /* GoodsShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780FF911FBEBC030031A919 /* GoodsShowCell.swift */; };
 		A780FF941FBEC8690031A919 /* GoodsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780FF931FBEC8690031A919 /* GoodsHeaderView.swift */; };
 		A780FF961FBEE5930031A919 /* CouponBagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780FF951FBEE5930031A919 /* CouponBagVC.swift */; };
 		A7851D952021A616003951B0 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7851D942021A616003951B0 /* UserManager.swift */; };
 		A7851D972021CD53003951B0 /* RecommendAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7851D962021CD53003951B0 /* RecommendAPI.swift */; };
 		A7851D992021D664003951B0 /* AdvertisementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7851D982021D664003951B0 /* AdvertisementModel.swift */; };
-		A786137F20183BF100080204 /* MineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786137E20183BF000080204 /* MineViewModel.swift */; };
+		A786137F20183BF100080204 /* MineHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786137E20183BF000080204 /* MineHeaderViewModel.swift */; };
 		A786138120183D7100080204 /* MineHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = A786138020183D7100080204 /* MineHeader.xib */; };
 		A786D03B1FB2FC4E006FB878 /* AutoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786D03A1FB2FC4E006FB878 /* AutoScrollView.swift */; };
 		A7908AC920119FAE0053CB8A /* ThirdParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7908AC820119FAE0053CB8A /* ThirdParty.swift */; };
@@ -135,13 +136,14 @@
 		A77C037D1FB1AF090047F961 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		A77C037F1FB1B4E40047F961 /* LeftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		A77D90971FBAD96F00D9F74D /* CustomSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegment.swift; sourceTree = "<group>"; };
+		A77F2DA3203FC1650013B863 /* VipInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VipInfoModel.swift; sourceTree = "<group>"; };
 		A780FF911FBEBC030031A919 /* GoodsShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsShowCell.swift; sourceTree = "<group>"; };
 		A780FF931FBEC8690031A919 /* GoodsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsHeaderView.swift; sourceTree = "<group>"; };
 		A780FF951FBEE5930031A919 /* CouponBagVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponBagVC.swift; sourceTree = "<group>"; };
 		A7851D942021A616003951B0 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		A7851D962021CD53003951B0 /* RecommendAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendAPI.swift; sourceTree = "<group>"; };
 		A7851D982021D664003951B0 /* AdvertisementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementModel.swift; sourceTree = "<group>"; };
-		A786137E20183BF000080204 /* MineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewModel.swift; sourceTree = "<group>"; };
+		A786137E20183BF000080204 /* MineHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineHeaderViewModel.swift; sourceTree = "<group>"; };
 		A786138020183D7100080204 /* MineHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineHeader.xib; sourceTree = "<group>"; };
 		A786D03A1FB2FC4E006FB878 /* AutoScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScrollView.swift; sourceTree = "<group>"; };
 		A7908AC820119FAE0053CB8A /* ThirdParty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdParty.swift; sourceTree = "<group>"; };
@@ -272,7 +274,6 @@
 				A7851D962021CD53003951B0 /* RecommendAPI.swift */,
 				A7B1DB341FECDDE2000B36AB /* BaseViewModel.swift */,
 				A7B1DB361FECE182000B36AB /* LoginViewModel.swift */,
-				A786137E20183BF000080204 /* MineViewModel.swift */,
 				A7D47F0C2018929C00A8C01C /* BaseModel.swift */,
 				A71FCD901FE22A92007204A2 /* UserModel.swift */,
 				A7851D982021D664003951B0 /* AdvertisementModel.swift */,
@@ -361,6 +362,8 @@
 				A77C037F1FB1B4E40047F961 /* LeftViewController.swift */,
 				A75AD8A2201743B600F8E2BE /* MineHeader.swift */,
 				A786138020183D7100080204 /* MineHeader.xib */,
+				A786137E20183BF000080204 /* MineHeaderViewModel.swift */,
+				A77F2DA3203FC1650013B863 /* VipInfoModel.swift */,
 			);
 			path = "侧滑";
 			sourceTree = "<group>";
@@ -563,7 +566,7 @@
 				A7B1DB371FECE182000B36AB /* LoginViewModel.swift in Sources */,
 				A73855191FBC245E006B046A /* SecondVC.swift in Sources */,
 				A7D47F0D2018929C00A8C01C /* BaseModel.swift in Sources */,
-				A786137F20183BF100080204 /* MineViewModel.swift in Sources */,
+				A786137F20183BF100080204 /* MineHeaderViewModel.swift in Sources */,
 				A71FCD911FE22A92007204A2 /* UserModel.swift in Sources */,
 				A77C037E1FB1AF090047F961 /* BaseNavigationController.swift in Sources */,
 				A79C8A132015C344009D2395 /* AppDelegate+Extension.swift in Sources */,
@@ -596,6 +599,7 @@
 				A780FF961FBEE5930031A919 /* CouponBagVC.swift in Sources */,
 				A7B1DB351FECDDE2000B36AB /* BaseViewModel.swift in Sources */,
 				A77C03801FB1B4E40047F961 /* LeftViewController.swift in Sources */,
+				A77F2DA4203FC1650013B863 /* VipInfoModel.swift in Sources */,
 				A77D90981FBAD96F00D9F74D /* CustomSegment.swift in Sources */,
 				A77B84E82007149B00D60FCB /* CQHttpService.swift in Sources */,
 				A73C03111FE0CF1E0053EF9C /* JsonStringAddition.swift in Sources */,

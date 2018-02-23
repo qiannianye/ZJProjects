@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ReactiveSwift
+import Result
 
 class LeftViewController: UIViewController {
     
@@ -15,22 +17,17 @@ class LeftViewController: UIViewController {
         header.frame = CGRect(x: 0, y: statusBarH, width: screenWidth, height: 150)
         return header
     }()
-    
-    
-    private var viewModel: MineViewModel?
+
+    private var viewModel: MineHeaderViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
         notifi()
-        var model = UserModel()
-        model.display_name = "123k"
-        model.icon_url = ""
         
-        viewModel = MineViewModel()
-        viewModel?.model = model
-        viewModel?.header = header as? MineHeader
+        viewModel = MineHeaderViewModel()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,7 +40,7 @@ class LeftViewController: UIViewController {
 
 extension LeftViewController {
     func setupUI() {
-       self.view.backgroundColor = UIColor.cyan
+       self.view.backgroundColor = UIColor.white
         view.addSubview(header)
     }
     
@@ -52,6 +49,12 @@ extension LeftViewController {
     }
     
     @objc private func loadUserInfo(){
-        UserAPI().userVipInfo(needInfo: "0")
+        let infoProducer = UserAPI().userVipInfo(needInfo: "0")
+        infoProducer.startWithValues { [unowned self] (value) in
+            
+            let model = VipInfoModel.deserialize(from: value as? Dictionary)
+            self.viewModel?.model = model
+            self.viewModel?.header = self.header as? MineHeader
+        }
     }
 }
