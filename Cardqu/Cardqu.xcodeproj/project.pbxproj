@@ -58,6 +58,8 @@
 		A786D03B1FB2FC4E006FB878 /* AutoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786D03A1FB2FC4E006FB878 /* AutoScrollView.swift */; };
 		A7908AC920119FAE0053CB8A /* ThirdParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7908AC820119FAE0053CB8A /* ThirdParty.swift */; };
 		A790BC961FB582BC009B5679 /* AppConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = A790BC951FB582BC009B5679 /* AppConstans.swift */; };
+		A795DB3E204140E400FEA784 /* ReactiveCocoa+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795DB3D204140E400FEA784 /* ReactiveCocoa+Extension.swift */; };
+		A795DB402041463A00FEA784 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795DB3F2041463A00FEA784 /* APIError.swift */; };
 		A79C8A132015C344009D2395 /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C8A122015C344009D2395 /* AppDelegate+Extension.swift */; };
 		A7A28AB420089B35008B3D96 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A28AB320089B35008B3D96 /* UIColor+Extension.swift */; };
 		A7A28AB62008C065008B3D96 /* CQHttpAPIManager+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A28AB52008C065008B3D96 /* CQHttpAPIManager+Reactive.swift */; };
@@ -149,6 +151,8 @@
 		A7908AC820119FAE0053CB8A /* ThirdParty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdParty.swift; sourceTree = "<group>"; };
 		A790BC941FB55794009B5679 /* Cardqu-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cardqu-bridging-header.h"; sourceTree = "<group>"; };
 		A790BC951FB582BC009B5679 /* AppConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstans.swift; sourceTree = "<group>"; };
+		A795DB3D204140E400FEA784 /* ReactiveCocoa+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReactiveCocoa+Extension.swift"; sourceTree = "<group>"; };
+		A795DB3F2041463A00FEA784 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		A79C8A122015C344009D2395 /* AppDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extension.swift"; sourceTree = "<group>"; };
 		A7A28AB320089B35008B3D96 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		A7A28AB52008C065008B3D96 /* CQHttpAPIManager+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CQHttpAPIManager+Reactive.swift"; sourceTree = "<group>"; };
@@ -284,6 +288,8 @@
 				A74C5EAB1FE7C978003AEAE6 /* UIButton+Extension.swift */,
 				A7A28AB320089B35008B3D96 /* UIColor+Extension.swift */,
 				A73C03101FE0CF1E0053EF9C /* JsonStringAddition.swift */,
+				A795DB3D204140E400FEA784 /* ReactiveCocoa+Extension.swift */,
+				A795DB3F2041463A00FEA784 /* APIError.swift */,
 				A790BC951FB582BC009B5679 /* AppConstans.swift */,
 				A77592FF1FD533CB000345AB /* AppInfo.swift */,
 				A77593011FD537F5000345AB /* DeviceInfo.swift */,
@@ -590,6 +596,7 @@
 				A74F4B0F1FBD9B92005A1B2F /* MallViewController.swift in Sources */,
 				A7419D9D202085DD00C622E5 /* LoginManager.swift in Sources */,
 				A786D03B1FB2FC4E006FB878 /* AutoScrollView.swift in Sources */,
+				A795DB3E204140E400FEA784 /* ReactiveCocoa+Extension.swift in Sources */,
 				A77B84EE2007532900D60FCB /* CQRequestManager.swift in Sources */,
 				A77C037C1FB1A31A0047F961 /* Bundle+Extensions.swift in Sources */,
 				A77B84F020075EBB00D60FCB /* CQHttpAPIManager.swift in Sources */,
@@ -600,6 +607,7 @@
 				A7B1DB351FECDDE2000B36AB /* BaseViewModel.swift in Sources */,
 				A77C03801FB1B4E40047F961 /* LeftViewController.swift in Sources */,
 				A77F2DA4203FC1650013B863 /* VipInfoModel.swift in Sources */,
+				A795DB402041463A00FEA784 /* APIError.swift in Sources */,
 				A77D90981FBAD96F00D9F74D /* CustomSegment.swift in Sources */,
 				A77B84E82007149B00D60FCB /* CQHttpService.swift in Sources */,
 				A73C03111FE0CF1E0053EF9C /* JsonStringAddition.swift in Sources */,

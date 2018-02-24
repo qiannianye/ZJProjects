@@ -50,7 +50,28 @@ class UserManager {
 
     var user: UserModel?
     
+    var isLogin: Bool {
+        if user == nil {
+            return false
+        }
+        return true
+    }
+    
+    var isVisitor: Bool {
+        
+        if user == nil {
+            return true
+        }else{
+            guard let name = user?.name else { return true }
+            if name.isEqualTo(CQVisitor.name) { return true }
+            return false
+        }
+    }
+    
+    
     init() {
         
     }
+    
+    
 }

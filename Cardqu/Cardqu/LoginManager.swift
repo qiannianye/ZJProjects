@@ -32,7 +32,7 @@ class LoginManager{
             CQUser.password = CQVisitor.password
         }
         
-        loginAction(username: "13146992471" /*CQUser.name*/, password: "123789"/*CQUser.password*/)
+        loginAction(username: /*"13146992471" */ CQUser.name, password: /*"123789"*/ CQUser.password)
     }
     
     
