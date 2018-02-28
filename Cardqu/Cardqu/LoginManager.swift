@@ -44,6 +44,7 @@ class LoginManager{
             print("value is [\(String(describing: value))]")
             CQUser.saveAccount()
             UserManager.default.user = UserModel.deserialize(from: (value as! Dictionary))
+            
             //发送通知
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LoginSuccess"), object: nil, userInfo: nil)
         })

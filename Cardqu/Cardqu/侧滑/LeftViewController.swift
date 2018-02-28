@@ -7,8 +7,11 @@
 //
 
 import UIKit
+
+import ReactiveCocoa
 import ReactiveSwift
 import Result
+import Kingfisher
 
 class LeftViewController: UIViewController {
     
@@ -18,43 +21,53 @@ class LeftViewController: UIViewController {
         return header
     }()
 
-    private var viewModel: MineHeaderViewModel?
+    private var viewModel: MineHeaderProtocol! {
+        didSet{
+            guard viewModel != nil else {
+                return
+            }
+            let hdv = header as! MineHeader
+            hdv.usernameLb.reactive.text <~ viewModel.nickName
+            hdv.qudouLb.reactive.text <~ viewModel.beans
+            
+            guard viewModel.headerUrl.value.count > 0 && (viewModel.headerUrl.value.hasPrefix("https://") || viewModel.headerUrl.value.hasPrefix("http://")) else {
+                return
+            }
+            hdv.headerImgView.kf.setImage(with: ImageResource(downloadURL: URL(string: viewModel.headerUrl.value)!, cacheKey: nil), placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+            
+            hdv.loginBtn.reactive.pressed = CocoaAction(viewModel.loginAction, input: hdv.loginBtn)
+            viewModel.loginAction.values.observeValues { (value) in
+                let state = value as! BtnEventState
+                switch state {
+                case .login:
+                    let loginVC = LoginViewController()
+                    self.present(loginVC, animated: true, completion: nil)
+                case .sigin: break
+                    
+                case .nothing: break
+                    
+                }
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
-        notifi()
-        
         viewModel = MineHeaderViewModel()
-        
+        viewModel.notifi()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }
 
 extension LeftViewController {
     func setupUI() {
        self.view.backgroundColor = UIColor.white
         view.addSubview(header)
-    }
-    
-    func notifi() {
-        NotificationCenter.default.addObserver(self, selector: #selector(loadUserInfo), name: NSNotification.Name(rawValue: "LoginSuccess"), object: nil)
-    }
-    
-    @objc private func loadUserInfo(){
-        let infoProducer = UserAPI().userVipInfo(needInfo: "0")
-        infoProducer.startWithValues { [unowned self] (value) in
-            
-            let model = VipInfoModel.deserialize(from: value as? Dictionary)
-            self.viewModel?.model = model
-            self.viewModel?.header = self.header as? MineHeader
-        }
     }
 }
