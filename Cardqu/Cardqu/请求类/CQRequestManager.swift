@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 typealias RequestSuccessBlock = (AnyObject) -> Void
-typealias RequestFailBlock = (Error) -> Void
+typealias RequestFailBlock = (APIError) -> Void
 
 final class HttpRequestManager{
     //MARK:单例
@@ -62,7 +62,8 @@ extension HttpRequestManager {
     func handleRespondsData(respondsData: DataResponse<Data>, success: RequestSuccessBlock, fail: RequestFailBlock) {
         guard respondsData.result.error == nil else { //请求成功后,result.error返回的是nil
             //处理失败的结果
-            fail(respondsData.result.error!)
+            //let error = APIError((respondsData.response?.statusCode)!)
+            fail(APIError(-1))
             return
         }
         //成功的结果

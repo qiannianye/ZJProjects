@@ -13,7 +13,7 @@ import Result
 import Alamofire
 
 class RecommendAPI: HttpAPIManager {
-    func banner() -> SignalProducer<Any?,NoError> {
+    func banner() -> AnyAPIProducer {
         let confi = HttpRequestConfiguration(url: "/2.3/slot/10000/ads.json", method: .get, parameters:[:], isToken: false)
         return producer(confi: confi)
     }

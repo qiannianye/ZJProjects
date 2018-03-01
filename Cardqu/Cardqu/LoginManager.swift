@@ -17,8 +17,8 @@ class LoginManager{
         if FileManager.default.fileExists(atPath: userPath) {
             //存在,取数据
             let userDic = NSMutableDictionary(contentsOfFile: userPath)
-            CQUser.password = userDic![usernameKey] as! String
-            CQUser.name = userDic![passwordKey] as! String
+            CQUser.password = userDic![passwordKey] as! String
+            CQUser.name = userDic![usernameKey] as! String
             if CQUser.password.count > 0 {
                 //用户登录
             }else{

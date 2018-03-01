@@ -26,8 +26,9 @@ class LoginViewController: UIViewController {
             userNameTF.reactive.text <~ loginViewModel.account
             passwordTF.reactive.text <~ loginViewModel.password
             loginBtn?.reactive.pressed = CocoaAction(loginViewModel.loginAction, input: loginBtn)
-            loginViewModel.loginAction.values.observeValues { (value) in
+            loginViewModel.loginAction.values.observeValues { [unowned self] (value) in
                 //print("login in ![\(value)]" )
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }
@@ -78,6 +79,11 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController{
+    
+    @objc func dismissVC(){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func setupUI() {
         view.backgroundColor = UIColor.white
         view.addSubview(bgImageView)
@@ -88,6 +94,12 @@ extension LoginViewController{
         setupLoginButton()
         setupThirdparty()
         view.setNeedsUpdateConstraints()
+        
+        let disBtn = UIButton(type: .system)
+        disBtn.frame = CGRect(x: screenWidth - 64, y: statusBarH, width: 44, height: 44)
+        disBtn.setTitle("dismiss", for: .normal)
+        disBtn.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
+        view.addSubview(disBtn)
     }
     
     func setupApplogo() {

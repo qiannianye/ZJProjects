@@ -14,7 +14,7 @@ import Result
 class UserAPI: HttpAPIManager {
     
     //手机登录
-    func mobileLogin(userName: String, password: String, type: String, clientId: String, appId: String) -> SignalProducer<Any?, NoError> {
+    func mobileLogin(userName: String, password: String, type: String, clientId: String, appId: String) -> AnyAPIProducer {
         
         //加密(pwd=123789):MWZmNmQ5YjAzMWVjMzVlZg==
         let encryptPwd = Base64DesFunc.encryptString(password, keyString: encryptKey)
@@ -25,7 +25,7 @@ class UserAPI: HttpAPIManager {
     }
     
     //第三方登录
-    func thirdLogin(openId: String, unionId: String, platform: String, accessToken: String, clientId: String, expiresIn: String, appId: String) -> SignalProducer<Any?,NoError> {
+    func thirdLogin(openId: String, unionId: String, platform: String, accessToken: String, clientId: String, expiresIn: String, appId: String) -> AnyAPIProducer {
         let dic = ["open_id":openId, "union_id":unionId, "platform": platform, "access_token":accessToken, "client_id":clientId, "expires_in":expiresIn, "ky_app_id":appId]
         let confi = HttpRequestConfiguration(url: "/2.3/auth/token.json", method: .post, parameters: dic, isToken: false)
         return producer(confi: confi)
@@ -67,7 +67,7 @@ class UserAPI: HttpAPIManager {
     }
     
     //MARK:获取用户基本信息
-    func userVipInfo(needInfo: String) -> SignalProducer<Any?,NoError> {
+    func userVipInfo(needInfo: String) -> AnyAPIProducer {
         let dic = ["needAllInfo":needInfo]
         let confi = HttpRequestConfiguration(url: "/2.3/vip/user/vipInfo.json", method: .post, parameters: dic, isToken: true)
         return producer(confi: confi)

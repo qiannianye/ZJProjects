@@ -30,10 +30,11 @@ class LeftViewController: UIViewController {
             hdv.usernameLb.reactive.text <~ viewModel.nickName
             hdv.qudouLb.reactive.text <~ viewModel.beans
             
-            guard viewModel.headerUrl.value.count > 0 && (viewModel.headerUrl.value.hasPrefix("https://") || viewModel.headerUrl.value.hasPrefix("http://")) else {
-                return
+            if viewModel.headerUrl.value.count > 0 && (viewModel.headerUrl.value.hasPrefix("https://") || viewModel.headerUrl.value.hasPrefix("http://")) {
+                
+                hdv.headerImgView.kf.setImage(with: ImageResource(downloadURL: URL(string: viewModel.headerUrl.value)!, cacheKey: nil), placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
             }
-            hdv.headerImgView.kf.setImage(with: ImageResource(downloadURL: URL(string: viewModel.headerUrl.value)!, cacheKey: nil), placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+            
             
             hdv.loginBtn.reactive.pressed = CocoaAction(viewModel.loginAction, input: hdv.loginBtn)
             viewModel.loginAction.values.observeValues { (value) in

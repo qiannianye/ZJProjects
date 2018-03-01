@@ -13,11 +13,11 @@ import Result
 
 //MARK:interface
 protocol LoginViewModelProtocol {
-    func setupInput(accountSignal: Signal<String?,NoError>, passwordSignal: Signal<String?,NoError>)
+    func setupInput(accountSignal: NSignal<String?>, passwordSignal: NSignal<String?>)
     
     var account: MutableProperty<String> { get }
     var password: MutableProperty<String> { get }
-    var loginAction: Action<Any?,Any?,NoError> { get }
+    var loginAction: AnyAPIAction { get }
 }
 
 extension LoginViewModel: LoginViewModelProtocol {}
@@ -27,11 +27,11 @@ class LoginViewModel: BaseViewModel {
     private(set) var account = MutableProperty("")
     private(set) var password = MutableProperty("")
     
-    private(set) lazy var loginAction: Action<Any?,Any?,NoError> = Action<Any?,Any?,NoError>(enabledIf: self.loginProperty) { [unowned self] _ -> SignalProducer<Any?, NoError> in
+    private(set) lazy var loginAction: AnyAPIAction = AnyAPIAction(enabledIf: self.loginProperty) { [unowned self] _ -> AnyAPIProducer in
         self.loginSignalProducer
     }
     
-    func setupInput(accountSignal: Signal<String?, NoError>, passwordSignal: Signal<String?, NoError>) {
+    func setupInput(accountSignal: NSignal<String?>, passwordSignal: NSignal<String?>) {
         
         account <~ accountSignal.map({ (text) -> String in
             let username = (text ?? "").substringTo(11)
@@ -45,7 +45,7 @@ class LoginViewModel: BaseViewModel {
     }
     
     //
-    private var loginSignalProducer: SignalProducer<Any?,NoError> {
+    private var loginSignalProducer: AnyAPIProducer {
 
         return UserAPI().mobileLogin(userName: self.account.value, password: self.password.value, type: "general", clientId: "IOS_" + AppInfo.appVersion, appId: "").on(value:{ value in
             //print("value is [\(String(describing: value))]")

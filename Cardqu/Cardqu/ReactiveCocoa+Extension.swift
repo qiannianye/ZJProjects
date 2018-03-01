@@ -29,8 +29,8 @@ typealias AnyAPIAction = Action<Any?,Any?,APIError>
 
 extension SignalProducer where Error == APIError {
     @discardableResult
-    func startWithValues(_ action: (Value) -> Void) -> Disposable {
-        return startWithValues(action)
+    func startWithValues(_ action: @escaping (Value) -> Void) -> Disposable {
+        return start(Signal.Observer(value: action))
     }
 }
 
