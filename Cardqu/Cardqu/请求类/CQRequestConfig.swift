@@ -23,12 +23,15 @@ class HttpRequestConfiguration {
     var isNeedToken: Bool = false
     
     //不签名的配置
-    init(url: String, method: HTTPMethod = .get, parameters: [String: Any]?, isToken: Bool) {
+    init(url: String, method: HTTPMethod = .get, paraDic: [String: Any]?, isToken: Bool) {
         self.requestUrl = url
         self.method = method
         self.isNeedToken = isToken
         self.publicParameters() //第三方请求时不需要公共参数,做处理
-        self.generateParameters(paraDic: parameters!)
+        guard paraDic != nil else {
+            return
+        }
+        self.generateParameters(paraDic: paraDic!)
     }
     
     //需要签名的配置

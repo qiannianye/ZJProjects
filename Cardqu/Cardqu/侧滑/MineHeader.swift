@@ -19,6 +19,7 @@ class MineHeader: UIView {
     @IBOutlet weak var usernameLb: UILabel!
     @IBOutlet weak var qudouLb: UILabel!
 
+    @IBOutlet weak var addBeansLb: UILabel!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var editBtn: UIButton!
     

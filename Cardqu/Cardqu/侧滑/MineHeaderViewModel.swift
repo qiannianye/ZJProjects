@@ -23,8 +23,12 @@ protocol MineHeaderProtocol {
     var headerUrl: MutableProperty<String> { get }
     var nickName: MutableProperty<String> { get }
     var level: MutableProperty<String> { get }
-    var beans: MutableProperty<String> { get }
+    var totalBeans: MutableProperty<String> { get }
+    var addBeans: MutableProperty<String> { get }
+    var btnTitle: MutableProperty<String> { get }
+    var state: MutableProperty<BtnEventState> { get }
     var loginAction: AnyAPIAction { get }
+    var signinAction: AnyAPIAction { get }
 }
 
 extension MineHeaderViewModel: MineHeaderProtocol {}
@@ -34,46 +38,60 @@ class MineHeaderViewModel: BaseViewModel {
     private(set) var headerUrl = MutableProperty("")
     private(set) var nickName = MutableProperty("")
     private(set) var level = MutableProperty("")
-    private(set) var beans = MutableProperty("")
+    private(set) var totalBeans = MutableProperty("")
+    private(set) var addBeans = MutableProperty("")
+    private(set) var btnTitle = MutableProperty("")
+    private(set) var state = MutableProperty(BtnEventState.nothing)
     
-    private(set) lazy var loginAction: AnyAPIAction = AnyAPIAction(enabledIf: self.loginProperty) { (value) -> SignalProducer<Any?, APIError> in
+    private(set) lazy var loginAction: AnyAPIAction = AnyAPIAction(enabledIf: self.btnProperty) { (value) -> SignalProducer<Any?, APIError> in
         return self.loginProducer
     }
     
+    private(set) lazy var signinAction: AnyAPIAction = AnyAPIAction(enabledIf: self.btnProperty) { (value) -> SignalProducer<Any?, APIError> in
+        return self.signinProducer
+    }
+    
+    
     private var loginProducer: AnyAPIProducer {
-        var state = BtnEventState.nothing
-        
-        if UserManager.default.isVisitor {
-            //弹出登录页面
-            state = .login
-        }else{
-            if let sigin = model?.has_signed {
-                if sigin.isEqualTo("0") {
-                    //签到
-                    state = .sigin
-                }
-            }
-        }
-        
         return AnyAPIProducer({ (observer, _) in
-            observer.send(value: state)
+            observer.send(value: self.state.value)
         }).observe(on: UIScheduler())
     }
     
-    private var loginProperty: Property<Bool> {
+    private var signinProducer: AnyAPIProducer {
+        return UserAPI().userSignIn().on(value: { [unowned self] (value) in
+            let dic = value as! Dictionary<String, Any>
+            let add = dic["add_beans"] as! NSNumber
+            let total = dic["beans"] as! NSNumber
+            self.addBeans.value = String.init(format: "%@", add)
+            self.totalBeans.value = String.init(format: "%@", total)
+        })
+    }
+    
+    private var btnProperty: Property<Bool> {
+        //
+        var enable = true
         
-        var enable = false
+//        if UserManager.default.isVisitor {
+//            enable = true
+//        }else{
+//            guard let sign = model?.has_signed else { return Property.init(value: false) }
+//
+//            if sign.isEqualTo("0"){
+//                enable = true
+//            }else{
+//                enable = false
+//            }
+//        }
+
         
-        if UserManager.default.isVisitor {
+        switch state.value {
+        case .login:
             enable = true
-        }else{
-            guard let sign = model?.has_signed else { return Property.init(value: false) }
-            
-            if sign.isEqualTo("0"){
-                enable = true
-            }else{
-                enable = false
-            }
+        case .sigin:
+            enable = true
+        default:
+            break
         }
         return Property.init(value: enable)
     }
@@ -86,9 +104,49 @@ class MineHeaderViewModel: BaseViewModel {
             headerUrl.value = UserManager.default.user?.icon_url ?? ""
             nickName.value = UserManager.default.user?.display_name ?? ""
             level.value = model?.level ?? ""
-            beans.value = (model?.beans ?? "0") + "趣豆"
+            totalBeans.value = (model?.beans ?? "0") + "趣豆"
+            
+            if UserManager.default.isVisitor {
+                //弹出登录页面
+                state.value = .login
+            }else{
+                if let sigin = model?.has_signed {
+                    if sigin.isEqualTo("0") {
+                        //签到
+                        state.value = .sigin
+                    }else{
+                        state.value = .nothing
+                    }
+                }else{
+                    state.value = .nothing
+                }
+            }
+    
+            switch state.value {
+            case .login:
+                btnTitle.value = "登录"
+            case .sigin:
+                btnTitle.value = "签到"
+            case .nothing:
+                btnTitle.value = "已签到"
+        }
+      }
+    }
+    
+    
+    func notifi() {
+        NotificationCenter.default.addObserver(self, selector: #selector(loadUserInfo), name: NSNotification.Name(rawValue: "LoginSuccess"), object: nil)
+    }
+    
+    @objc private func loadUserInfo(){
+        let infoProducer = UserAPI().userVipInfo(needInfo: "0")
+        infoProducer.startWithValues { [unowned self] (value) in
+            
+            self.model = VipInfoModel.deserialize(from: value as? Dictionary)
         }
     }
+    
+    
     
     /*
     var header: MineHeader? {
@@ -119,15 +177,5 @@ class MineHeaderViewModel: BaseViewModel {
     }
  */
     
-    func notifi() {
-        NotificationCenter.default.addObserver(self, selector: #selector(loadUserInfo), name: NSNotification.Name(rawValue: "LoginSuccess"), object: nil)
-    }
     
-    @objc private func loadUserInfo(){
-        let infoProducer = UserAPI().userVipInfo(needInfo: "0")
-        infoProducer.startWithValues { [unowned self] (value) in
-            
-            self.model = VipInfoModel.deserialize(from: value as? Dictionary)
-        }
-    }
 }

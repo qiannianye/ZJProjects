@@ -25,8 +25,10 @@ class LoginViewController: UIViewController {
             loginViewModel.setupInput(accountSignal: userNameTF.reactive.continuousTextValues, passwordSignal: passwordTF.reactive.continuousTextValues)
             userNameTF.reactive.text <~ loginViewModel.account
             passwordTF.reactive.text <~ loginViewModel.password
+            
             loginBtn?.reactive.pressed = CocoaAction(loginViewModel.loginAction, input: loginBtn)
             loginViewModel.loginAction.values.observeValues { [unowned self] (value) in
+                
                 //print("login in ![\(value)]" )
                 self.dismiss(animated: true, completion: nil)
             }

@@ -47,10 +47,16 @@ class LoginViewModel: BaseViewModel {
     //
     private var loginSignalProducer: AnyAPIProducer {
 
-        return UserAPI().mobileLogin(userName: self.account.value, password: self.password.value, type: "general", clientId: "IOS_" + AppInfo.appVersion, appId: "").on(value:{ value in
-            //print("value is [\(String(describing: value))]")
-            let model = UserModel.deserialize(from: (value as! Dictionary))
-            print("user's name is \(String(describing: model?.display_name))")
+        return UserAPI().mobileLogin(userName: self.account.value, password: self.password.value, type: "general", clientId: "IOS_" + AppInfo.appVersion, appId: "").on(value:{[unowned self] value in
+            
+            //这块做的,和LoginMannager登录成功后做的一样. 能否优化?
+            CQUser.name = self.account.value
+            CQUser.password = self.password.value
+            CQUser.saveAccount()
+            UserManager.default.user = UserModel.deserialize(from: (value as! Dictionary))
+            
+            //发送通知
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LoginSuccess"), object: nil, userInfo: nil)
         })
     }
     

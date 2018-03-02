@@ -14,7 +14,7 @@ import Alamofire
 
 class RecommendAPI: HttpAPIManager {
     func banner() -> AnyAPIProducer {
-        let confi = HttpRequestConfiguration(url: "/2.3/slot/10000/ads.json", method: .get, parameters:[:], isToken: false)
+        let confi = HttpRequestConfiguration(url: "/2.3/slot/10000/ads.json", method: .get, paraDic:nil, isToken: false)
         return producer(confi: confi)
     }
 }
