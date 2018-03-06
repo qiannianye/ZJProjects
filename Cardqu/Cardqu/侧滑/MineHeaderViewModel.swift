@@ -29,6 +29,7 @@ protocol MineHeaderProtocol {
     var state: MutableProperty<BtnEventState> { get }
     var loginAction: AnyAPIAction { get }
     var signinAction: AnyAPIAction { get }
+    //var editAction: AnyAPIAction { get }
 }
 
 extension MineHeaderViewModel: MineHeaderProtocol {}

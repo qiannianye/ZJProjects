@@ -23,6 +23,8 @@ class MineHeader: UIView {
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var editBtn: UIButton!
     
+    @IBOutlet weak var levelLb: UILabel!
+    @IBOutlet weak var levelBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,5 +33,10 @@ class MineHeader: UIView {
         self.headerImgView.layer.cornerRadius = self.headerImgView.frame.width/2
         self.headerImgView.layer.borderColor = UIColor.black.cgColor
         self.headerImgView.layer.borderWidth = 1
+        
+        self.loginBtn.clipsToBounds = true
+        self.loginBtn.layer.cornerRadius = 6
+        self.loginBtn.layer.borderWidth = 1
+        self.loginBtn.layer.borderColor = UIColor.orange.cgColor
     }
 }

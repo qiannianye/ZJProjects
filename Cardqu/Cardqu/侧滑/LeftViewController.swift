@@ -30,6 +30,7 @@ class LeftViewController: UIViewController {
             hdv.usernameLb.reactive.text <~ viewModel.nickName
             hdv.qudouLb.reactive.text <~ viewModel.totalBeans
             hdv.addBeansLb.reactive.text <~ viewModel.addBeans
+            hdv.levelLb.reactive.text <~ viewModel.level
             
             if viewModel.headerUrl.value.count > 0 && (viewModel.headerUrl.value.hasPrefix("https://") || viewModel.headerUrl.value.hasPrefix("http://")) {
                 
