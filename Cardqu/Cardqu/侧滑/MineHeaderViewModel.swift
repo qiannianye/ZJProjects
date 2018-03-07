@@ -29,7 +29,8 @@ protocol MineHeaderProtocol {
     var state: MutableProperty<BtnEventState> { get }
     var loginAction: AnyAPIAction { get }
     var signinAction: AnyAPIAction { get }
-    //var editAction: AnyAPIAction { get }
+    var editAction: AnyAPIAction { get }
+    var levelAction: AnyAPIAction { get }
 }
 
 extension MineHeaderViewModel: MineHeaderProtocol {}
@@ -43,6 +44,19 @@ class MineHeaderViewModel: BaseViewModel {
     private(set) var addBeans = MutableProperty("")
     private(set) var btnTitle = MutableProperty("")
     private(set) var state = MutableProperty(BtnEventState.nothing)
+    
+    
+    private(set) lazy var levelAction: AnyAPIAction = AnyAPIAction(enabledIf: Property<Bool>(value: true)) { (value) -> SignalProducer<Any?, APIError> in
+        return AnyAPIProducer({ (observer, _) in
+            observer.send(value: "")
+        }).observe(on: UIScheduler())
+    }
+    
+    private(set) lazy var editAction: AnyAPIAction = AnyAPIAction { (value) -> SignalProducer<Any?, APIError> in
+        return AnyAPIProducer({ (observer, _) in
+            observer.send(value: "")
+        }).observe(on: UIScheduler())
+    }
     
     private(set) lazy var loginAction: AnyAPIAction = AnyAPIAction(enabledIf: self.btnProperty) { (value) -> SignalProducer<Any?, APIError> in
         return self.loginProducer

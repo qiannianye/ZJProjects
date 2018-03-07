@@ -32,6 +32,9 @@
 		A75AD8A3201743B600F8E2BE /* MineHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75AD8A2201743B600F8E2BE /* MineHeader.swift */; };
 		A7619CBA2019BD17009F5941 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A7619CB62019BD16009F5941 /* Base64.m */; };
 		A7619CBB2019BD17009F5941 /* Base64+DES.m in Sources */ = {isa = PBXBuildFile; fileRef = A7619CB82019BD16009F5941 /* Base64+DES.m */; };
+		A76C690A204FC9A4005EF0FD /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C6909204FC9A4005EF0FD /* LevelViewController.swift */; };
+		A76C690C204FDC9E005EF0FD /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C690B204FDC9E005EF0FD /* WebViewController.swift */; };
+		A76C690E20500187005EF0FD /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C690D20500187005EF0FD /* MyInfoViewController.swift */; };
 		A772EEE21FD672C100BEB72A /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772EEE11FD672C100BEB72A /* String+Extensions.swift */; };
 		A772EEE41FD67B4000BEB72A /* ZJHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = A772EEE31FD67B4000BEB72A /* ZJHud.swift */; };
 		A77593001FD533CB000345AB /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77592FF1FD533CB000345AB /* AppInfo.swift */; };
@@ -124,6 +127,9 @@
 		A7619CB72019BD16009F5941 /* Base64+DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Base64+DES.h"; sourceTree = "<group>"; };
 		A7619CB82019BD16009F5941 /* Base64+DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Base64+DES.m"; sourceTree = "<group>"; };
 		A7619CB92019BD16009F5941 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		A76C6909204FC9A4005EF0FD /* LevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
+		A76C690B204FDC9E005EF0FD /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		A76C690D20500187005EF0FD /* MyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
 		A772EEE11FD672C100BEB72A /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A772EEE31FD67B4000BEB72A /* ZJHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJHud.swift; sourceTree = "<group>"; };
 		A77592FF1FD533CB000345AB /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
@@ -370,6 +376,9 @@
 				A786138020183D7100080204 /* MineHeader.xib */,
 				A786137E20183BF000080204 /* MineHeaderViewModel.swift */,
 				A77F2DA3203FC1650013B863 /* VipInfoModel.swift */,
+				A76C6909204FC9A4005EF0FD /* LevelViewController.swift */,
+				A76C690B204FDC9E005EF0FD /* WebViewController.swift */,
+				A76C690D20500187005EF0FD /* MyInfoViewController.swift */,
 			);
 			path = "侧滑";
 			sourceTree = "<group>";
@@ -567,6 +576,7 @@
 				A7851D972021CD53003951B0 /* RecommendAPI.swift in Sources */,
 				A74C5EAC1FE7C978003AEAE6 /* UIButton+Extension.swift in Sources */,
 				A75AD89D20172F6F00F8E2BE /* UIImage+Drawing.swift in Sources */,
+				A76C690A204FC9A4005EF0FD /* LevelViewController.swift in Sources */,
 				A7A28AB62008C065008B3D96 /* CQHttpAPIManager+Reactive.swift in Sources */,
 				A77C03781FB185D40047F961 /* HomeViewController.swift in Sources */,
 				A7B1DB371FECE182000B36AB /* LoginViewModel.swift in Sources */,
@@ -582,6 +592,7 @@
 				A7619CBA2019BD17009F5941 /* Base64.m in Sources */,
 				A71FCD931FE261CE007204A2 /* LoginViewController.swift in Sources */,
 				A75AD8A3201743B600F8E2BE /* MineHeader.swift in Sources */,
+				A76C690C204FDC9E005EF0FD /* WebViewController.swift in Sources */,
 				A7908AC920119FAE0053CB8A /* ThirdParty.swift in Sources */,
 				A7851D952021A616003951B0 /* UserManager.swift in Sources */,
 				A73855171FBC2445006B046A /* FirstVC.swift in Sources */,
@@ -612,6 +623,7 @@
 				A77B84E82007149B00D60FCB /* CQHttpService.swift in Sources */,
 				A73C03111FE0CF1E0053EF9C /* JsonStringAddition.swift in Sources */,
 				A77593021FD537F5000345AB /* DeviceInfo.swift in Sources */,
+				A76C690E20500187005EF0FD /* MyInfoViewController.swift in Sources */,
 				A738551B1FBC246C006B046A /* ThirdVC.swift in Sources */,
 				A790BC961FB582BC009B5679 /* AppConstans.swift in Sources */,
 				A74DD3481FB016E50067D31A /* AppDelegate.swift in Sources */,

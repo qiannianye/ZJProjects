@@ -14,8 +14,11 @@ class BaseNavigationController: UINavigationController {
         super.viewDidLoad()
         
         navigationBar.barTintColor = UIColor.white
+    
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.black, .font : UIFont.systemFont(ofSize: 14)], for: .normal)
+
         
-        //UIBarButtonItem.appearance().setTitleTextAttributes([], for: <#T##UIControlState#>)
+//        UIBarButtonItem.setBackButtonBackgroundImage(UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector()))
     }
 
     override func didReceiveMemoryWarning() {
