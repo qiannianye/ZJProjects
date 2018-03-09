@@ -26,6 +26,9 @@ class MineHeader: UIView {
     @IBOutlet weak var levelLb: UILabel!
     @IBOutlet weak var levelBtn: UIButton!
     
+    
+    @IBOutlet weak var logoutBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

@@ -27,6 +27,8 @@ typealias AnyAction = Action<Any?,Any?,NoError>
 typealias APIAction<I,O> = Action<I,O,APIError>
 typealias AnyAPIAction = Action<Any?,Any?,APIError>
 
+typealias ButtonAction = CocoaAction<UIButton>
+
 extension SignalProducer where Error == APIError {
     @discardableResult
     func startWithValues(_ action: @escaping (Value) -> Void) -> Disposable {
@@ -34,3 +36,8 @@ extension SignalProducer where Error == APIError {
     }
 }
 
+extension CocoaAction {
+    public convenience init<Output, Error>(_ action: Action<Any?, Output, Error>) {
+        self.init(action, input: nil)
+    }
+}

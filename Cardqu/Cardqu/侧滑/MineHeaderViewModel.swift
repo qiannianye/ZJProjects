@@ -29,8 +29,6 @@ protocol MineHeaderProtocol {
     var state: MutableProperty<BtnEventState> { get }
     var loginAction: AnyAPIAction { get }
     var signinAction: AnyAPIAction { get }
-    var editAction: AnyAPIAction { get }
-    var levelAction: AnyAPIAction { get }
 }
 
 extension MineHeaderViewModel: MineHeaderProtocol {}
@@ -46,23 +44,11 @@ class MineHeaderViewModel: BaseViewModel {
     private(set) var state = MutableProperty(BtnEventState.nothing)
     
     
-    private(set) lazy var levelAction: AnyAPIAction = AnyAPIAction(enabledIf: Property<Bool>(value: true)) { (value) -> SignalProducer<Any?, APIError> in
-        return AnyAPIProducer({ (observer, _) in
-            observer.send(value: "")
-        }).observe(on: UIScheduler())
-    }
-    
-    private(set) lazy var editAction: AnyAPIAction = AnyAPIAction { (value) -> SignalProducer<Any?, APIError> in
-        return AnyAPIProducer({ (observer, _) in
-            observer.send(value: "")
-        }).observe(on: UIScheduler())
-    }
-    
-    private(set) lazy var loginAction: AnyAPIAction = AnyAPIAction(enabledIf: self.btnProperty) { (value) -> SignalProducer<Any?, APIError> in
+    private(set) lazy var loginAction: AnyAPIAction = AnyAPIAction(enabledIf: Property(value: true)) { (value) -> SignalProducer<Any?, APIError> in
         return self.loginProducer
     }
     
-    private(set) lazy var signinAction: AnyAPIAction = AnyAPIAction(enabledIf: self.btnProperty) { (value) -> SignalProducer<Any?, APIError> in
+    private(set) lazy var signinAction: AnyAPIAction = AnyAPIAction(enabledIf: Property(value: true)) { (value) -> SignalProducer<Any?, APIError> in
         return self.signinProducer
     }
     
@@ -74,43 +60,17 @@ class MineHeaderViewModel: BaseViewModel {
     }
     
     private var signinProducer: AnyAPIProducer {
+        
         return UserAPI().userSignIn().on(value: { [unowned self] (value) in
             let dic = value as! Dictionary<String, Any>
             let add = dic["add_beans"] as! NSNumber
             let total = dic["beans"] as! NSNumber
             self.addBeans.value = String.init(format: "%@", add)
             self.totalBeans.value = String.init(format: "%@", total)
+            self.btnTitle.value = "已签到"
+            self.model?.has_signed = "1"
         })
     }
-    
-    private var btnProperty: Property<Bool> {
-        //
-        var enable = true
-        
-//        if UserManager.default.isVisitor {
-//            enable = true
-//        }else{
-//            guard let sign = model?.has_signed else { return Property.init(value: false) }
-//
-//            if sign.isEqualTo("0"){
-//                enable = true
-//            }else{
-//                enable = false
-//            }
-//        }
-
-        
-        switch state.value {
-        case .login:
-            enable = true
-        case .sigin:
-            enable = true
-        default:
-            break
-        }
-        return Property.init(value: enable)
-    }
-    
     
     
     var model: VipInfoModel? {
@@ -154,9 +114,7 @@ class MineHeaderViewModel: BaseViewModel {
     }
     
     @objc private func loadUserInfo(){
-        let infoProducer = UserAPI().userVipInfo(needInfo: "0")
-        infoProducer.startWithValues { [unowned self] (value) in
-            
+        UserAPI().userVipInfo(needInfo: "0").startWithValues { [unowned self] (value) in
             self.model = VipInfoModel.deserialize(from: value as? Dictionary)
         }
     }

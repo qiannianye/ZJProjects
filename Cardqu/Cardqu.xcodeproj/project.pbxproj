@@ -59,6 +59,9 @@
 		A786137F20183BF100080204 /* MineHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786137E20183BF000080204 /* MineHeaderViewModel.swift */; };
 		A786138120183D7100080204 /* MineHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = A786138020183D7100080204 /* MineHeader.xib */; };
 		A786D03B1FB2FC4E006FB878 /* AutoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A786D03A1FB2FC4E006FB878 /* AutoScrollView.swift */; };
+		A7905DC32052616E0072B654 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7905DC22052616E0072B654 /* UIViewController+Extension.swift */; };
+		A7905DC720529B930072B654 /* ImgLbComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7905DC620529B930072B654 /* ImgLbComponent.swift */; };
+		A7905DC920529BAE0072B654 /* ImgLbComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7905DC820529BAE0072B654 /* ImgLbComponent.xib */; };
 		A7908AC920119FAE0053CB8A /* ThirdParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7908AC820119FAE0053CB8A /* ThirdParty.swift */; };
 		A790BC961FB582BC009B5679 /* AppConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = A790BC951FB582BC009B5679 /* AppConstans.swift */; };
 		A795DB3E204140E400FEA784 /* ReactiveCocoa+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795DB3D204140E400FEA784 /* ReactiveCocoa+Extension.swift */; };
@@ -154,6 +157,9 @@
 		A786137E20183BF000080204 /* MineHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineHeaderViewModel.swift; sourceTree = "<group>"; };
 		A786138020183D7100080204 /* MineHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineHeader.xib; sourceTree = "<group>"; };
 		A786D03A1FB2FC4E006FB878 /* AutoScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScrollView.swift; sourceTree = "<group>"; };
+		A7905DC22052616E0072B654 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		A7905DC620529B930072B654 /* ImgLbComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgLbComponent.swift; sourceTree = "<group>"; };
+		A7905DC820529BAE0072B654 /* ImgLbComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImgLbComponent.xib; sourceTree = "<group>"; };
 		A7908AC820119FAE0053CB8A /* ThirdParty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdParty.swift; sourceTree = "<group>"; };
 		A790BC941FB55794009B5679 /* Cardqu-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cardqu-bridging-header.h"; sourceTree = "<group>"; };
 		A790BC951FB582BC009B5679 /* AppConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstans.swift; sourceTree = "<group>"; };
@@ -287,14 +293,7 @@
 				A7D47F0C2018929C00A8C01C /* BaseModel.swift */,
 				A71FCD901FE22A92007204A2 /* UserModel.swift */,
 				A7851D982021D664003951B0 /* AdvertisementModel.swift */,
-				A7D47F0A2018702E00A8C01C /* UIView+Extension.swift */,
-				A77C037B1FB1A31A0047F961 /* Bundle+Extensions.swift */,
-				A75AD89C20172F6F00F8E2BE /* UIImage+Drawing.swift */,
-				A772EEE11FD672C100BEB72A /* String+Extensions.swift */,
-				A74C5EAB1FE7C978003AEAE6 /* UIButton+Extension.swift */,
-				A7A28AB320089B35008B3D96 /* UIColor+Extension.swift */,
-				A73C03101FE0CF1E0053EF9C /* JsonStringAddition.swift */,
-				A795DB3D204140E400FEA784 /* ReactiveCocoa+Extension.swift */,
+				A7905DC1205261340072B654 /* extensions */,
 				A795DB3F2041463A00FEA784 /* APIError.swift */,
 				A790BC951FB582BC009B5679 /* AppConstans.swift */,
 				A77592FF1FD533CB000345AB /* AppInfo.swift */,
@@ -372,6 +371,8 @@
 			children = (
 				A71D350D1FB043D000ED2B01 /* SlidingMenuVC.swift */,
 				A77C037F1FB1B4E40047F961 /* LeftViewController.swift */,
+				A7905DC620529B930072B654 /* ImgLbComponent.swift */,
+				A7905DC820529BAE0072B654 /* ImgLbComponent.xib */,
 				A75AD8A2201743B600F8E2BE /* MineHeader.swift */,
 				A786138020183D7100080204 /* MineHeader.xib */,
 				A786137E20183BF000080204 /* MineHeaderViewModel.swift */,
@@ -381,6 +382,22 @@
 				A76C690D20500187005EF0FD /* MyInfoViewController.swift */,
 			);
 			path = "侧滑";
+			sourceTree = "<group>";
+		};
+		A7905DC1205261340072B654 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A7D47F0A2018702E00A8C01C /* UIView+Extension.swift */,
+				A77C037B1FB1A31A0047F961 /* Bundle+Extensions.swift */,
+				A75AD89C20172F6F00F8E2BE /* UIImage+Drawing.swift */,
+				A772EEE11FD672C100BEB72A /* String+Extensions.swift */,
+				A74C5EAB1FE7C978003AEAE6 /* UIButton+Extension.swift */,
+				A7A28AB320089B35008B3D96 /* UIColor+Extension.swift */,
+				A73C03101FE0CF1E0053EF9C /* JsonStringAddition.swift */,
+				A795DB3D204140E400FEA784 /* ReactiveCocoa+Extension.swift */,
+				A7905DC22052616E0072B654 /* UIViewController+Extension.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,6 +516,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A786138120183D7100080204 /* MineHeader.xib in Resources */,
+				A7905DC920529BAE0072B654 /* ImgLbComponent.xib in Resources */,
 				A74DD34F1FB016E60067D31A /* Assets.xcassets in Resources */,
 				A74DD34D1FB016E50067D31A /* Main.storyboard in Resources */,
 			);
@@ -573,6 +591,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7905DC32052616E0072B654 /* UIViewController+Extension.swift in Sources */,
 				A7851D972021CD53003951B0 /* RecommendAPI.swift in Sources */,
 				A74C5EAC1FE7C978003AEAE6 /* UIButton+Extension.swift in Sources */,
 				A75AD89D20172F6F00F8E2BE /* UIImage+Drawing.swift in Sources */,
@@ -629,6 +648,7 @@
 				A74DD3481FB016E50067D31A /* AppDelegate.swift in Sources */,
 				A7A28AB420089B35008B3D96 /* UIColor+Extension.swift in Sources */,
 				A7479AAE201F081300383F83 /* KeychainWrapper.swift in Sources */,
+				A7905DC720529B930072B654 /* ImgLbComponent.swift in Sources */,
 				A71D35101FB072D300ED2B01 /* BaseTabbarController.swift in Sources */,
 				A77593001FD533CB000345AB /* AppInfo.swift in Sources */,
 			);

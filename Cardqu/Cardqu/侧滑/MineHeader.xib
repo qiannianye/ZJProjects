@@ -104,6 +104,11 @@
                         <constraint firstItem="fBD-dY-OYw" firstAttribute="leading" secondItem="Qq9-fW-Ngz" secondAttribute="leading" id="gLg-kc-xWG"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBF-SU-68f">
+                    <rect key="frame" x="10" y="148" width="62" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="退出登录"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -131,10 +136,11 @@
                 <outlet property="levelBtn" destination="ufR-xP-byZ" id="aBV-gy-JKE"/>
                 <outlet property="levelLb" destination="fBD-dY-OYw" id="tPG-dD-yLm"/>
                 <outlet property="loginBtn" destination="5kL-3u-j4V" id="CLH-Lm-zyd"/>
+                <outlet property="logoutBtn" destination="yBF-SU-68f" id="v2q-3n-0aA"/>
                 <outlet property="qudouLb" destination="sh0-Lr-kdA" id="Qre-GU-xxz"/>
                 <outlet property="usernameLb" destination="sWA-WX-cpr" id="fW6-SX-8fL"/>
             </connections>
-            <point key="canvasLocation" x="43.5" y="-500"/>
+            <point key="canvasLocation" x="30" y="-528"/>
         </view>
     </objects>
     <resources>
