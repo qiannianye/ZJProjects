@@ -10,8 +10,20 @@ import Foundation
 
 
 //MARK: loadNib view
+
+protocol LoadNibProtocol {
+    
+}
+
+extension LoadNibProtocol where Self: UIView {
+    static func loadNib(_ nibName: String? = nil) -> Self{
+        return Bundle.main.loadNibNamed(nibName ?? "\(self)", owner: nil, options: nil)?.first as! Self
+    }
+}
+
+
 extension UIView{
-    static func loadNibView<T: UIView>() -> T {
+    static func loadNibView<T: UIView>() -> T{
         let className = self.description().components(separatedBy: ".").last
         guard let clsname = className else { return UIView() as! T }
         return Bundle.main.loadNibNamed(clsname, owner: nil, options: nil)?.first as! T

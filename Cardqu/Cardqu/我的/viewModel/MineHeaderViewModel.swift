@@ -12,10 +12,10 @@ import ReactiveSwift
 import Result
 import Kingfisher
 
-enum BtnEventState {
-    case login
-    case sigin
-    case nothing
+enum BtnEvent: String {
+    case login = "登录"
+    case signin = "签到"
+    case hasSignin = "已签到"
 }
 
 protocol MineHeaderProtocol {
@@ -26,9 +26,8 @@ protocol MineHeaderProtocol {
     var totalBeans: MutableProperty<String> { get }
     var addBeans: MutableProperty<String> { get }
     var btnTitle: MutableProperty<String> { get }
-    var state: MutableProperty<BtnEventState> { get }
-    var loginAction: AnyAPIAction { get }
-    var signinAction: AnyAPIAction { get }
+    var btnIsEnabled : MutableProperty<Bool> { get }
+    var signinProducer: AnyAPIProducer { get }
 }
 
 extension MineHeaderViewModel: MineHeaderProtocol {}
@@ -41,25 +40,9 @@ class MineHeaderViewModel: BaseViewModel {
     private(set) var totalBeans = MutableProperty("")
     private(set) var addBeans = MutableProperty("")
     private(set) var btnTitle = MutableProperty("")
-    private(set) var state = MutableProperty(BtnEventState.nothing)
+    private(set) var btnIsEnabled = MutableProperty(true)
     
-    
-    private(set) lazy var loginAction: AnyAPIAction = AnyAPIAction(enabledIf: Property(value: true)) { (value) -> SignalProducer<Any?, APIError> in
-        return self.loginProducer
-    }
-    
-    private(set) lazy var signinAction: AnyAPIAction = AnyAPIAction(enabledIf: Property(value: true)) { (value) -> SignalProducer<Any?, APIError> in
-        return self.signinProducer
-    }
-    
-    
-    private var loginProducer: AnyAPIProducer {
-        return AnyAPIProducer({ (observer, _) in
-            observer.send(value: self.state.value)
-        }).observe(on: UIScheduler())
-    }
-    
-    private var signinProducer: AnyAPIProducer {
+    private(set) lazy var signinProducer: AnyAPIProducer = {
         
         return UserAPI().userSignIn().on(value: { [unowned self] (value) in
             let dic = value as! Dictionary<String, Any>
@@ -70,12 +53,13 @@ class MineHeaderViewModel: BaseViewModel {
             self.btnTitle.value = "已签到"
             self.model?.has_signed = "1"
         })
-    }
+    }()
     
     
     var model: VipInfoModel? {
         didSet{
             guard model != nil else { return }
+            
             headerUrl.value = UserManager.default.user?.icon_url ?? ""
             nickName.value = UserManager.default.user?.display_name ?? ""
             level.value = model?.level ?? ""
@@ -83,29 +67,24 @@ class MineHeaderViewModel: BaseViewModel {
             
             if UserManager.default.isVisitor {
                 //弹出登录页面
-                state.value = .login
+                btnTitle.value = BtnEvent.login.rawValue
+                btnIsEnabled.value = true
             }else{
-                if let sigin = model?.has_signed {
-                    if sigin.isEqualTo("0") {
-                        //签到
-                        state.value = .sigin
-                    }else{
-                        state.value = .nothing
-                    }
+                guard let signin = model?.has_signed else{
+                    btnTitle.value = BtnEvent.hasSignin.rawValue
+                    btnIsEnabled.value = false
+                    return
+                }
+                
+                if signin.isEqualTo("0") {//签到
+                    btnTitle.value = BtnEvent.signin.rawValue
+                    btnIsEnabled.value = true
                 }else{
-                    state.value = .nothing
+                    btnTitle.value = BtnEvent.hasSignin.rawValue
+                    btnIsEnabled.value = false
                 }
             }
-    
-            switch state.value {
-            case .login:
-                btnTitle.value = "登录"
-            case .sigin:
-                btnTitle.value = "签到"
-            case .nothing:
-                btnTitle.value = "已签到"
         }
-      }
     }
     
     

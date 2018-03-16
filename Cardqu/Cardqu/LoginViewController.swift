@@ -62,7 +62,6 @@ class LoginViewController: UIViewController {
         tf.font = UIFont.systemFont(ofSize: 12)
         tf.clearButtonMode = UITextFieldViewMode.whileEditing
         tf.backgroundColor = UIColor.yellow
-        //tf.becomeFirstResponder()
         return tf
     }
     
@@ -70,6 +69,27 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+       
+        NotificationCenter.default.reactive.notifications(forName: Notification.Name.UIKeyboardWillShow, object: nil).observe { /*[unowned self]*/(event) in
+            guard let notify = event.value else {return}
+            let userInfo = notify.userInfo! as NSDictionary
+            let value = userInfo.object(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
+            let rect = value.cgRectValue
+            
+            let diff = self.scrollView.frame.maxY - rect.height
+            guard diff >= 0 else {return}
+            
+            UIView.animate(withDuration: 0.25, animations: {
+                self.scrollView.frame = CGRect(x: 0, y: naviBarH, width: self.scrollView.frame.width, height: self.scrollView.frame.height)
+            })
+        }
+        
+        NotificationCenter.default.reactive.notifications(forName: Notification.Name.UIKeyboardWillHide, object: nil).observe { /*[unowned self]*/(event) in
+            
+            UIView.animate(withDuration: 0.25, animations: {
+                self.scrollView.frame = CGRect(x: 0, y: self.logoView.frame.maxY, width: self.scrollView.frame.width, height: self.scrollView.frame.height)
+            })
+        }
         
         loginViewModel = LoginViewModel()
     }
@@ -85,6 +105,7 @@ extension LoginViewController{
     @objc func dismissVC(){
         self.dismiss(animated: true, completion: nil)
     }
+    
     
     func setupUI() {
         view.backgroundColor = UIColor.white

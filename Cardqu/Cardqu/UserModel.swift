@@ -15,6 +15,8 @@ struct UserModel: HandyJSON { // "!" 和 "?" 什么时候用
     var name: String!                 //用户名
     var display_name: String!         //昵称
     var mobile: String!              //注册手机号
+    var gender: String!              //性别
+    var birthday: String!            //生日
     var icon_url: String!             //头像
     var access_token: String!         //token
     var expire_in: String!            //过期时间

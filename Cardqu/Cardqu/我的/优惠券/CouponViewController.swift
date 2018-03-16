@@ -1,19 +1,19 @@
 //
-//  MyInfoViewController.swift
+//  CouponViewController.swift
 //  Cardqu
 //
-//  Created by qiannianye on 2018/3/7.
+//  Created by qiannianye on 2018/3/14.
 //  Copyright © 2018年 qiannianye. All rights reserved.
 //
 
 import UIKit
 
-class MyInfoViewController: BaseViewController {
+class CouponViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.white
+        
     }
 
     override func didReceiveMemoryWarning() {

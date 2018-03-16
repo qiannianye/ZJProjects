@@ -266,13 +266,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardqu/LoginViewController.swift"
-            timestampString = "542275022.837307"
+            timestampString = "542800221.553232"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "loginViewModel"
-            landmarkType = "24">
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ReactiveSwift.Signal&lt;Foundation.Notification, Result.NoError&gt;.Event) -&gt; () in Cardqu.LoginViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "Cardqu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sunhaidong/Documents/ZJProjects/Cardqu/Cardqu/LoginViewController.swift"
+                  timestampString = "542893450.165774"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "1848">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (ReactiveSwift.Signal&lt;Foundation.Notification, Result.NoError&gt;.Event) -&gt; () in Cardqu.LoginViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "Cardqu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sunhaidong/Documents/ZJProjects/Cardqu/Cardqu/LoginViewController.swift"
+                  timestampString = "542893450.168422"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cardqu/ListViewModel.swift"
+            timestampString = "542893449.629095"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "fetchDataSignal(_:_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

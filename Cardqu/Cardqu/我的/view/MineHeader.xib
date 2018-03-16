@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MineHeader" customModule="Cardqu" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="188"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="279"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_head_icon_1" translatesAutoresizingMaskIntoConstraints="NO" id="IJV-WG-QKx">
@@ -104,14 +104,39 @@
                         <constraint firstItem="fBD-dY-OYw" firstAttribute="leading" secondItem="Qq9-fW-Ngz" secondAttribute="leading" id="gLg-kc-xWG"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxK-tA-vBH" customClass="ImgLbComponent" customModule="Cardqu" customModuleProvider="target">
+                    <rect key="frame" x="12" y="134" width="116" height="70"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="116" id="Val-sf-kEm"/>
+                        <constraint firstAttribute="height" constant="70" id="VeV-yM-gyw"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6Q-aC-xXe" customClass="ImgLbComponent" customModule="Cardqu" customModuleProvider="target">
+                    <rect key="frame" x="128" y="134" width="116" height="70"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="116" id="fIB-gR-oBZ"/>
+                        <constraint firstAttribute="height" constant="70" id="tjD-RX-jgu"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZH-DM-lnu" customClass="ImgLbComponent" customModule="Cardqu" customModuleProvider="target">
+                    <rect key="frame" x="244" y="134" width="116" height="70"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="116" id="D8x-A0-qsI"/>
+                        <constraint firstAttribute="height" constant="70" id="iBP-1w-TOy"/>
+                    </constraints>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBF-SU-68f">
-                    <rect key="frame" x="10" y="148" width="62" height="30"/>
+                    <rect key="frame" x="9" y="229" width="62" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="退出登录"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="n6Q-aC-xXe" firstAttribute="leading" secondItem="uxK-tA-vBH" secondAttribute="trailing" id="15L-n4-g6H"/>
                 <constraint firstItem="IJV-WG-QKx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="1BJ-tv-SNd"/>
                 <constraint firstAttribute="trailing" secondItem="5kL-3u-j4V" secondAttribute="trailing" constant="60" id="56g-z0-XL0"/>
                 <constraint firstItem="Qq9-fW-Ngz" firstAttribute="top" secondItem="lRv-TJ-YfW" secondAttribute="bottom" constant="2" id="7bQ-dr-sWO"/>
@@ -119,28 +144,36 @@
                 <constraint firstItem="lRv-TJ-YfW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CRo-xj-c90"/>
                 <constraint firstItem="5kL-3u-j4V" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Iyj-GJ-xYp"/>
                 <constraint firstItem="5kL-3u-j4V" firstAttribute="leading" secondItem="sWA-WX-cpr" secondAttribute="trailing" constant="6" id="PD7-db-Zf0"/>
+                <constraint firstItem="uxK-tA-vBH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="UPd-Cj-mbR"/>
                 <constraint firstItem="sh0-Lr-kdA" firstAttribute="top" secondItem="sWA-WX-cpr" secondAttribute="bottom" constant="6" id="Udn-QB-sau"/>
+                <constraint firstItem="n6Q-aC-xXe" firstAttribute="top" secondItem="Qq9-fW-Ngz" secondAttribute="bottom" constant="8" id="VUH-Gb-tiA"/>
+                <constraint firstItem="KZH-DM-lnu" firstAttribute="leading" secondItem="n6Q-aC-xXe" secondAttribute="trailing" id="XUE-lz-Lig"/>
                 <constraint firstItem="sWA-WX-cpr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="YAo-5l-ezZ"/>
                 <constraint firstItem="5kL-3u-j4V" firstAttribute="leading" secondItem="sh0-Lr-kdA" secondAttribute="trailing" constant="6" id="c18-oI-Lyx"/>
+                <constraint firstItem="uxK-tA-vBH" firstAttribute="top" secondItem="Qq9-fW-Ngz" secondAttribute="bottom" constant="8" id="dTq-0u-WpS"/>
                 <constraint firstItem="IJV-WG-QKx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="g9k-TA-pyL"/>
                 <constraint firstItem="sh0-Lr-kdA" firstAttribute="leading" secondItem="IJV-WG-QKx" secondAttribute="trailing" constant="12" id="jUg-ZN-woj"/>
                 <constraint firstItem="Qq9-fW-Ngz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kxh-7T-52S"/>
+                <constraint firstItem="KZH-DM-lnu" firstAttribute="top" secondItem="Qq9-fW-Ngz" secondAttribute="bottom" constant="8" id="qHL-ao-LFL"/>
                 <constraint firstItem="sWA-WX-cpr" firstAttribute="leading" secondItem="IJV-WG-QKx" secondAttribute="trailing" constant="12" id="tQN-u2-KRd"/>
                 <constraint firstAttribute="trailing" secondItem="Qq9-fW-Ngz" secondAttribute="trailing" constant="60" id="z72-Ok-dbA"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="addBeansLb" destination="ZLf-6v-jxl" id="UV9-LF-nrp"/>
-                <outlet property="editBtn" destination="lRv-TJ-YfW" id="FEI-gk-KcH"/>
+                <outlet property="couponVw" destination="uxK-tA-vBH" id="vf6-Xi-a7T"/>
+                <outlet property="editInfoBtn" destination="lRv-TJ-YfW" id="gQ8-gC-5DY"/>
                 <outlet property="headerImgView" destination="IJV-WG-QKx" id="lj0-3U-EbB"/>
                 <outlet property="levelBtn" destination="ufR-xP-byZ" id="aBV-gy-JKE"/>
                 <outlet property="levelLb" destination="fBD-dY-OYw" id="tPG-dD-yLm"/>
-                <outlet property="loginBtn" destination="5kL-3u-j4V" id="CLH-Lm-zyd"/>
+                <outlet property="loginSigninBtn" destination="5kL-3u-j4V" id="TB8-hB-LAq"/>
                 <outlet property="logoutBtn" destination="yBF-SU-68f" id="v2q-3n-0aA"/>
+                <outlet property="messageVw" destination="KZH-DM-lnu" id="znK-nR-UPk"/>
+                <outlet property="orderVw" destination="n6Q-aC-xXe" id="ghD-cU-mfu"/>
                 <outlet property="qudouLb" destination="sh0-Lr-kdA" id="Qre-GU-xxz"/>
                 <outlet property="usernameLb" destination="sWA-WX-cpr" id="fW6-SX-8fL"/>
             </connections>
-            <point key="canvasLocation" x="30" y="-528"/>
+            <point key="canvasLocation" x="29.5" y="-482.5"/>
         </view>
     </objects>
     <resources>

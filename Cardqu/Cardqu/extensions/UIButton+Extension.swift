@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import ReactiveCocoa
+import ReactiveSwift
 
 private var indexKey = "IndexKey"
 
@@ -19,6 +21,14 @@ extension UIButton{
         set(newValue) {
             objc_setAssociatedObject(self, &indexKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
         }
+    }
+}
+
+extension Reactive where Base: UIButton {
+    public var isEnabled: BindingTarget<Bool> {
+        return makeBindingTarget({
+            $0.isEnabled = $1
+        })
     }
 }
 

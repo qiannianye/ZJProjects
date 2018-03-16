@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A70B423D205A5D3900FC17E9 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B423C205A5D3900FC17E9 /* ListViewModel.swift */; };
+		A70B423F205A5E7900FC17E9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B423E205A5E7900FC17E9 /* ProfileViewController.swift */; };
+		A70B4241205A880400FC17E9 /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B4240205A880400FC17E9 /* InfoModel.swift */; };
+		A70B4244205A898700FC17E9 /* MyInfoCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B4243205A898700FC17E9 /* MyInfoCellModel.swift */; };
 		A71D350E1FB043D000ED2B01 /* SlidingMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71D350D1FB043D000ED2B01 /* SlidingMenuVC.swift */; };
 		A71D35101FB072D300ED2B01 /* BaseTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71D350F1FB072D300ED2B01 /* BaseTabbarController.swift */; };
 		A71FCD911FE22A92007204A2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71FCD901FE22A92007204A2 /* UserModel.swift */; };
@@ -50,6 +54,10 @@
 		A77C03801FB1B4E40047F961 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C037F1FB1B4E40047F961 /* LeftViewController.swift */; };
 		A77D90981FBAD96F00D9F74D /* CustomSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D90971FBAD96F00D9F74D /* CustomSegment.swift */; };
 		A77F2DA4203FC1650013B863 /* VipInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77F2DA3203FC1650013B863 /* VipInfoModel.swift */; };
+		A77FD57620591F1100291793 /* CouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77FD57520591F1100291793 /* CouponViewController.swift */; };
+		A77FD57920592BFA00291793 /* MyInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77FD57720592BFA00291793 /* MyInfoCell.swift */; };
+		A77FD57A20592BFA00291793 /* MyInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A77FD57820592BFA00291793 /* MyInfoCell.xib */; };
+		A77FD57C20592F3B00291793 /* MyInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77FD57B20592F3B00291793 /* MyInfoViewModel.swift */; };
 		A780FF921FBEBC030031A919 /* GoodsShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780FF911FBEBC030031A919 /* GoodsShowCell.swift */; };
 		A780FF941FBEC8690031A919 /* GoodsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780FF931FBEC8690031A919 /* GoodsHeaderView.swift */; };
 		A780FF961FBEE5930031A919 /* CouponBagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780FF951FBEE5930031A919 /* CouponBagVC.swift */; };
@@ -66,6 +74,7 @@
 		A790BC961FB582BC009B5679 /* AppConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = A790BC951FB582BC009B5679 /* AppConstans.swift */; };
 		A795DB3E204140E400FEA784 /* ReactiveCocoa+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795DB3D204140E400FEA784 /* ReactiveCocoa+Extension.swift */; };
 		A795DB402041463A00FEA784 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795DB3F2041463A00FEA784 /* APIError.swift */; };
+		A79C5557205BB88A0042BEBD /* ListBinderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C5556205BB88A0042BEBD /* ListBinderProtocol.swift */; };
 		A79C8A132015C344009D2395 /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C8A122015C344009D2395 /* AppDelegate+Extension.swift */; };
 		A7A28AB420089B35008B3D96 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A28AB320089B35008B3D96 /* UIColor+Extension.swift */; };
 		A7A28AB62008C065008B3D96 /* CQHttpAPIManager+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A28AB52008C065008B3D96 /* CQHttpAPIManager+Reactive.swift */; };
@@ -95,6 +104,10 @@
 
 /* Begin PBXFileReference section */
 		A561E0B495A6F55CE3145D33 /* Pods-Cardqu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cardqu.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cardqu/Pods-Cardqu.release.xcconfig"; sourceTree = "<group>"; };
+		A70B423C205A5D3900FC17E9 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		A70B423E205A5E7900FC17E9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A70B4240205A880400FC17E9 /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
+		A70B4243205A898700FC17E9 /* MyInfoCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoCellModel.swift; sourceTree = "<group>"; };
 		A71D350D1FB043D000ED2B01 /* SlidingMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingMenuVC.swift; sourceTree = "<group>"; };
 		A71D350F1FB072D300ED2B01 /* BaseTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabbarController.swift; sourceTree = "<group>"; };
 		A71FCD901FE22A92007204A2 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -148,6 +161,10 @@
 		A77C037F1FB1B4E40047F961 /* LeftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		A77D90971FBAD96F00D9F74D /* CustomSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegment.swift; sourceTree = "<group>"; };
 		A77F2DA3203FC1650013B863 /* VipInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VipInfoModel.swift; sourceTree = "<group>"; };
+		A77FD57520591F1100291793 /* CouponViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponViewController.swift; sourceTree = "<group>"; };
+		A77FD57720592BFA00291793 /* MyInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoCell.swift; sourceTree = "<group>"; };
+		A77FD57820592BFA00291793 /* MyInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyInfoCell.xib; sourceTree = "<group>"; };
+		A77FD57B20592F3B00291793 /* MyInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewModel.swift; sourceTree = "<group>"; };
 		A780FF911FBEBC030031A919 /* GoodsShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsShowCell.swift; sourceTree = "<group>"; };
 		A780FF931FBEC8690031A919 /* GoodsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsHeaderView.swift; sourceTree = "<group>"; };
 		A780FF951FBEE5930031A919 /* CouponBagVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponBagVC.swift; sourceTree = "<group>"; };
@@ -165,6 +182,7 @@
 		A790BC951FB582BC009B5679 /* AppConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstans.swift; sourceTree = "<group>"; };
 		A795DB3D204140E400FEA784 /* ReactiveCocoa+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReactiveCocoa+Extension.swift"; sourceTree = "<group>"; };
 		A795DB3F2041463A00FEA784 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		A79C5556205BB88A0042BEBD /* ListBinderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBinderProtocol.swift; sourceTree = "<group>"; };
 		A79C8A122015C344009D2395 /* AppDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extension.swift"; sourceTree = "<group>"; };
 		A7A28AB320089B35008B3D96 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		A7A28AB52008C065008B3D96 /* CQHttpAPIManager+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CQHttpAPIManager+Reactive.swift"; sourceTree = "<group>"; };
@@ -217,6 +235,100 @@
 				A561E0B495A6F55CE3145D33 /* Pods-Cardqu.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A70B4233205A5A6400FC17E9 /* 我的 */ = {
+			isa = PBXGroup;
+			children = (
+				A70B423E205A5E7900FC17E9 /* ProfileViewController.swift */,
+				A70B4234205A5AE400FC17E9 /* view */,
+				A70B4235205A5B1700FC17E9 /* model */,
+				A70B4236205A5B2B00FC17E9 /* viewModel */,
+				A70B4237205A5B9A00FC17E9 /* 等级 */,
+				A70B4238205A5BB700FC17E9 /* 优惠券 */,
+				A70B4239205A5BCE00FC17E9 /* 个人信息设置 */,
+			);
+			path = "我的";
+			sourceTree = "<group>";
+		};
+		A70B4234205A5AE400FC17E9 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A7905DC620529B930072B654 /* ImgLbComponent.swift */,
+				A7905DC820529BAE0072B654 /* ImgLbComponent.xib */,
+				A75AD8A2201743B600F8E2BE /* MineHeader.swift */,
+				A786138020183D7100080204 /* MineHeader.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		A70B4235205A5B1700FC17E9 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A77F2DA3203FC1650013B863 /* VipInfoModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		A70B4236205A5B2B00FC17E9 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A786137E20183BF000080204 /* MineHeaderViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		A70B4237205A5B9A00FC17E9 /* 等级 */ = {
+			isa = PBXGroup;
+			children = (
+				A76C6909204FC9A4005EF0FD /* LevelViewController.swift */,
+			);
+			path = "等级";
+			sourceTree = "<group>";
+		};
+		A70B4238205A5BB700FC17E9 /* 优惠券 */ = {
+			isa = PBXGroup;
+			children = (
+				A77FD57520591F1100291793 /* CouponViewController.swift */,
+			);
+			path = "优惠券";
+			sourceTree = "<group>";
+		};
+		A70B4239205A5BCE00FC17E9 /* 个人信息设置 */ = {
+			isa = PBXGroup;
+			children = (
+				A76C690D20500187005EF0FD /* MyInfoViewController.swift */,
+				A70B423A205A5BFE00FC17E9 /* view */,
+				A70B4242205A888D00FC17E9 /* model */,
+				A70B423B205A5C2E00FC17E9 /* viewModel */,
+			);
+			path = "个人信息设置";
+			sourceTree = "<group>";
+		};
+		A70B423A205A5BFE00FC17E9 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A77FD57720592BFA00291793 /* MyInfoCell.swift */,
+				A77FD57820592BFA00291793 /* MyInfoCell.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		A70B423B205A5C2E00FC17E9 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A77FD57B20592F3B00291793 /* MyInfoViewModel.swift */,
+				A70B4243205A898700FC17E9 /* MyInfoCellModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		A70B4242205A888D00FC17E9 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A70B4240205A880400FC17E9 /* InfoModel.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		A73C03121FE10CD00053EF9C /* 券包 */ = {
@@ -278,7 +390,11 @@
 				A71D350F1FB072D300ED2B01 /* BaseTabbarController.swift */,
 				A77C037D1FB1AF090047F961 /* BaseNavigationController.swift */,
 				A71FCD941FE27DE3007204A2 /* BaseViewController.swift */,
+				A76C690B204FDC9E005EF0FD /* WebViewController.swift */,
+				A70B423C205A5D3900FC17E9 /* ListViewModel.swift */,
+				A79C5556205BB88A0042BEBD /* ListBinderProtocol.swift */,
 				A780FF991FBEE5D90031A919 /* 侧滑 */,
+				A70B4233205A5A6400FC17E9 /* 我的 */,
 				A780FF981FBEE5BF0031A919 /* 首页 */,
 				A780FF971FBEE59C0031A919 /* 商城 */,
 				A73C03121FE10CD00053EF9C /* 券包 */,
@@ -371,15 +487,6 @@
 			children = (
 				A71D350D1FB043D000ED2B01 /* SlidingMenuVC.swift */,
 				A77C037F1FB1B4E40047F961 /* LeftViewController.swift */,
-				A7905DC620529B930072B654 /* ImgLbComponent.swift */,
-				A7905DC820529BAE0072B654 /* ImgLbComponent.xib */,
-				A75AD8A2201743B600F8E2BE /* MineHeader.swift */,
-				A786138020183D7100080204 /* MineHeader.xib */,
-				A786137E20183BF000080204 /* MineHeaderViewModel.swift */,
-				A77F2DA3203FC1650013B863 /* VipInfoModel.swift */,
-				A76C6909204FC9A4005EF0FD /* LevelViewController.swift */,
-				A76C690B204FDC9E005EF0FD /* WebViewController.swift */,
-				A76C690D20500187005EF0FD /* MyInfoViewController.swift */,
 			);
 			path = "侧滑";
 			sourceTree = "<group>";
@@ -516,6 +623,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A786138120183D7100080204 /* MineHeader.xib in Resources */,
+				A77FD57A20592BFA00291793 /* MyInfoCell.xib in Resources */,
 				A7905DC920529BAE0072B654 /* ImgLbComponent.xib in Resources */,
 				A74DD34F1FB016E60067D31A /* Assets.xcassets in Resources */,
 				A74DD34D1FB016E50067D31A /* Main.storyboard in Resources */,
@@ -594,6 +702,7 @@
 				A7905DC32052616E0072B654 /* UIViewController+Extension.swift in Sources */,
 				A7851D972021CD53003951B0 /* RecommendAPI.swift in Sources */,
 				A74C5EAC1FE7C978003AEAE6 /* UIButton+Extension.swift in Sources */,
+				A77FD57620591F1100291793 /* CouponViewController.swift in Sources */,
 				A75AD89D20172F6F00F8E2BE /* UIImage+Drawing.swift in Sources */,
 				A76C690A204FC9A4005EF0FD /* LevelViewController.swift in Sources */,
 				A7A28AB62008C065008B3D96 /* CQHttpAPIManager+Reactive.swift in Sources */,
@@ -607,20 +716,26 @@
 				A79C8A132015C344009D2395 /* AppDelegate+Extension.swift in Sources */,
 				A772EEE21FD672C100BEB72A /* String+Extensions.swift in Sources */,
 				A71FCD951FE27DE3007204A2 /* BaseViewController.swift in Sources */,
+				A79C5557205BB88A0042BEBD /* ListBinderProtocol.swift in Sources */,
 				A77B84F42007624100D60FCB /* UserAPI.swift in Sources */,
 				A7619CBA2019BD17009F5941 /* Base64.m in Sources */,
 				A71FCD931FE261CE007204A2 /* LoginViewController.swift in Sources */,
 				A75AD8A3201743B600F8E2BE /* MineHeader.swift in Sources */,
 				A76C690C204FDC9E005EF0FD /* WebViewController.swift in Sources */,
+				A70B423D205A5D3900FC17E9 /* ListViewModel.swift in Sources */,
+				A70B4241205A880400FC17E9 /* InfoModel.swift in Sources */,
 				A7908AC920119FAE0053CB8A /* ThirdParty.swift in Sources */,
+				A77FD57C20592F3B00291793 /* MyInfoViewModel.swift in Sources */,
 				A7851D952021A616003951B0 /* UserManager.swift in Sources */,
 				A73855171FBC2445006B046A /* FirstVC.swift in Sources */,
 				A7619CBB2019BD17009F5941 /* Base64+DES.m in Sources */,
 				A7479AB0201F27A200383F83 /* KeychainUUID.swift in Sources */,
 				A7851D992021D664003951B0 /* AdvertisementModel.swift in Sources */,
 				A7264A09200CB3820073FDF4 /* Encryption.swift in Sources */,
+				A77FD57920592BFA00291793 /* MyInfoCell.swift in Sources */,
 				A780FF921FBEBC030031A919 /* GoodsShowCell.swift in Sources */,
 				A772EEE41FD67B4000BEB72A /* ZJHud.swift in Sources */,
+				A70B4244205A898700FC17E9 /* MyInfoCellModel.swift in Sources */,
 				A780FF941FBEC8690031A919 /* GoodsHeaderView.swift in Sources */,
 				A71D350E1FB043D000ED2B01 /* SlidingMenuVC.swift in Sources */,
 				A74F4B0F1FBD9B92005A1B2F /* MallViewController.swift in Sources */,
@@ -649,6 +764,7 @@
 				A7A28AB420089B35008B3D96 /* UIColor+Extension.swift in Sources */,
 				A7479AAE201F081300383F83 /* KeychainWrapper.swift in Sources */,
 				A7905DC720529B930072B654 /* ImgLbComponent.swift in Sources */,
+				A70B423F205A5E7900FC17E9 /* ProfileViewController.swift in Sources */,
 				A71D35101FB072D300ED2B01 /* BaseTabbarController.swift in Sources */,
 				A77593001FD533CB000345AB /* AppInfo.swift in Sources */,
 			);

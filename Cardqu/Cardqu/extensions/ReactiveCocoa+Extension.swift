@@ -12,7 +12,7 @@ import ReactiveCocoa
 import ReactiveSwift
 import Result
 
-typealias NSignal<T> = ReactiveSwift.Signal<T,NoError>
+typealias NSignal<T> = Signal<T,NoError>
 typealias AnySignal = Signal<Any?,NoError>
 typealias APISignal<T> = Signal<T,APIError>
 typealias AnyAPISignal = Signal<Any?,APIError>
@@ -24,7 +24,7 @@ typealias AnyAPIProducer = SignalProducer<Any?,APIError>
 
 typealias NAction<I,O> = Action<I,O,NoError>
 typealias AnyAction = Action<Any?,Any?,NoError>
-typealias APIAction<I,O> = Action<I,O,APIError>
+typealias APIAction<O> = Action<[String:String]?,O,APIError>
 typealias AnyAPIAction = Action<Any?,Any?,APIError>
 
 typealias ButtonAction = CocoaAction<UIButton>

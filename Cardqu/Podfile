@@ -8,4 +8,5 @@ target 'Cardqu' do
    pod 'ReactiveCocoa', '~> 7.1.0'
    pod 'WechatOpenSDK'
    pod 'Kingfisher', '~> 4.6.1'
+   pod 'MJRefresh', '~> 3.1.15.1'
 end
