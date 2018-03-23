@@ -45,6 +45,10 @@ class LoginManager{
             CQUser.saveAccount()
             UserManager.default.user = UserModel.deserialize(from: (value as! Dictionary))
             
+//            NotificationCenter.default.reactive.notifications(forName: NSNotification.Name(rawValue: "LoginSuccess"), object: nil).observe({ (event) in
+//                
+//            })
+            
             //发送通知
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LoginSuccess"), object: nil, userInfo: nil)
         })

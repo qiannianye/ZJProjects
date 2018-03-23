@@ -14,5 +14,4 @@
 #import "WXApi.h"
 #import "Base64+DES.h"
 
-
 #endif /* Cardqu_bridging_header_h */

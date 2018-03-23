@@ -21,6 +21,7 @@ extension ListCellModelProtocol{
 }
 
 protocol ListViewModelProtocol {
+    
     var allData: [ListCellModelProtocol] { get } //数据源
     var refeshAction: APIAction<[ListCellModelProtocol]>? { get } //刷新数据
     var loadMoreAction: APIAction<[ListCellModelProtocol]>? { get } //加载更多数据

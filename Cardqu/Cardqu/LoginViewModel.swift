@@ -22,7 +22,7 @@ protocol LoginViewModelProtocol {
 
 extension LoginViewModel: LoginViewModelProtocol {}
 
-class LoginViewModel: BaseViewModel {
+class LoginViewModel {
 
     private(set) var account = MutableProperty("")
     private(set) var password = MutableProperty("")

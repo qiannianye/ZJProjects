@@ -20,7 +20,7 @@ class UserAPI: HttpAPIManager {
         let encryptPwd = Base64DesFunc.encryptString(password, keyString: encryptKey)
         
         let paraStr = String.init(format: "username=%@&password=%@&type=%@&client_id=%@&ky_app_id=%@", userName, encryptPwd!, type, clientId, appId)
-        let confi = HttpRequestConfiguration(url: "/2.3/user/login.json", method: .post, parametersStr: paraStr, isToken: false)
+        let confi = HttpRequestConfiguration(url: "/2.3/user/login.json", method: .post, signParameters: paraStr, isToken: false)
         return producer(confi: confi)
     }
     

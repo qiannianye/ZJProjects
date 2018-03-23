@@ -16,28 +16,30 @@ class ProfileViewController: BaseViewController {
 
     let header: UIView = {
         let header = MineHeader.loadNibView()
-        header.frame = CGRect(x: 0, y: statusBarH, width: screenWidth, height: 300)
-        header.backgroundColor = UIColor.cyan
+        header.frame = CGRect(x: 0, y: statusBarH, width: screenWidth, height: 280)
+        header.backgroundColor = UIColor.clear
         return header
     }()
+
+    var table: UITableView!
+    private var tableViewModel = ProfileViewModel()
     
-       private var viewModel: MineHeaderProtocol! {
+       private var headerViewModel: MineHeaderProtocol! {
         didSet{
-            guard viewModel != nil else {
-                return
-            }
+            guard let vm = headerViewModel else { return }
             
             let hdv = header as! MineHeader
-            hdv.usernameLb.reactive.text <~ viewModel.nickName
-            hdv.qudouLb.reactive.text <~ viewModel.totalBeans
-            hdv.addBeansLb.reactive.text <~ viewModel.addBeans
-            hdv.levelLb.reactive.text <~ viewModel.level
-            hdv.loginSigninBtn.reactive.title <~ viewModel.btnTitle
-            hdv.loginSigninBtn.reactive.isEnabled <~ viewModel.btnIsEnabled
+            hdv.usernameLb.reactive.text <~ vm.nickName
+            hdv.qudouLb.reactive.text <~ vm.totalBeans
+            hdv.addBeansLb.reactive.text <~ vm.addBeans
+            hdv.levelLb.reactive.text <~ vm.level
+            hdv.editInfoBtn.reactive.isEnabled <~ vm.editInfoBtnIsEnabled
+            hdv.loginSigninBtn.reactive.title <~ vm.btnTitle
+            hdv.loginSigninBtn.reactive.isEnabled <~ vm.loginsiginBtnIsEnabled
             
-            if viewModel.headerUrl.value.count > 0 && (viewModel.headerUrl.value.hasPrefix("https://") || viewModel.headerUrl.value.hasPrefix("http://")) {
+            if vm.headerUrl.value.count > 0 && (vm.headerUrl.value.hasPrefix("https://") || vm.headerUrl.value.hasPrefix("http://")) {
                 
-                hdv.headerImgView.kf.setImage(with: ImageResource(downloadURL: URL(string: viewModel.headerUrl.value)!, cacheKey: nil), placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+                hdv.headerImgView.kf.setImage(with: ImageResource(downloadURL: URL(string: vm.headerUrl.value)!, cacheKey: nil), placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
             }
             hdv.editInfoBtn.reactive.controlEvents(.touchUpInside).observe { (event) in
                 let vc = MyInfoViewController()
@@ -58,7 +60,7 @@ class ProfileViewController: BaseViewController {
                 case BtnEvent.signin.rawValue:
                     
                     btn.isEnabled = false
-                    self.viewModel.signinProducer.startWithValues({ (value) in
+                    vm.signinProducer.startWithValues({ (value) in
                         UIView.animate(withDuration: 0.25, animations: {
                             hdv.addBeansLb.alpha = 1.0
                             var tmpFrame = hdv.addBeansLb.frame
@@ -104,8 +106,10 @@ class ProfileViewController: BaseViewController {
         super.viewDidLoad()
         
         setupUI()
-        viewModel = MineHeaderViewModel()
-        viewModel.notifi()
+        headerViewModel = MineHeaderViewModel()
+        headerViewModel.notifi()
+        
+        loadDataNoMj()
     }
 
     override func didReceiveMemoryWarning() {
@@ -117,6 +121,44 @@ class ProfileViewController: BaseViewController {
 extension ProfileViewController {
     func setupUI() {
         self.view.backgroundColor = UIColor.white
+
         view.addSubview(header)
+        table = UITableView(frame: CGRect(x: 0, y: header.frame.maxY, width: screenWidth, height: screenHeight - header.frame.maxY), style: UITableViewStyle.plain)
+        table.separatorStyle = .none
+        view.addSubview(table)
     }
 }
+
+extension ProfileViewController: ListBinderPotocol{
+    var tableView: UITableView {
+        return table
+    }
+    
+    var viewModel: ListViewModelProtocol {
+        return tableViewModel
+    }
+    
+    var cellClass: AnyClass {
+        return ProfileCell.self 
+    }
+    
+    var cellNib: UINib? {
+        guard let clsName = ProfileCell.description().components(separatedBy: ".").last else { return nil }
+        return UINib(nibName: clsName, bundle: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableViewModel.allData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProfileCell.description()) as! ProfileCell
+        
+        cell.viewModel = tableViewModel.allData[indexPath.row] as? ProfileCellModel
+        return cell
+    }
+
+}
+
+

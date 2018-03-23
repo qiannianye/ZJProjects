@@ -20,7 +20,7 @@ final class HttpRequestManager{
     //请求manager
     lazy var manager: SessionManager = {
         let sessionConfig = URLSessionConfiguration.default
-        sessionConfig.timeoutIntervalForRequest = 10
+        sessionConfig.timeoutIntervalForRequest = 60
         sessionConfig.timeoutIntervalForResource = 20
         let sessionDelegate = SessionDelegate()
         sessionDelegate.sessionDidReceiveChallenge = {(session: URLSession, challege: URLAuthenticationChallenge) in

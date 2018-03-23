@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="349" height="94.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tcg-m8-uhP">
+                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tcg-m8-uhP">
                         <rect key="frame" x="16" y="37" width="60" height="20.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="Aff-ov-EIc"/>
@@ -29,7 +29,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWk-Qh-hb8">
+                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWk-Qh-hb8">
                         <rect key="frame" x="76" y="37.5" width="229" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="CwK-9B-YJc"/>
@@ -45,11 +45,30 @@
                             <constraint firstAttribute="width" constant="16" id="TSt-Vd-zgr"/>
                         </constraints>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_head_icon_1" translatesAutoresizingMaskIntoConstraints="NO" id="Ak7-yF-m76">
+                        <rect key="frame" x="245" y="17.5" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="7AH-cW-9ue"/>
+                            <constraint firstAttribute="height" constant="60" id="88N-p7-gso"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7YK-c0-bJ9">
+                        <rect key="frame" x="12" y="93.5" width="337" height="0.5"/>
+                        <color key="backgroundColor" red="0.82218633797505325" green="0.82829502691878998" blue="0.84662109375000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="xNp-Ig-Dk3"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Svi-AY-1Y6" firstAttribute="leading" secondItem="ZWk-Qh-hb8" secondAttribute="trailing" constant="16" id="6mS-Jv-RFv"/>
+                    <constraint firstItem="Ak7-yF-m76" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Boa-9l-XJb"/>
+                    <constraint firstItem="Svi-AY-1Y6" firstAttribute="leading" secondItem="Ak7-yF-m76" secondAttribute="trailing" constant="16" id="DGT-fZ-w0h"/>
+                    <constraint firstItem="7YK-c0-bJ9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Dh7-4b-hAs"/>
                     <constraint firstItem="ZWk-Qh-hb8" firstAttribute="leading" secondItem="Tcg-m8-uhP" secondAttribute="trailing" id="MJD-Gd-cYk"/>
                     <constraint firstItem="Svi-AY-1Y6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="TDX-OW-YcY"/>
+                    <constraint firstAttribute="bottom" secondItem="7YK-c0-bJ9" secondAttribute="bottom" constant="0.5" id="WBP-tW-afQ"/>
+                    <constraint firstAttribute="trailing" secondItem="7YK-c0-bJ9" secondAttribute="trailing" id="X7f-a4-soo"/>
                     <constraint firstItem="Tcg-m8-uhP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="jh7-4o-Jlx"/>
                     <constraint firstAttribute="trailing" secondItem="Svi-AY-1Y6" secondAttribute="trailing" constant="12" id="mCo-eK-R8Y"/>
                     <constraint firstItem="Tcg-m8-uhP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="saj-tD-HyT"/>
@@ -59,6 +78,8 @@
             <connections>
                 <outlet property="arrowImgVw" destination="Svi-AY-1Y6" id="6oB-7y-w6m"/>
                 <outlet property="contentLb" destination="ZWk-Qh-hb8" id="W37-au-xFj"/>
+                <outlet property="infoImgVw" destination="Ak7-yF-m76" id="OzA-Ds-1Xg"/>
+                <outlet property="lineImgVw" destination="7YK-c0-bJ9" id="SU3-mZ-it8"/>
                 <outlet property="titleLb" destination="Tcg-m8-uhP" id="E4q-M0-gsP"/>
             </connections>
             <point key="canvasLocation" x="48.5" y="80.5"/>
@@ -66,5 +87,6 @@
     </objects>
     <resources>
         <image name="my_arrow_icon" width="16" height="16"/>
+        <image name="my_head_icon_1" width="720" height="720"/>
     </resources>
 </document>

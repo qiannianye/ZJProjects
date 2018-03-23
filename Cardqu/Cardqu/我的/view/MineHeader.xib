@@ -15,14 +15,14 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="279"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_head_icon_1" translatesAutoresizingMaskIntoConstraints="NO" id="IJV-WG-QKx">
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_head_icon_1" translatesAutoresizingMaskIntoConstraints="NO" id="IJV-WG-QKx">
                     <rect key="frame" x="16" y="6" width="48" height="48"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="WWn-Fb-WiP"/>
                         <constraint firstAttribute="width" constant="48" id="u2H-iA-TYB"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWA-WX-cpr">
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWA-WX-cpr">
                     <rect key="frame" x="76" y="6" width="153" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="yWc-64-a25"/>
@@ -31,13 +31,20 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sh0-Lr-kdA">
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sh0-Lr-kdA">
                     <rect key="frame" x="76" y="32" width="153" height="14"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="14" id="SNG-KC-cnt"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLf-6v-jxl">
+                    <rect key="frame" x="235" y="8" width="80" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.90196078430000004" green="0.36862745099999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kL-3u-j4V">
@@ -57,13 +64,6 @@
                         <constraint firstAttribute="width" constant="74" id="bUZ-ir-glZ"/>
                     </constraints>
                 </button>
-                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLf-6v-jxl">
-                    <rect key="frame" x="235" y="8" width="80" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="0.90196078430000004" green="0.36862745099999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qq9-fW-Ngz">
                     <rect key="frame" x="0.0" y="60" width="315" height="66"/>
                     <subviews>
@@ -106,7 +106,7 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxK-tA-vBH" customClass="ImgLbComponent" customModule="Cardqu" customModuleProvider="target">
                     <rect key="frame" x="12" y="134" width="116" height="70"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="116" id="Val-sf-kEm"/>
                         <constraint firstAttribute="height" constant="70" id="VeV-yM-gyw"/>
@@ -114,7 +114,7 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6Q-aC-xXe" customClass="ImgLbComponent" customModule="Cardqu" customModuleProvider="target">
                     <rect key="frame" x="128" y="134" width="116" height="70"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="116" id="fIB-gR-oBZ"/>
                         <constraint firstAttribute="height" constant="70" id="tjD-RX-jgu"/>
@@ -122,7 +122,7 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZH-DM-lnu" customClass="ImgLbComponent" customModule="Cardqu" customModuleProvider="target">
                     <rect key="frame" x="244" y="134" width="116" height="70"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="116" id="D8x-A0-qsI"/>
                         <constraint firstAttribute="height" constant="70" id="iBP-1w-TOy"/>

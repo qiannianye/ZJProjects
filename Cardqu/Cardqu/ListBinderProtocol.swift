@@ -14,22 +14,35 @@ protocol ListBinderPotocol : UITableViewDelegate,UITableViewDataSource{
     var viewModel: ListViewModelProtocol { get }
     var cellClass: AnyClass { get }
     var cellNib: UINib? { get }
-    func bindListView()
     func refreshData()
-    func loadMoreData()
+    func loadDataNoMj()
 }
 
 extension ListBinderPotocol {
+    //带MJ刷新
     func refreshData() {
-        guard let tableHeader = tableView.mj_header else { return }
-        tableHeader.beginRefreshing()
+        bindListView()
+        tableView.mj_header.beginRefreshing()
     }
     
-    func loadMoreData() {
-        
+    //不带MJ
+    func loadDataNoMj() {
+        tableConfig()
+        self.viewModel.refeshAction?.apply(nil).start()
+        self.viewModel.refeshAction?.events.observeResult({ [unowned self] (event) in
+            let result = event.value
+            guard result?.error == nil else {return}
+            self.tableView.reloadData()
+        })
     }
     
     func bindListView(){
+        tableConfig()
+        bindRefresh()
+        bindLoadmore()
+    }
+    
+    func tableConfig(){
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -38,9 +51,6 @@ extension ListBinderPotocol {
         }else{
             tableView.register(cellNib, forCellReuseIdentifier: cellClass.description())
         }
-        
-        bindRefresh()
-        bindLoadmore()
     }
     
     private func bindRefresh(){

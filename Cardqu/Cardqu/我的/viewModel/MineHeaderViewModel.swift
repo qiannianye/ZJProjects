@@ -26,13 +26,14 @@ protocol MineHeaderProtocol {
     var totalBeans: MutableProperty<String> { get }
     var addBeans: MutableProperty<String> { get }
     var btnTitle: MutableProperty<String> { get }
-    var btnIsEnabled : MutableProperty<Bool> { get }
+    var loginsiginBtnIsEnabled : MutableProperty<Bool> { get }
+    var editInfoBtnIsEnabled: MutableProperty<Bool> { get }
     var signinProducer: AnyAPIProducer { get }
 }
 
 extension MineHeaderViewModel: MineHeaderProtocol {}
 
-class MineHeaderViewModel: BaseViewModel {
+class MineHeaderViewModel {
     
     private(set) var headerUrl = MutableProperty("")
     private(set) var nickName = MutableProperty("")
@@ -40,7 +41,8 @@ class MineHeaderViewModel: BaseViewModel {
     private(set) var totalBeans = MutableProperty("")
     private(set) var addBeans = MutableProperty("")
     private(set) var btnTitle = MutableProperty("")
-    private(set) var btnIsEnabled = MutableProperty(true)
+    private(set) var loginsiginBtnIsEnabled = MutableProperty(true)
+    private(set) var editInfoBtnIsEnabled = MutableProperty(false)
     
     private(set) lazy var signinProducer: AnyAPIProducer = {
         
@@ -68,20 +70,22 @@ class MineHeaderViewModel: BaseViewModel {
             if UserManager.default.isVisitor {
                 //弹出登录页面
                 btnTitle.value = BtnEvent.login.rawValue
-                btnIsEnabled.value = true
+                loginsiginBtnIsEnabled.value = true
+                editInfoBtnIsEnabled.value = false
             }else{
+                editInfoBtnIsEnabled.value = true
                 guard let signin = model?.has_signed else{
                     btnTitle.value = BtnEvent.hasSignin.rawValue
-                    btnIsEnabled.value = false
+                    loginsiginBtnIsEnabled.value = false
                     return
                 }
                 
                 if signin.isEqualTo("0") {//签到
                     btnTitle.value = BtnEvent.signin.rawValue
-                    btnIsEnabled.value = true
+                    loginsiginBtnIsEnabled.value = true
                 }else{
                     btnTitle.value = BtnEvent.hasSignin.rawValue
-                    btnIsEnabled.value = false
+                    loginsiginBtnIsEnabled.value = false
                 }
             }
         }

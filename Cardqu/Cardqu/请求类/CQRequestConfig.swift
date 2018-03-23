@@ -19,14 +19,15 @@ class HttpRequestConfiguration {
     var requestUrl: String
     var method: HTTPMethod
     var parameters = Dictionary<String, Any>()
-    var respondsType = RespondsDataType.json
     var isNeedToken: Bool = false
+    var isCache: Bool = false //默认不缓存
     
     //不签名的配置
-    init(url: String, method: HTTPMethod = .get, paraDic: [String: Any]?, isToken: Bool) {
+    init(url: String, method: HTTPMethod = .get, paraDic: [String: Any]?, isToken: Bool, isCache: Bool = false) {
         self.requestUrl = url
         self.method = method
         self.isNeedToken = isToken
+        self.isCache = isCache
         self.publicParameters() //第三方请求时不需要公共参数,做处理
         guard paraDic != nil else {
             return
@@ -35,11 +36,12 @@ class HttpRequestConfiguration {
     }
     
     //需要签名的配置
-    init(url: String, method: HTTPMethod = .post, parametersStr: String, isToken: Bool) {
+    init(url: String, method: HTTPMethod = .post, signParameters: String, isToken: Bool, isCache: Bool = false) {
         self.requestUrl = url
         self.method = method
         self.isNeedToken = isToken
-        self.siginParameters(paraStr: parametersStr)
+        self.isCache = isCache
+        self.siginParameters(paraStr: signParameters)
     }
     
     //签名
