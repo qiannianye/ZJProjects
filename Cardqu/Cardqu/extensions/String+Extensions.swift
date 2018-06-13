@@ -8,6 +8,18 @@
 
 import Foundation
 
+extension String{
+    static func contentWidth(content: String, font: CGFloat, height: CGFloat) -> CGSize {
+        let nstr = content as NSString
+        return nstr.boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: height), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: font)], context: nil).size
+    }
+    
+    static func contentHeight(content: String, font: CGFloat, width: CGFloat) -> CGSize {
+        let nstr = content as NSString
+        return nstr.boundingRect(with: CGSize(width:width , height: CGFloat(MAXFLOAT)), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: font)], context: nil).size
+    }
+}
+
 //MARK: 文件路经
 extension String{
     static func filePath(fileName: String) -> String {

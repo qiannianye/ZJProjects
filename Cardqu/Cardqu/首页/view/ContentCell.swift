@@ -67,9 +67,10 @@ extension ContentCell:UICollectionViewDataSource,UICollectionViewDelegate,UIScro
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCellId", for: indexPath)
         let vc = childControllers[indexPath.row]
-        vc.view.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        vc.view.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - tabBarH)
         cell.contentView.addSubview(vc.view)
         self.parentController?.addChildViewController(vc)
+        
         return cell
     }
     

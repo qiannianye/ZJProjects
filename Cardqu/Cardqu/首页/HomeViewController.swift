@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReactiveCocoa
 
 class HomeViewController: UIViewController {
     
@@ -15,19 +16,28 @@ class HomeViewController: UIViewController {
     private let adViewModel = AdsViewModel()
     private let monthRecmmdVM = MonthRecmmdViewModel()
     
-    var vcArr = [UIViewController]()
+    
     var mainTable: UITableView?
+    lazy var adScroll: CustomScrollView = {
+        let autoSV = CustomScrollView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 200), scroll: .autoCircle, imgStyle: .normal)
+        return autoSV
+    }()
     var isScroll: Bool = true
+    var vcArr = [UIViewController]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
+        containerScrollNotif()
         adViewModel.notify()
         
         adViewModel.fetchAction.values.observeValues { [unowned self] (value) in
-            self.mainTable?.reloadSections(IndexSet(integer: 0), with: .none)
+            self.adScroll.images = self.adViewModel.dataArr.map({ (adModel) -> String in
+                let model = adModel as! AdModel
+                return model.image_url ?? ""
+            })
         }
         
         monthRecmmdVM.fetchAction.apply(nil).start()
@@ -49,7 +59,7 @@ extension HomeViewController: UICollectionViewDataSource,UICollectionViewDelegat
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCellId", for: indexPath) as! AutoScrollCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCellId", for: indexPath) as! ImageCollectionCell
         let model = monthRecmmdVM.dataArr[indexPath.row] as? MonthRecmmdModel
         cell.imgUrl = model?.img_url
         return cell
@@ -89,12 +99,17 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
             
             cell?.parentController = self
             
-            let vcNameArr = ["PickedViewController","SecondVC","ThirdVC"]
+            let vcNameArr = ["HomepagePickedVC","SecondVC","ThirdVC"]
             for vcName in vcNameArr {
                 let cls = NSClassFromString(Bundle.main.namespace + "." + vcName) as? UIViewController.Type
                 let vc = cls?.init()
                 vc?.title = vcName
                 vcArr.append(vc!)
+               
+//                let contentVC = vc as! ContentViewController
+//                contentVC.scrollProducer.startWithValues { [unowned self](isScroll) in
+//                    self.mainTable?.isScrollEnabled = isScroll as! Bool
+//                }
             }
             cell?.childControllers = vcArr
             
@@ -107,8 +122,11 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
-            let autoSV = AutoScrollView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 200))
-            autoSV.images = adViewModel.dataArr
+           let autoSV = CustomScrollView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 200), scroll: .autoCircle, imgStyle: .normal)
+            autoSV.images = adViewModel.dataArr.map({ (adModel) -> String in
+                let model = adModel as! AdModel
+                return model.image_url ?? ""
+            })
             return autoSV
         }else if section == 1 {
             let header = UIButton(type: UIButtonType.custom)
@@ -127,7 +145,7 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
             let collv = UICollectionView(frame: CGRect(x:0,y:0,width:screenWidth,height:screenWidth/2), collectionViewLayout: layout)
             collv.backgroundColor = UIColor.clear
             collv.dataSource = self
-            collv.register(AutoScrollCell.self, forCellWithReuseIdentifier: "CollectionViewCellId")
+            collv.register(ImageCollectionCell.self, forCellWithReuseIdentifier: "CollectionViewCellId")
             return collv
         }else{
             let title = ["title1","title2","title3"]
@@ -140,7 +158,7 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 3 {
-            return screenHeight
+            return screenHeight - tabBarH
         }else{
             return 0
         }
@@ -174,14 +192,17 @@ extension HomeViewController: CustomSegmentDelegate{
 extension HomeViewController: UIScrollViewDelegate{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
 
+        let contentHeight = mainTable?.rect(forSection: 3).origin.y
         let offsetY = scrollView.contentOffset.y
-        if offsetY >= scrollView.contentSize.height {
+        if offsetY >= contentHeight ?? 0 {
             isScroll = false
-            
         }else{
             isScroll = true
         }
         
+        print("scroll offset y = [\(offsetY)]")
+        
+    
         scrollView.isScrollEnabled = isScroll
         
         //发送通知
@@ -199,5 +220,18 @@ extension HomeViewController {
         mainTable?.separatorStyle = UITableViewCellSeparatorStyle.none
         view.addSubview(mainTable!)
         mainTable?.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCellId")
+        
+        let header = UIView(frame: CGRect(x: 0, y: naviBarH, width: screenWidth, height: adScroll.frame.height + ))
+    }
+    
+    func containerScrollNotif() {
+        NotificationCenter.default.addObserver(self, selector: #selector(setScroll), name: NSNotification.Name(rawValue: "ContainerScroll"), object: nil)
+    }
+    
+    @objc func setScroll(notify: NSNotification) {
+        
+        let isCanScroll = notify.object as! NSNumber
+        mainTable?.isScrollEnabled = isCanScroll.boolValue
+        isScroll = isCanScroll.boolValue
     }
 }

@@ -11,6 +11,7 @@ import Foundation
 class PickedViewModel: ListViewModel {
     
     let sectionArr = ["专题","精选"]
+    var dataArr = [NSArray]()
     
     override func fetchDataSignal(_ page: Int, _ pageSize: Int) -> APIProducer<[ListCellModelProtocol]> {
         return RecommendAPI().pickedRecommend().map({ (result) -> [ListCellModelProtocol] in
