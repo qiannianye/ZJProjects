@@ -160,7 +160,7 @@ extension HomeViewController:UITableViewDataSource,UITableViewDelegate{
         if indexPath.section == 3 {
             return screenHeight - tabBarH
         }else{
-            return 0
+            return 1
         }
     }
     
@@ -221,7 +221,7 @@ extension HomeViewController {
         view.addSubview(mainTable!)
         mainTable?.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCellId")
         
-        let header = UIView(frame: CGRect(x: 0, y: naviBarH, width: screenWidth, height: adScroll.frame.height + ))
+        let header = UIView(frame: CGRect(x: 0, y: naviBarH, width: screenWidth, height: adScroll.frame.height + 100))
     }
     
     func containerScrollNotif() {

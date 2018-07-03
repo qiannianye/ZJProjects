@@ -21,11 +21,14 @@ class LRImgLbComponent: UIView {
     }
     
     init(frame: CGRect, fontSize: CGFloat = 14, imageSize: CGSize = CGSize(width: 16, height: 16)) {
+        super.init(frame: frame)
+        
         addSubview(titleLb)
         addSubview(imgVw)
         
         self.font = fontSize
         self.imgSize = imageSize
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
